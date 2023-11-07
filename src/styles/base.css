@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url(/fonts/IBM_Plex_Mono/IBMPlexMono-Medium.ttf)format("truetype")font-weight-normal,
+  url(/fonts/IBM_Plex_Mono/IBMPlexMono-Bold.ttf) format("truetype") font-weight-bold;
+}
+@font-face {
+  font-family: "IBM Plex Serif";
+  src: url(/fonts/IBM_Plex_Serif/IBMPlexSerif-SemiBold.ttf)format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url(/fonts/IBM_Plex_Sans/IBMPlexSans-Medium.ttf)format("truetype");
+}
+@font-face {
+  font-family: "Roboto Mono";
+  src: url(/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf)format("truetype");
+}
+@font-face {
+  font-family: "Roboto Mono Italic";
+  src: url(/fonts/Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf)format("truetype");
+}
+
+
+@layer base {
+  :root,
+  html[data-theme="light"] {
+    --color-fill: 251, 254, 251;
+    --color-text-base: 40, 39, 40;
+    --color-accent: 101, 126, 103;
+    --color-card: 229, 240, 231;
+    --color-card-muted: 205, 205, 205;
+    --color-border: 180, 207, 184;
+  }
+  html[data-theme="dark"] {
+    --color-fill: 21, 25, 36;
+    --color-text-base: 234, 237, 243;
+    --color-accent: 204, 230, 208;
+    --color-card: 57, 66, 59;
+    --color-card-muted: 138, 51, 2;
+    --color-border: 96, 153, 104;
+  }
+  #sun-svg,
+  html[data-theme="dark"] #moon-svg {
+    display: none;
+  }
+  #xyz {
+    color: rgb(251, 254, 251);
+    color: rgb(205, 205, 205);
+    color: rgb(229, 240, 231);
+  }
+  #moon-svg,
+  html[data-theme="dark"] #sun-svg {
+    display: block;
+  }
+  body {
+    @apply flex min-h-screen flex-col bg-skin-fill font-mono text-skin-base 
+    selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
+  }
+  section,
+  footer {
+    max-width: var(--site_width);
+    @apply mx-auto px-4;
+  }
+  a {
+    @apply outline-2 outline-offset-1 outline-skin-fill 
+    focus-visible:no-underline focus-visible:outline-dashed;
+  }
+  svg {
+    @apply inline-block h-6 w-6 fill-skin-base group-hover:fill-skin-accent;
+  }
+  svg.icon-tabler {
+    @apply inline-block h-6 w-6 scale-125 fill-transparent 
+    stroke-current stroke-2 opacity-90 group-hover:fill-transparent 
+    sm:scale-110;
+  }
+  img {
+    @apply w-full
+  }
+  .prose {
+    @apply prose-headings:!mb-3 prose-headings:!text-skin-base 
+    prose-h3:italic prose-p:!text-skin-base 
+    prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-8
+    hover:prose-a:text-skin-accent prose-blockquote:!border-l-skin-accent
+    prose-blockquote:border-opacity-50 prose-blockquote:opacity-80
+    prose-figcaption:!text-skin-base prose-figcaption:opacity-70
+    prose-strong:!text-skin-base
+
+    
+    prose-code:rounded prose-code:bg-skin-card 
+    prose-code:bg-opacity-75 prose-code:p-1 prose-code:!text-skin-base 
+    prose-code:before:!content-[''] prose-code:after:!content-['']
+    prose-pre:!text-skin-base prose-ol:!text-skin-base 
+    prose-ul:overflow-x-clip prose-ul:!text-skin-base prose-li:marker:!text-skin-accent
+    prose-table:text-skin-base prose-th:border
+    prose-th:border-skin-line prose-td:border 
+    prose-td:border-skin-line prose-img:mx-auto 
+    prose-img:!mt-2 prose-img:border-2 
+    prose-img:border-skin-line prose-hr:!border-skin-line;
+  }
+  .prose a {
+    @apply hover:!text-skin-accent;
+  }
+  .prose thead th:first-child,
+  tbody td:first-child,
+  tfoot td:first-child {
+    padding-left: 0.5714286em;
+  }
+  .prose h2#table-of-contents {
+    @apply mb-2;
+  }
+  .prose details {
+    @apply inline-block cursor-pointer select-none text-skin-base;
+  }
+  .prose summary {
+    @apply focus-outline;
+  }
+  .prose h2#table-of-contents + p {
+    @apply hidden;
+  }
+
+  /* ===== scrollbar ===== */
+  html {
+    overflow-y: scroll;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-3;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-skin-fill;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-skin-card;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-skin-card-muted;
+  }
+
+  code,
+  blockquote {
+    word-wrap: break-word;
+  }
+
+  pre > code {
+    white-space: pre;
+  }
+}
+
+@layer components {
+  .display-none {
+    @apply hidden;
+  }
+  .focus-outline {
+    @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
+  }
+}
+
+:root {
+  --site_width: 100rem;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.center-layout {
+  width: 100%;
+  max-width: var(--site_width);
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  margin-inline: auto;
+}
+
+.max-width {
+  max-width: var(--site_width);
+}
+
+.hover-transform {
+  position: relative;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .3s;
+}
+
+.hover-transform:hover {
+  transform: translate(var(--translate-x),var(--translate-y)) rotate(var(--rotate)) skew(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
+}
+
+.strokeme {
+  --_color-shadow: var(--color-text-base);
+  --_alpha: 0.5;
+  --_width: 6px;
+  text-shadow: -1px -1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), 1px -1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), -1px 1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), 1px 1px var(--_width) rgba(var(--_color-shadow), var(--_alpha));
+}
+
+.postUl {
+  max-width: var(--site_width);
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  grid-auto-rows: 18rem auto auto auto;
+  container-type: inline-size;
+  @apply grid grid-flow-dense gap-8 justify-center;
+}
+
+.postCard {
+  border-radius: 1rem;
+  border-width: 1px;
+  transition: all .2s ease-in-out;
+  height: auto;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+  @apply grid gap-4 my-5 overflow-hidden
+}
+
+.postCard:hover {
+  background-color: rgba(var(--color-card), 0.8);
+}
+
+.postTitle {
+  @apply text-ellipsis line-clamp-2 w-4/5 text-balance
+}
+
+
+@media (min-width: 70rem) {
+  .postCard:first-child {
+    --_padding: 3rem;
+    grid-template-columns: 2fr var(--_padding) 1fr;
+    grid-template-rows: 1px 5rem auto 1fr;
+    grid-template-areas:
+    "postImg b a"
+    "postImg b postDate"
+    "postImg b postTitle"
+    "postImg b postDesc";
+    grid-column-start: 1;
+    grid-column-end: -1;
+    height: auto;
+    padding-right: var(--_padding);
+  }
+  .postCard:first-child .postImg {
+    grid-area: postImg;
+    @apply h-full
+  }
+  .postCard:first-child .postDate {
+    grid-area: postDate;
+    text-align: start;
+    width: 100%;
+    font-size: 18pt;
+  }
+  .postCard:first-child .postTitle {
+    grid-area: postTitle;
+    text-align: start;
+    align-self: center;
+    @apply text-5xl w-auto line-clamp-none
+  }
+  .postCard:first-child .postDesc {
+    grid-area: postDesc;
+    text-align: start;
+    width: 100%;
+    font-size: 15pt;
+    @apply line-clamp-none
+  }
+  .day {
+    font-size: 30pt;
+  }
+}
+@media (min-width: 100rem) {
+  .postCard:first-child {
+    max-width: 100rem;
+  }
+}
+
+.day {
+  font-weight: 900;
+  font-size: 25pt;
+}
+
+.fancy-link {
+  text-decoration: none;
+  position: relative;
+}
+
+.fancy-link::after {
+  content: "";
+  position: absolute;
+  left: .5rem;
+  bottom: 0;
+  width: calc(100% - 1rem);
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease-in;
+  transition: transform 250ms ease-in;
+}
+
+.fancy-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}

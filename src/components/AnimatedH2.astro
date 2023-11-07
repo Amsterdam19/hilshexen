@@ -1,0 +1,116 @@
+---
+const { txt } = Astro.props;
+---
+
+<h2>{txt}</h2>
+
+<style>
+  h2 {
+    width: fit-content;
+  }
+  @media (width <= 1024px) {
+    h2 {
+      @apply mb-[5rem] w-full text-center text-3xl font-semibold tracking-wide nm:text-4xl;
+    }
+  }
+  @media (width > 1024px) {
+    h2 {
+      --_shaddow-width: 3px;
+      --_animation-duration: 0.4s;
+      --color-primary: rgb(var(--color-text-base));
+      --color-secondary: color-mix(
+        in lch,
+        rgb(var(--color-accent)) 80%,
+        rgb(var(--color-fill))
+      );
+      --color-tertiary: color-mix(
+        in lch,
+        rgb(var(--color-accent)) 60%,
+        rgb(var(--color-fill))
+      );
+      --color-quaternary: color-mix(
+        in lch,
+        rgb(var(--color-accent)) 40%,
+        rgb(var(--color-fill))
+      );
+      --color-quinary: color-mix(
+        in lch,
+        rgb(var(--color-accent)) 20%,
+        rgb(var(--color-fill))
+      );
+      text-shadow: none;
+      color: var(--color-primary);
+      font-weight: 600;
+      @apply px-8 py-10 text-6xl tracking-wide;
+    }
+    h2:hover {
+      animation:
+        shadows var(--_animation-duration) ease-in-out forwards,
+        move var(--_animation-duration) ease-in-out forwards;
+    }
+  }
+  @keyframes shadows {
+  0% {
+    text-shadow: none;
+  }
+  10% {
+    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary);
+  }
+  20% {
+    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary),
+      calc(var(--_shaddow-width) * 2) calc(var(--_shaddow-width) * 2) 0 var(--color-tertiary);
+  }
+  30% {
+    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary),
+      calc(var(--_shaddow-width) * 2) calc(var(--_shaddow-width) * 2) 0 var(--color-tertiary), calc(var(--_shaddow-width) * 3) calc(var(--_shaddow-width) * 3) var(--color-quaternary);
+  }
+  40% {
+    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary),
+      calc(var(--_shaddow-width) * 2) calc(var(--_shaddow-width) * 2) 0 var(--color-tertiary), calc(var(--_shaddow-width) * 3) calc(var(--_shaddow-width) * 3) var(--color-quaternary),
+      calc(var(--_shaddow-width) * 4) calc(var(--_shaddow-width) * 4) 0 var(--color-quinary);
+  }
+  50% {
+    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary),
+      calc(var(--_shaddow-width) * 2) calc(var(--_shaddow-width) * 2) 0 var(--color-tertiary), calc(var(--_shaddow-width) * 3) calc(var(--_shaddow-width) * 3) var(--color-quaternary),
+      calc(var(--_shaddow-width) * 4) calc(var(--_shaddow-width) * 4) 0 var(--color-quinary);
+  }
+  60% {
+    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary),
+      calc(var(--_shaddow-width) * 2) calc(var(--_shaddow-width) * 2) 0 var(--color-tertiary), calc(var(--_shaddow-width) * 3) calc(var(--_shaddow-width) * 3) var(--color-quaternary),
+      calc(var(--_shaddow-width) * 4) calc(var(--_shaddow-width) * 4) 0 var(--color-quinary);
+  }
+  70% {
+    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary),
+      calc(var(--_shaddow-width) * 2) calc(var(--_shaddow-width) * 2) 0 var(--color-tertiary), calc(var(--_shaddow-width) * 3) calc(var(--_shaddow-width) * 3) var(--color-quaternary);
+  }
+  80% {
+    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary),
+      calc(var(--_shaddow-width) * 2) calc(var(--_shaddow-width) * 2) 0 var(--color-tertiary);
+  }
+  90% {
+    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary);
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  40% {
+    transform: translate(calc(var(--_shaddow-width) * -4), calc(var(--_shaddow-width) * -4));
+  }
+  50% {
+    transform: translate(calc(var(--_shaddow-width) * -4), calc(var(--_shaddow-width) * -4));
+  }
+  60% {
+    transform: translate(calc(var(--_shaddow-width) * -4), calc(var(--_shaddow-width) * -4));
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+</style>
