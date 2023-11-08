@@ -1,6 +1,6 @@
 ---
 title: How Do I Develop My Terminal Portfolio Website with React
-heroImage: ../../assets/images/AstroPaper-v3.png
+heroImage: ../../assets/AstroPaper-v3.png
 author: Sat Naing
 pubDatetime: 2022-06-09T03:42:51Z
 postSlug: how-do-i-develop-my-terminal-portfolio-website-with-react

@@ -2,7 +2,7 @@
 author: Sat Naing
 pubDatetime: 2022-09-26T12:13:24Z
 title: Predefined color schemes
-heroImage: ../../assets/images/AstroPaper-v3.png
+heroImage: ../../assets/AstroPaper-v3.png
 postSlug: predefined-color-schemes
 featured: false
 draft: false
