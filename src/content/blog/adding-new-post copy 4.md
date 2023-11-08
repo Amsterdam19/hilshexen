@@ -2,7 +2,7 @@
 author: Sat Naing
 pubDatetime: 2022-09-23T15:22:00Z
 title: Adding new posts in AstroPaper theme posts in AstroPaper theme posts in AstroPaper theme
-heroImage: ../../assets/AstroPaper-v3.png
+heroImage: ../../assets/images/AstroPaper-v3.png
 postSlug: adding-new-posts-in-astropaper-theme
 featured: true
 draft: false

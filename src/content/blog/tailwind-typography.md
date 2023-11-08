@@ -1,6 +1,6 @@
 ---
 title: Tailwind Typography Plugin
-heroImage: ../../assets/AstroPaper-v3.png
+heroImage: ../../assets/images/AstroPaper-v3.png
 author: Sat Naing
 pubDatetime: 2022-07-05T02:05:51Z
 featured: false
