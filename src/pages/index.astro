@@ -25,7 +25,7 @@ import AnimatedH2 from "@components/AnimatedH2.astro";
 const optimizedBackground = await getImage({src: heroImage, format: 'webp'})
 ---
 
-<Layout>
+<Layout identity={true}>
   <Header activeNav="index"/>
   <main id="main-content">
     <section id="hero" class="max-w-none bg-no-repeat bg-cover" style={`background-image: url(${optimizedBackground.src});`}>

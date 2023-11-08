@@ -11,6 +11,7 @@ export interface Props {
   description?: string;
   ogImage?: string;
   canonicalURL?: string;
+  identity?: boolean;
 }
 
 const {
@@ -19,6 +20,7 @@ const {
   description = SITE.desc,
   ogImage = SITE.ogImage,
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+  identity = false,
 } = Astro.props;
 
 const socialImageURL = new URL(
@@ -67,6 +69,12 @@ const socialImageURL = new URL(
           name="google-site-verification"
           content={googleSiteVerification}
         />
+      )
+    }
+
+    {
+      identity && (
+      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       )
     }
 
