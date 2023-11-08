@@ -1,10 +1,10 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "http://localhost:4321/",
+  website: "https://cheerful-pasca-165143.netlify.app/",
   author: "Amsterdam19",
   desc: "Ein Blog über die Wanderschaft",
-  title: "Katrins Blog",
+  title: "HilsHexen",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 9,
