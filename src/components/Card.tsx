@@ -6,9 +6,10 @@ export interface Props {
   href?: string;
   frontmatter: CollectionEntry<"blog">["data"];
   secHeading?: boolean;
+  Card?: boolean;
 }
 
-export default function Card({ href, frontmatter, secHeading = true }: Props) {
+export default function Card({ href, frontmatter, secHeading = true, Card = true }: Props) {
   const { title, heroImage, pubDatetime, description } = frontmatter;
 
   const headerProps = {
@@ -17,7 +18,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
   };
 
   return (
-    <a href={href} className="postCard">
+    <a href={href} className={Card ? ("postCard card"): ("postCard")}>
       <img className="h-full object-cover postImg" src={heroImage.src} alt={"Bild zum Artikel " + title}/>
       <Datetime datetime={pubDatetime} className="text-skin-accent postDate mx-[5%]"/>
       <span

@@ -205,6 +205,10 @@
   text-shadow: -1px -1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), 1px -1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), -1px 1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), 1px 1px var(--_width) rgba(var(--_color-shadow), var(--_alpha));
 }
 
+ul {
+  max-width: var(--site_width);
+  width: 100%;
+}
 .postUl {
   max-width: var(--site_width);
   width: 100%;
@@ -215,6 +219,7 @@
 }
 
 .postCard {
+  max-width: 30rem;
   border-radius: 1rem;
   border-width: 1px;
   transition: all .2s ease-in-out;
@@ -234,7 +239,7 @@
 
 
 @media (min-width: 70rem) {
-  .postCard:first-child {
+  .card:first-child {
     --_padding: 3rem;
     grid-template-columns: 2fr var(--_padding) 1fr;
     grid-template-rows: 1px 5rem auto 1fr;
@@ -245,26 +250,28 @@
     "postImg b postDesc";
     grid-column-start: 1;
     grid-column-end: -1;
+    min-height: 30rem;
+    max-width: unset;
     height: auto;
     padding-right: var(--_padding);
   }
-  .postCard:first-child .postImg {
+  .card:first-child .postImg {
     grid-area: postImg;
     @apply h-full
   }
-  .postCard:first-child .postDate {
+  .card:first-child .postDate {
     grid-area: postDate;
     text-align: start;
     width: 100%;
     font-size: 18pt;
   }
-  .postCard:first-child .postTitle {
+  .card:first-child .postTitle {
     grid-area: postTitle;
     text-align: start;
     align-self: center;
     @apply text-5xl w-auto line-clamp-none
   }
-  .postCard:first-child .postDesc {
+  .card:first-child .postDesc {
     grid-area: postDesc;
     text-align: start;
     width: 100%;
@@ -276,8 +283,8 @@
   }
 }
 @media (min-width: 100rem) {
-  .postCard:first-child {
-    max-width: 100rem;
+  .card:first-child {
+    max-width: unset;
   }
 }
 

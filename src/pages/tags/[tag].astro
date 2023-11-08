@@ -43,16 +43,22 @@ const sortTagsPost = getSortedPosts(tagPosts);
   <Main
     pageTitle={[`Tag:`, `${tag}`]}
     titleTransition={tag}
-    pageDesc={`All the articles with the tag "${tag}".`}
+    pageDesc={`Alle Blogeinträge mit dem Tag „${tag}“.`}
   >
     <h1 slot="title" transition:name={tag}>{`Tag:${tag}`}</h1>
     <ul>
       {
         sortTagsPost.map(({ data }) => (
-          <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
+          <Card href={`/posts/${slugify(data)}`} frontmatter={data} Card={false}/>
         ))
       }
     </ul>
   </Main>
   <Footer />
 </Layout>
+<style>
+  ul {
+    max-width: var(--site_width);
+    width: 100%;
+  }
+</style>

@@ -37,12 +37,16 @@ const { props } = Astro;
 
 <style>
   #main-content {
+    max-width: var(--site_width);
     @apply mx-auto mt-3 w-full px-4 pb-12 flex flex-col items-center;
   }
   #main-content h1 {
-    @apply text-2xl font-semibold sm:text-3xl sm:px-4;
+    @apply text-2xl font-semibold sm:text-3xl;
   }
   #main-content p {
-    @apply mb-6 mt-2 italic sm:px-4;
+    @apply mb-6 mt-2 italic;
+  }
+  span {
+    @apply italic
   }
 </style>

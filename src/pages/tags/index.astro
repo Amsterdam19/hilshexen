@@ -15,10 +15,16 @@ let tags = getUniqueTags(posts);
 
 <Layout title={`Tags | ${SITE.title}`}>
   <Header activeNav="tags" />
-  <Main pageTitle="Tags" pageDesc="All the tags used in posts.">
+  <Main pageTitle="Tags" pageDesc="Alle Tags.">
     <ul>
       {tags.map(tag => <Tag name={tag} size="lg" />)}
     </ul>
   </Main>
   <Footer />
 </Layout>
+<style>
+    ul {
+    max-width: var(--site_width);
+    width: 100%;
+  }
+</style>
