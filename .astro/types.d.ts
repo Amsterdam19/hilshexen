@@ -238,6 +238,20 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"huhu.md": {
+	id: "huhu.md";
+  slug: "huhu";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"mount-saint-michel.md": {
+	id: "mount-saint-michel.md";
+  slug: "mount-saint-michel";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "predefined-color-schemes.md": {
 	id: "predefined-color-schemes.md";
   slug: "predefined-color-schemes";

@@ -98,8 +98,7 @@
     prose-table:text-skin-base prose-th:border
     prose-th:border-skin-line prose-td:border 
     prose-td:border-skin-line prose-img:mx-auto 
-    prose-img:!mt-2 prose-img:border-2 
-    prose-img:border-skin-line prose-hr:!border-skin-line;
+    prose-img:!mt-2 prose-img:rounded-2xl
   }
   .prose a {
     @apply hover:!text-skin-accent;
@@ -226,6 +225,7 @@ ul {
   height: auto;
   grid-row: span 4;
   grid-template-rows: subgrid;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   @apply grid gap-4 my-5 overflow-hidden
 }
 

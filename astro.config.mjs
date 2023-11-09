@@ -21,7 +21,7 @@ export default defineConfig({
       [
         remarkCollapse,
         {
-          test: "Table of contents",
+          test: "contents",
         },
       ],
     ],
@@ -37,4 +37,5 @@ export default defineConfig({
     },
   },
   scopedStyleStrategy: "where",
+  prefetch: true,
 });
