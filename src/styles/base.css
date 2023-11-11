@@ -169,7 +169,7 @@
 }
 
 :root {
-  --site_width: 100rem;
+  --site_width: 70rem;
 }
 
 .text-balance {
@@ -217,7 +217,7 @@ ul {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   grid-auto-rows: 18rem auto auto auto;
   container-type: inline-size;
-  @apply grid grid-flow-dense gap-8 justify-center;
+  @apply grid grid-flow-dense gap-8;
 }
 
 .postCard {
@@ -229,7 +229,7 @@ ul {
   grid-row: span 4;
   grid-template-rows: subgrid;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  @apply grid gap-4 my-5 overflow-hidden
+  @apply grid my-5 overflow-hidden
 }
 
 .postCard:hover {
@@ -244,7 +244,7 @@ ul {
 @media (min-width: 70rem) {
   .card:first-child {
     --_padding: 3rem;
-    grid-template-columns: 2fr var(--_padding) 1fr;
+    grid-template-columns: 3fr var(--_padding) 2fr;
     grid-template-rows: 3rem 5rem auto 1fr;
     grid-template-areas:
     "postImg b a"
@@ -253,7 +253,7 @@ ul {
     "postImg b postDesc";
     grid-column-start: 1;
     grid-column-end: -1;
-    min-height: 35rem;
+    min-height: 25rem;
     justify-content: space-between;
     max-width: unset;
     height: auto;

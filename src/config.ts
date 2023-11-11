@@ -7,7 +7,7 @@ export const SITE: Site = {
   title: "HilsHexen",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
-  postPerPage: 9,
+  postPerPage: 10,
   feturedPosts: 5,
 };
 

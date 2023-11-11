@@ -49,8 +49,10 @@ import AnimatedH2 from "./AnimatedH2.astro";
      style="fill:rgb(var(--color-card));stroke-width:1.00761"
      d="m 1227.4784,106.92276 -107.1826,31.57227 v 0.29883 l -102.5442,23.76562 v 0.23438 l -83.2539,12.84375 v 0.15625 l -0.74361,-0.041 -0.27168,0.041 v -0.0566 l -105.5902,-5.94336 v -0.3418 l -87.99513,-29.54496 -106.94062,17.71875 v 0.16797 l -92.39142,17.80469 v 0.19531 l -83.25382,26.67383 v 0.32617 l -73.1009,2.95898 v 0.041 l -0.21813,-0.0332 -0.79717,0.0332 v -0.15039 l -51.9325,-7.72068 -39.44363,33.02148 v 0.84961 l -0.92803,-0.0723 -0.0872,0.0723 v -0.0801 l -24.36697,-1.91992 v -0.7832 l -22.06872,-17.00975 -23.61939,6.51367 v 0.2793 l -0.63653,-0.10352 -0.37876,0.10352 v -0.16602 l -22.64374,-3.71875 -72.79356,27.50196 v 0.38281 l -68.024452,33.5 v 0.5 l -67.009164,23 v 59 H 1893.9471 v -162 l -46.969,-2.95312 -49.4835,8.77343 v 0.17969 l -0.4582,-0.0977 -0.5571,0.0977 v -0.21875 l -54.8257,-11.78125 v -0.082 l -47.909,-3.85159 -47.5283,16.58007 v 0.35352 l -0.9558,-0.0215 -0.06,0.0215 v -0.0215 l -44.6724,-0.97852 v -0.25 l -153.3088,-37.75 v -0.29102 l -131.9878,-37.70898 v -0.22657 z" />
 </svg>
-<a href="#featured" id="more">
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="rgb(var(--color-accent))" d="M15.88 9.29L12 13.17L8.12 9.29a.996.996 0 1 0-1.41 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59a.996.996 0 0 0 0-1.41c-.39-.38-1.03-.39-1.42 0z"/></svg>
+<a href="#featured" id="more" aria-label="Weiter nach unten">
+  <div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="rgb(var(--color-accent))" d="M15.88 9.29L12 13.17L8.12 9.29a.996.996 0 1 0-1.41 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59a.996.996 0 0 0 0-1.41c-.39-.38-1.03-.39-1.42 0z"/></svg>
+  </div>
 </a>
 
   <div class="center-layout">
@@ -72,8 +74,9 @@ import AnimatedH2 from "./AnimatedH2.astro";
     display: flex;
     flex-direction: column;
     position: relative;
-    justify-content: center;
     margin-bottom: 2rem;
+    padding-inline: 1rem;
+    @apply pb-16 md:pb-0 sm:mt-16
   }
   #svg27 {
     position: absolute;
@@ -84,7 +87,7 @@ import AnimatedH2 from "./AnimatedH2.astro";
     @apply max-h-[15rem] min-h-[5rem] -z-10
   }
   #content {
-    @apply flex flex-col-reverse items-center tracking-wide leading-10 gap-16 my-16 justify-between sm:flex-row;
+    @apply flex flex-col-reverse items-center tracking-wide leading-10 gap-16 mb-16 justify-between md:flex-row;
   }
   p {
     max-width: calc(var(--site_width) * .5);
@@ -94,22 +97,30 @@ import AnimatedH2 from "./AnimatedH2.astro";
     border-radius: 50%;
     border-width: 10px;
     border-color: rgba(var(--color-border), .5);
+    background-color: aliceblue;
     max-width: 15rem;
+    min-width: 10rem;
   }
   #more {
     position: absolute;
-    bottom: -2rem;
+    bottom: -1.5rem;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
 
-    svg {
-      border-radius: 1.5rem;
+    div {
+      transform: rotate(45deg);
       background-color: rgb(var(--color-card));
-      height: 4rem;
-      width: 4rem;
-      padding: .5rem;
+      height: 3rem;
+      width: 3rem;
+    }
+
+    svg {
+      transform: rotate(-45deg);
+      height: 3rem;
+      width: 3rem;
+      padding: .1rem;
     }
   }
   @media only screen and (max-width: 640px){

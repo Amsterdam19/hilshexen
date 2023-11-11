@@ -46,7 +46,7 @@ const sortTagsPost = getSortedPosts(tagPosts);
     pageDesc={`Alle Blogeinträge mit dem Tag „${tag}“.`}
   >
     <h1 slot="title" transition:name={tag}>{`Tag:${tag}`}</h1>
-    <ul>
+    <ul class="postUl">
       {
         sortTagsPost.map(({ data }) => (
           <Card href={`/posts/${slugify(data)}`} frontmatter={data} Card={false}/>
