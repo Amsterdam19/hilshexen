@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import portrait from "@assets/images/portraitFeichtinger.jpg";
+import portrait from "@assets/images/1122822-200.png";
 import AnimatedH2 from "./AnimatedH2.astro";
 ---
 
@@ -49,11 +49,14 @@ import AnimatedH2 from "./AnimatedH2.astro";
      style="fill:rgb(var(--color-card));stroke-width:1.00761"
      d="m 1227.4784,106.92276 -107.1826,31.57227 v 0.29883 l -102.5442,23.76562 v 0.23438 l -83.2539,12.84375 v 0.15625 l -0.74361,-0.041 -0.27168,0.041 v -0.0566 l -105.5902,-5.94336 v -0.3418 l -87.99513,-29.54496 -106.94062,17.71875 v 0.16797 l -92.39142,17.80469 v 0.19531 l -83.25382,26.67383 v 0.32617 l -73.1009,2.95898 v 0.041 l -0.21813,-0.0332 -0.79717,0.0332 v -0.15039 l -51.9325,-7.72068 -39.44363,33.02148 v 0.84961 l -0.92803,-0.0723 -0.0872,0.0723 v -0.0801 l -24.36697,-1.91992 v -0.7832 l -22.06872,-17.00975 -23.61939,6.51367 v 0.2793 l -0.63653,-0.10352 -0.37876,0.10352 v -0.16602 l -22.64374,-3.71875 -72.79356,27.50196 v 0.38281 l -68.024452,33.5 v 0.5 l -67.009164,23 v 59 H 1893.9471 v -162 l -46.969,-2.95312 -49.4835,8.77343 v 0.17969 l -0.4582,-0.0977 -0.5571,0.0977 v -0.21875 l -54.8257,-11.78125 v -0.082 l -47.909,-3.85159 -47.5283,16.58007 v 0.35352 l -0.9558,-0.0215 -0.06,0.0215 v -0.0215 l -44.6724,-0.97852 v -0.25 l -153.3088,-37.75 v -0.29102 l -131.9878,-37.70898 v -0.22657 z" />
 </svg>
+<a href="#featured" id="more">
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="rgb(var(--color-accent))" d="M15.88 9.29L12 13.17L8.12 9.29a.996.996 0 1 0-1.41 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59a.996.996 0 0 0 0-1.41c-.39-.38-1.03-.39-1.42 0z"/></svg>
+</a>
 
   <div class="center-layout">
     <AnimatedH2 txt="Über den Blog"/>
     <div id="content">
-      <p class="text-balance">Mit diesem Blog mache ich dies und das, um irgendwas zu errreichen.</p>
+      <p class="text-balance">Ich möchte mit meiner Freundin zu Fuß von Kaierde ans Mittelmeer laufen.  Wir werden zwischen 70 und 80 Tage unterwegs sein. Ich würde gerne eine "Challenge" zu Gunsten unseres Freibades daraus machen: Ich sammele für meine Kilometer Spenden, die dann das Freibad bekommt. Dafür teile ich täglich Bilder und Posts von der Strecke.</p>
       <Image src={portrait} id="portraitImage" alt="Portrait Image" />
     </div>
   </div>
@@ -72,7 +75,7 @@ import AnimatedH2 from "./AnimatedH2.astro";
     justify-content: center;
     margin-bottom: 2rem;
   }
-  svg {
+  #svg27 {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -84,11 +87,30 @@ import AnimatedH2 from "./AnimatedH2.astro";
     @apply flex flex-col-reverse items-center tracking-wide leading-10 gap-16 my-16 justify-between sm:flex-row;
   }
   p {
+    max-width: calc(var(--site_width) * .5);
     height: fit-content;
   }
   #portraitImage {
     border-radius: 50%;
+    border-width: 10px;
+    border-color: rgba(var(--color-border), .5);
     max-width: 15rem;
+  }
+  #more {
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    svg {
+      border-radius: 1.5rem;
+      background-color: rgb(var(--color-card));
+      height: 4rem;
+      width: 4rem;
+      padding: .5rem;
+    }
   }
   @media only screen and (max-width: 640px){
     h2,

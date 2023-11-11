@@ -5,9 +5,10 @@ export interface Props {
   ariaLabel?: string;
   title?: string;
   disabled?: boolean;
+  decoration?: boolean;
 }
 
-const { href, className, ariaLabel, title, disabled = false } = Astro.props;
+const { href, className, ariaLabel, title, disabled = false, decoration = false } = Astro.props;
 ---
 
 <a
@@ -17,12 +18,13 @@ const { href, className, ariaLabel, title, disabled = false } = Astro.props;
   aria-label={ariaLabel}
   title={title}
   aria-disabled={disabled}
+  style={decoration ? "text-decoration: underline;" : ""}
 >
   <slot />
 </a>
 
 <style>
   a {
-    @apply hover:text-skin-accent;
+    font-size: 1.1rem;
   }
 </style>

@@ -1,11 +1,11 @@
 ---
 import { getCollection } from "astro:content";
+import { SITE } from "@config";
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
-import TurbulentSvg from "@components/TurbulentSvg.astro";
 import Card from "@components/Card";
 import getSortedPosts from "@utils/getSortedPosts";
 import slugify from "@utils/slugify";
@@ -31,7 +31,7 @@ const optimizedBackground = await getImage({src: heroImage, format: 'webp'})
     <section id="hero" class="max-w-none bg-no-repeat bg-cover" style={`background-image: url(${optimizedBackground.src});`}>
       <div class="heroContent">
       <h1 class="strokeme">Dies ist mein Blog</h1>
-      <Button url="/posts" icon="round_volunteer_activism" txt="Spenden" className="ml-[4%]"/>        
+      <Button url="#spenden" icon="round_volunteer_activism" txt="Spenden" className="ml-[4%]"/>        
       </div>
       <div class="heroSocial" aria-label="Folgt mir auf Instagram, Facebook oder per RSS">
         <p>Folgt mir auf:</p>
@@ -46,7 +46,7 @@ const optimizedBackground = await getImage({src: heroImage, format: 'webp'})
           <section id="featured">
             <AnimatedH2 txt="Vorgestellt"/>
             <ul class="postUl">
-              {featuredPosts.map(({ data }) => (
+              {featuredPosts.slice(0, SITE.feturedPosts).map(({ data }) => (
                 <Card
                   href={`/posts/${slugify(data)}`}
                   frontmatter={data}
@@ -55,10 +55,17 @@ const optimizedBackground = await getImage({src: heroImage, format: 'webp'})
               ))}
             </ul>
           </section>
-          <Hr />
         </>
       )
     }
+
+    <section id="spenden">
+      <div>
+        <h2>Wofür werden die Spenden verwendet?</h2>
+        <p>Ich möchte mit meiner Freundin zu Fuß von Kaierde ans Mittelmeer laufen.  Wir werden zwischen 70 und 80 Tage unterwegs sein. Ich würde gerne eine "Challenge" zu Gunsten unseres Freibades daraus machen: Ich sammele für meine Kilometer Spenden, die dann das Freibad bekommt.</p>
+        <LinkButton href="http://www.freibad-delligsen.de" ariaLabel="Link zur Seite des Freibads Delligsen" decoration={true}>Freibad Delligsen</LinkButton>
+      </div>
+    </section>
 
     <section id="recent-posts">
       <AnimatedH2 txt="Letzte Einträge"/>
@@ -68,7 +75,7 @@ const optimizedBackground = await getImage({src: heroImage, format: 'webp'})
             .filter(({ data }) => !data.featured)
             .map(
               ({ data }, index) =>
-                index < 4 && (
+                index < 5 && (
                   <Card
                     href={`/posts/${slugify(data)}`}
                     frontmatter={data}
@@ -112,6 +119,34 @@ const optimizedBackground = await getImage({src: heroImage, format: 'webp'})
 </Layout>
 
 <style>
+  /* ===== Spenden Section ===== */
+  #spenden {
+    width: 100%;
+    min-height: 90vh;
+    min-height: 90svh;
+    background-color: rgb(var(--color-card));
+    display: flex;
+    align-items: center;
+
+    div {
+      max-width: calc(var(--site_width) * .55);
+      display: grid;
+      justify-items: center;
+      margin: auto;
+    }
+    h2 {
+      width: fit-content;
+      font-weight: 500;
+      font-size: 2.5rem;
+      text-align: center;
+      padding-block: 2rem;
+    }
+    p {
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+  }
+
   /* ===== Hero Section ===== */
   #hero {
     display: grid;

@@ -56,6 +56,9 @@
   html[data-theme="dark"] #sun-svg {
     display: block;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply flex min-h-screen flex-col bg-skin-fill font-mono text-skin-base 
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
@@ -242,7 +245,7 @@ ul {
   .card:first-child {
     --_padding: 3rem;
     grid-template-columns: 2fr var(--_padding) 1fr;
-    grid-template-rows: 1px 5rem auto 1fr;
+    grid-template-rows: 3rem 5rem auto 1fr;
     grid-template-areas:
     "postImg b a"
     "postImg b postDate"
@@ -250,10 +253,15 @@ ul {
     "postImg b postDesc";
     grid-column-start: 1;
     grid-column-end: -1;
-    min-height: 30rem;
+    min-height: 35rem;
+    justify-content: space-between;
     max-width: unset;
     height: auto;
     padding-right: var(--_padding);
+
+    p {
+      height: fit-content;
+    }
   }
   .card:first-child .postImg {
     grid-area: postImg;
