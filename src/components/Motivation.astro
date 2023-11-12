@@ -55,7 +55,7 @@ import AnimatedH2 from "./AnimatedH2.astro";
   </div>
 </a>
 
-  <div class="center-layout">
+  <div class="center-layout" id="motivationDiv">
     <AnimatedH2 txt="Über den Blog"/>
     <div id="content">
       <p class="text-balance">Ich möchte mit meiner Freundin zu Fuß von Kaierde ans Mittelmeer laufen.  Wir werden zwischen 70 und 80 Tage unterwegs sein. Ich würde gerne eine "Challenge" zu Gunsten unseres Freibades daraus machen: Ich sammele für meine Kilometer Spenden, die dann das Freibad bekommt. Dafür teile ich täglich Bilder und Posts von der Strecke.</p>
@@ -67,16 +67,9 @@ import AnimatedH2 from "./AnimatedH2.astro";
 <style>
   /* ===== Motivation ===== */
   section {
-    max-width: none;
-    width: 100%;
     min-height: 50rem;
     min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin-bottom: 2rem;
-    padding-inline: 1rem;
-    @apply pb-16 md:pb-0 sm:mt-16 isolate
+    @apply pb-16 md:pb-0 sm:mt-16 isolate flex flex-col relative mb-8 px-4 w-full max-w-none justify-center;
   }
   #svg27 {
     position: absolute;
@@ -86,8 +79,11 @@ import AnimatedH2 from "./AnimatedH2.astro";
     height: auto;
     @apply max-h-[15rem] min-h-[5rem] -z-10
   }
+  #motivationDiv {
+    @apply px-4 mb-8 sm:mb-[15rem];
+  }
   #content {
-    @apply flex flex-col-reverse items-center tracking-wide leading-10 gap-16 mb-16 justify-between md:flex-row;
+    @apply flex flex-col-reverse items-center tracking-wide leading-10 gap-16 justify-between md:flex-row;
   }
   p {
     max-width: calc(var(--site_width) * .5);
