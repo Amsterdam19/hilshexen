@@ -28,29 +28,33 @@
 @layer base {
   :root,
   html[data-theme="light"] {
-    --color-fill: 251, 254, 251;
+    --color-fill: 255, 255, 247;
     --color-text-base: 40, 39, 40;
     --color-accent: 101, 126, 103;
     --color-card: 229, 240, 231;
     --color-card-muted: 205, 205, 205;
     --color-border: 180, 207, 184;
+    --color-postCard: 255, 255, 255;
+    --color-main: 255, 255, 247;
   }
   html[data-theme="dark"] {
-    --color-fill: 21, 25, 36;
+    --color-fill: 30, 34, 44;
     --color-text-base: 234, 237, 243;
     --color-accent: 204, 230, 208;
     --color-card: 57, 66, 59;
     --color-card-muted: 138, 51, 2;
     --color-border: 96, 153, 104;
+    --color-postCard: 49, 55, 72;
+    --color-main: 30, 34, 44;
   }
   #sun-svg,
   html[data-theme="dark"] #moon-svg {
     display: none;
   }
   #xyz {
-    color: rgb(251, 254, 251);
-    color: rgb(205, 205, 205);
-    color: rgb(229, 240, 231);
+    color: rgb(30, 34, 44);
+    color: rgb(23, 24, 25);
+    color: rgb(255, 255, 245);
   }
   #moon-svg,
   html[data-theme="dark"] #sun-svg {
@@ -217,13 +221,13 @@ ul {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   grid-auto-rows: 18rem auto auto auto;
   container-type: inline-size;
-  @apply grid grid-flow-dense gap-8;
+  @apply grid grid-flow-dense gap-6;
 }
 
 .postCard {
-  max-width: 30rem;
+  max-width: 27rem;
   border-radius: 1rem;
-  border-width: 1px;
+  background-color: rgb(var(--color-postCard));
   transition: all .2s ease-in-out;
   height: auto;
   grid-row: span 4;
@@ -233,7 +237,7 @@ ul {
 }
 
 .postCard:hover {
-  background-color: rgba(var(--color-card), 0.8);
+  background-color: rgba(var(--color-card), 0.6);
 }
 
 .postTitle {
