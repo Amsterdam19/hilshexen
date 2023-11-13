@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/670740a2-c526-4cfd-a2d8-7c3c5f049df8/deploy-status)](https://app.netlify.com/sites/hilshexen/deploys)
+
 # HilsHexen
 
 The blog *hilshexen.de* is in this repository. It uses a further development of the blog theme Astro Paper with image support for the post cards.
