@@ -1,17 +1,16 @@
 ---
-title: Example Blog
-heroImage: ../../assets/images/screenshot_20230815_161555.png
+title: Tag 40 - München
+heroImage: ../../assets/images/01b-munich-city-tour.webp
 author: katrin
-pubDatetime: 2023-11-08T20:03:59.048Z
+pubDatetime: 2023-11-07T20:03:59.048Z
 featured: true
 tags:
-  - spaß
-  - witzig
-  - hahaha
-description: Dies ist ein doofer Eintrag
+  - Stadt
+  - Bayern
+description: Am 40. Tag waren wir in München. Hier haben wir ...
 ---
-**Bitte**
+Am 40. Tag waren wir in München. Hier haben wir dies und jenes gemacht. Irgendjemand hat gesagt:
 
-> Bitte Lösche mich.
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna.
 
-![bsp](../../assets/images/AstroPaper-v3.png "bsp")
+![ab1](../../assets/images/060718_1gr.webp "cnde")
