@@ -238,6 +238,16 @@ ul {
   @apply grid my-5 overflow-hidden
 }
 
+/* ==== Safari Fix ==== */
+@supports  (background: -webkit-named-image(i)) or (-webkit-touch-callout: none) {
+  .postUl {
+    grid-template-columns: repeat(auto-fill,minmax(300px, 100%)) !important;
+  }
+  .postImg {
+    height: 18rem;
+  }
+}
+
 .postCard:hover {
   background-color: rgba(var(--color-card), 0.6);
 }

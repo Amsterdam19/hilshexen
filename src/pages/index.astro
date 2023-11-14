@@ -60,9 +60,9 @@ const optimizedBackground = await getImage({src: heroImage, format: 'webp'})
     }
 
     <section id="spenden">
-      <div>
-        <h2>Wofür werden die Spenden verwendet?</h2>
-        <p>Ich möchte mit meiner Freundin zu Fuß von Kaierde ans Mittelmeer laufen.  Wir werden zwischen 70 und 80 Tage unterwegs sein. Ich würde gerne eine "Challenge" zu Gunsten unseres Freibades daraus machen: Ich sammele für meine Kilometer Spenden, die dann das Freibad bekommt.</p>
+      <div id="spendenDiv">
+        <h2 id="spendenH2">Wofür werden die Spenden verwendet?</h2>
+        <p id="spendenP">Ich möchte mit meiner Freundin zu Fuß von Kaierde ans Mittelmeer laufen.  Wir werden zwischen 70 und 80 Tage unterwegs sein. Ich würde gerne eine "Challenge" zu Gunsten unseres Freibades daraus machen: Ich sammele für meine Kilometer Spenden, die dann das Freibad bekommt.</p>
         <LinkButton href="http://www.freibad-delligsen.de" ariaLabel="Link zur Seite des Freibads Delligsen" decoration={true}>Freibad Delligsen</LinkButton>
       </div>
     </section>
@@ -132,25 +132,24 @@ const optimizedBackground = await getImage({src: heroImage, format: 'webp'})
     align-items: center;
     margin: 0;
     max-width: none;
-
-    div {
+  }
+  #spendenDiv {
       max-width: calc(var(--site_width) * .55);
       display: grid;
       justify-items: center;
       margin: auto;
     }
-    h2 {
+    #spendenH2 {
       width: fit-content;
       font-weight: 500;
       font-size: 2.5rem;
       text-align: center;
       padding-block: 2rem;
     }
-    p {
+    #spendenP {
       text-align: center;
       padding-bottom: 1rem;
     }
-  }
 
   /* ===== Hero Section ===== */
   #hero {
