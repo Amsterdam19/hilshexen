@@ -1,8 +1,8 @@
 ---
 author: Sat Naing
-pubDatetime: 2022-09-23T15:22:00Z
-title: Adding new posts in AstroPaper theme
-heroImage: ../../assets/images/AstroPaper-v3.png
+pubDatetime: 2022-12-23T15:22:00Z
+title: Tag 71 - interessantes Tal
+heroImage: ../../assets/images/oetztal_soelden.jpg
 postSlug: adding-new-posts-in-astropaper-theme
 featured: true
 draft: false

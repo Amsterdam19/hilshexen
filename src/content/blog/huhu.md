@@ -2,7 +2,7 @@
 title: Huhu
 heroImage: ../../assets/images/hacker.webp
 author: Katrin
-pubDatetime: 2023-11-08T21:12:35.927Z
+pubDatetime: 2023-10-08T21:12:35.927Z
 featured: false
 tags:
   - hacking

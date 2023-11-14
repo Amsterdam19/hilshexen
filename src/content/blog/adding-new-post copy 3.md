@@ -1,8 +1,8 @@
 ---
 author: Sat Naing
 pubDatetime: 2022-09-23T15:22:00Z
-title: Adding new posts in AstroPaper theme
-heroImage: ../../assets/images/AstroPaper-v3.png
+title: Tag 60 - Alpenort
+heroImage: ../../assets/images/d06dca5990e0e273cf079f76fa0c24bb.webp
 postSlug: adding-new-posts-in-astropaper-theme
 featured: true
 draft: false

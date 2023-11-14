@@ -1,5 +1,5 @@
 ---
-title: Tag 25
+title: Tag 25 - Nürnberg
 heroImage: ../../assets/images/060718_1gr.webp
 author: katrin
 pubDatetime: 2023-11-05T19:54:23.720Z

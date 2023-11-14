@@ -1,9 +1,9 @@
 ---
 author: Sat Naing
 pubDatetime: 2022-09-23T15:22:00Z
-title: Adding 
-heroImage: ../../assets/images/AstroPaper-v3.png
-postSlug: adding-new-posts-in-astropaper-theme
+title: Tag 65 - Hügel XYZ
+heroImage: ../../assets/images/5434876.webp
+postSlug: Tag 65 - Hügel XYZ
 featured: true
 draft: false
 tags:

@@ -1,9 +1,9 @@
 ---
 author: Sat Naing
-pubDatetime: 2022-09-23T15:22:00Z
-title: Adding new posts in AstroPaper theme posts in AstroPaper theme posts in AstroPaper theme
-heroImage: ../../assets/images/AstroPaper-v3.png
-postSlug: adding-new-posts-in-astropaper-theme
+pubDatetime: 2022-11-23T15:22:00Z
+title: Tag 65 - Berg XYZ
+heroImage: ../../assets/images/Switzerland_Mountains_Scenery_Alps_Clouds_517724_1920x1200.webp
+postSlug: Tag 65 - Berg XYZ
 featured: true
 draft: false
 tags:
