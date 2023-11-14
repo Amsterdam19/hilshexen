@@ -1,17 +1,18 @@
 ---
-title: Example Blog
-heroImage: ../../assets/images/screenshot_20230815_161555.png
+title: Tag 25
+heroImage: ../../assets/images/060718_1gr.webp
 author: katrin
-pubDatetime: 2023-11-08T19:54:23.720Z
-featured: true
+pubDatetime: 2023-11-05T19:54:23.720Z
+featured: false
 tags:
-  - spaß
-  - witzig
-  - hahaha
-description: Dies ist ein doofer Eintrag
+  - bayern
+  - stadt
+description: Dies ist ein ein Eintrag über Nürnberg
 ---
 **Bitte**
 
 > Bitte Lösche mich.
 
-![bsp](../../assets/images/AstroPaper-v3.png "bsp")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna accessio potest, si aliquod aeternum et infinitum impendere malum nobis opinemur. Quod idem licet transferre in voluptatem, ut postea variari voluptas distinguique possit.
+
+Ullus investigandi veri, nisi inveneris, et quaerendi defatigatio turpis est, cum esset accusata et vituperata ab Hortensio. Qui liber cum et mortem contemnit, qua qui est imbutus quietus esse numquam potest. Praeterea bona praeterita grata recordatione renovata delectant. Est autem situm in nobis ut et voluptates et dolores nasci fatemur e corporis voluptatibus et doloribus -- itaque concedo.
