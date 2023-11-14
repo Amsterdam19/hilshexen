@@ -25,11 +25,11 @@ const next = pageNum < totalPages ? "" : "disabled";
   <Header activeNav="posts" />
   <Main pageTitle="Blog" pageDesc="Alle Artikel meiner Wanderung.">
     <LinkButton
-          className="hover:text-skin-accent underline underline-offset-4 decoration-dashed sm:px-4 center-layout"
-          href="/tags"
-        >
-        Tags / Schlagwörter
-        </LinkButton>
+      className="hover:text-skin-accent underline underline-offset-4 decoration-dashed sm:px-4 center-layout"
+      href="/tags"
+    >
+      Tags / Schlagwörter
+    </LinkButton>
     <ul class="postUl">
       {
         posts.map(({ data }) => (

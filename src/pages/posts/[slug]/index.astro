@@ -35,6 +35,7 @@ const sortedPosts = getSortedPosts(posts);
 
 const totalPages = getPageNumbers(sortedPosts.length);
 
+
 const currentPage =
   slug && !isNaN(Number(slug)) && totalPages.includes(Number(slug))
     ? Number(slug)
