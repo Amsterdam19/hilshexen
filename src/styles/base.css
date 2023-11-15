@@ -133,6 +133,10 @@
     overflow-y: scroll;
   }
 
+  * {
+    transition: background-color .2s ease-in-out, color .2s ease-in-out;
+  }
+
   /* width */
   ::-webkit-scrollbar {
     @apply w-3;
