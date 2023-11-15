@@ -279,9 +279,11 @@ ul {
       height: fit-content;
     }
   }
-  .card:first-child picture {
+  .card:first-child picture,
+  .card:first-child img,
+  .card:first-child .postCard {
     grid-area: postImg;
-    @apply h-full
+    height: 100% !important;
   }
   .card:first-child .postDate {
     grid-area: postDate;
