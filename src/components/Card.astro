@@ -1,0 +1,38 @@
+---
+import slugify from "@utils/slugify";
+import Datetime from "./Datetime";
+import type { CollectionEntry } from "astro:content";
+import { Picture, getImage } from "astro:assets";
+
+
+export interface Props {
+  href?: string;
+  frontmatter: CollectionEntry<"blog">["data"];
+  secHeading?: boolean;
+  card?: boolean;
+}
+
+const { href, frontmatter, secHeading = true, card = true } = Astro.props ;
+
+const { title, heroImage, pubDatetime, description } = frontmatter;
+
+const headerProps = {
+    style: { viewTransitionName: slugify(title) },
+    className: "decoration-dashed hover:underline font-bold",
+  };
+---
+
+<a href={href} class={card ? ("postCard card"): ("postCard")}>
+    <Picture class="h-full object-cover postImg" src={heroImage} formats={['avif', 'webp']} alt={"Bild zum Artikel " + title} />
+    <Datetime datetime={pubDatetime} className="text-skin-accent postDate mx-[5%]"/>
+    <span
+      class="inline-block font-medium decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0 text-balance text-3xl postTitle mx-[5%]"
+    >
+      {secHeading ? (
+        <h2 {...headerProps}>{title}</h2>
+      ) : (
+        <h3 {...headerProps}>{title}</h3>
+      )}
+    </span>
+    <p class="text-balance mt-4 mb-6 mx-[5%] line-clamp-3 text-ellipsis postDesc">{description}</p>
+  </a>

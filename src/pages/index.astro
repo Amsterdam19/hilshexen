@@ -5,7 +5,6 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
-import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
 import getSortedPosts from "@utils/getSortedPosts";
 import slugify from "@utils/slugify";
@@ -23,20 +22,22 @@ import Button from "@components/Button.astro";
 import Motivation from "@components/Motivation.astro";
 import AnimatedH2 from "@components/AnimatedH2.astro";
 const optimizedBackground = await getImage({src: heroImage, format: 'webp'})
+const superOptimizedBackground = await getImage({src: heroImage, format: 'webp', quality: 1})
 ---
 
 <Layout identity={true}>
+  <link rel=preload as=image href={superOptimizedBackground.src} fetchpriority=high slot="head">
   <Header activeNav="index"/>
   <main id="main-content">
-    <section id="hero" class="max-w-none bg-no-repeat bg-cover" style={`background-image: url(${optimizedBackground.src});`}>
+    <section id="hero" class="max-w-none bg-no-repeat bg-cover bg-center" style={`background-image: url(${optimizedBackground.src}), url(${superOptimizedBackground.src});`}>
       <div class="heroContent">
-      <h1 class="strokeme">Dies ist mein Blog</h1>
-      <Button url="#spenden" icon="round_volunteer_activism" txt="Spenden" className="ml-[4%]"/>        
-      </div>
-      <div class="heroSocial" aria-label="Folgt mir auf Instagram, Facebook oder per RSS">
-        <p>Folgt mir auf:</p>
-        <Socials/>
-      </div>
+        <h1 class="strokeme">Dies ist mein Blog</h1>
+        <Button url="#spenden" icon="round_volunteer_activism" txt="Spenden" className="ml-[4%]"/>        
+        </div>
+        <div class="heroSocial" aria-label="Folgt mir auf Instagram, Facebook oder per RSS">
+          <p>Folgt mir auf:</p>
+          <Socials/>
+        </div>
     </section>
 
     <Motivation/>
@@ -156,7 +157,6 @@ const optimizedBackground = await getImage({src: heroImage, format: 'webp'})
     display: grid;
     grid-template-areas: "content content", "social" "social";
     grid-template-rows: auto 4rem;
-    background-position: center;
     height: 90vh;
     height: 90svh;
     min-height: 500px;
