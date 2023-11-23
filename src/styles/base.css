@@ -133,12 +133,6 @@
     overflow-y: scroll;
   }
 
-@supports (view-transition-name: header) {
-  a, p, h1, span {
-    transition:  color .2s ease-in-out;
-  }
-}
-
   /* width */
   ::-webkit-scrollbar {
     @apply w-3;
