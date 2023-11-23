@@ -24,7 +24,54 @@ const { activeNav } = Astro.props;
               height={LOGO_IMAGE.height}
             />
           ) : (
-            SITE.title
+          <span class="outer"><span class="inner" style="animation-delay: -3673ms;">
+            <span class="letter" style="animation-delay: 0ms;">H</span>
+        </span>
+    </span>
+    <span class="outer">
+        <span class="inner" style="animation-delay: -547ms;">
+            <span class="letter" style="animation-delay: 1000ms;">i</span>
+        </span>
+    </span>
+    <span class="outer">
+        <span class="inner" style="animation-delay: -2630ms;">
+            <span class="letter" style="animation-delay: 2000ms;">l
+            </span></span></span><span class="outer">
+        <span class="inner" style="animation-delay: -990ms;">
+            <span class="letter" style="animation-delay: 3000ms;">s</span>
+        </span>
+    </span>
+    <span class="outer">
+        <span class="inner" style="animation-delay: -810ms;">
+            <span class="letter" style="animation-delay: 4000ms;">H
+            </span>
+        </span>
+    </span>
+    <span class="outer">
+        <span class="inner" style="animation-delay: -4652ms;">
+            <span class="letter" style="animation-delay: 5000ms;">e
+            </span>
+        </span>
+    </span>
+    <span class="outer">
+        <span class="inner" style="animation-delay: -3735ms;">
+            <span class="letter" style="animation-delay: 6000ms;">x
+            </span>
+        </span>
+    </span>
+    <span class="outer">
+        <span class="inner" style="animation-delay: -4789ms;">
+            <span class="letter" style="animation-delay: 7000ms;">e
+            </span>
+        </span>
+    </span>
+    <span class="outer">
+        <span class="inner" style="animation-delay: -4637ms;">
+            <span class="letter" style="animation-delay: 8000ms;">n
+            </span>
+        </span>
+    </span>
+
           )
         }
       </a>
@@ -172,7 +219,7 @@ const { activeNav } = Astro.props;
     @apply p-3 sm:p-1;
   }
   #theme-btn svg {
-    @apply scale-125 hover:rotate-12 sm:scale-100;
+    @apply scale-125 transition-all hover:rotate-12 sm:scale-100;
   }
 
   .menu-icon line {
@@ -250,9 +297,7 @@ const { activeNav } = Astro.props;
 
   }
 
-  animateLogo();
 
   // Runs on view transitions navigation
   document.addEventListener("astro:after-swap", toggleNav);
-  document.addEventListener("astro:after-swap", animateLogo);
 </script>
