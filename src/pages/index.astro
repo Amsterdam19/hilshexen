@@ -32,7 +32,7 @@ const superOptimizedBackground = await getImage({src: heroImage, format: 'webp',
     <section id="hero" class="max-w-none bg-no-repeat bg-cover bg-center" style={`background-image: url(${optimizedBackground.src}), url(${superOptimizedBackground.src});`}>
       <div class="heroContent">
         <h1 class="strokeme">Dies ist mein Blog</h1>
-        <Button url="#spenden" icon="round_volunteer_activism" txt="Spenden" className="ml-[4%]"/>        
+        <Button url="#spenden" icon="round_volunteer_activism" txt="Spenden"/>        
         </div>
         <div class="heroSocial" aria-label="Folgt mir auf Instagram, Facebook oder per RSS">
           <p>Folgt mir auf:</p>
@@ -165,12 +165,10 @@ const superOptimizedBackground = await getImage({src: heroImage, format: 'webp',
   }
   .heroContent {
     grid-area: "content";
-    display: grid;
     gap: 1.5rem;
-    align-content: center;
     justify-content: flex-start;
-    margin-inline: 1rem;
-    @apply lg:ml-[15%]
+    max-width: var(--site_width);
+    @apply mx-auto grid content-center w-full px-4;
   }
   .heroSocial {
     grid-area: "social";
