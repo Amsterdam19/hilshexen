@@ -3,8 +3,10 @@ function animationTimelineInit () {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
-            } else {
-                entry.target.classList.remove('show')
+            }else {
+                if(!(entry.classList.contains('slide'))) {
+                    entry.target.classList.remove('show');
+                }
             }
         })
     })
@@ -13,6 +15,6 @@ function animationTimelineInit () {
     hiddenElements.forEach((e) => observer.observe(e));
 }
 if (!(CSS.supports("animation-timeline", "auto"))) {
-    animationTimelineInit();
-document.addEventListener('astro:after-swap', animationTimelineInit);
+    document.addEventListener('astro:page-load', animationTimelineInit);
+    document.addEventListener('astro:after-swap', animationTimelineInit);
 }

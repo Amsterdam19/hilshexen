@@ -2,19 +2,19 @@
 const { txt } = Astro.props;
 ---
 
-<h2 class="scroll-animation slide">{txt}</h2>
+<h2 class="scroll-animation slide animated-h2">{txt}</h2>
 
 <style>
-  h2 {
+  .animated-h2 {
     width: fit-content;
   }
   @media (width <= 1024px) {
-    h2 {
+    .animated-h2 {
       @apply my-[3rem] sm:mb-[7rem] w-full text-center text-3xl font-semibold tracking-wide nm:text-4xl;
     }
   }
   @media (width > 1024px) {
-    h2 {
+    .animated-h2 {
       --_shaddow-width: 3px;
       --_animation-duration: 0.4s;
       --color-primary: rgb(var(--color-text-base));
@@ -43,7 +43,7 @@ const { txt } = Astro.props;
       font-weight: 600;
       @apply px-8 py-10 text-6xl tracking-wide;
     }
-    h2:hover {
+    .animated-h2:hover {
       animation:
         shadows var(--_animation-duration) ease-in-out forwards,
         move var(--_animation-duration) ease-in-out forwards;

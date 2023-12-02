@@ -462,15 +462,24 @@ ul {
     transform: translateY(0px);
   }
 }
-
 @keyframes slide {
   from {
     opacity: 0;
-    transform: translateX(-200px) scaleX(0) rotateY(45deg);
+    transform: translateX(-10vw) scaleX(0);
   }
   to {
     opacity: 1;
-    transform: translateX(0px) scaleX(1) rotateY(0deg);
+    transform: translateX(0vw) scaleX(1);
+  }
+}
+@keyframes roll-in {
+  from {
+    opacity: 0;
+    transform: translateX(20vw) scale(0) rotate(2turn);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0vw) scale(1) rotate(0turn);
   }
 }
 
@@ -493,6 +502,9 @@ ul {
   .just-fade {
     --_animation-type: just-fade;
   }
+  .roll-in {
+    --_animation-type: roll-in;
+  }
 }
 @supports (not (animation-timeline: view())) {
 .scroll-animation,
@@ -507,13 +519,25 @@ ul {
 
 .show.scroll-animation,
 .show.fade {
-  animation: fade 1s ease-in forwards;
+  animation: fade 0.5s ease-in forwards;
+}
+
+.slide {
+  animation: none;
+  opacity: 0;
+  transform: translateX(-10vw) scaleX(0);
+  transition: all 0.5s ease-in;
 }
 .show.slide {
-  animation: slide 0.5s ease-in forwards;
+  animation: none;
+  opacity: 1;
+  transform: translateX(0vw) scaleX(1);
 }
 .show.just-fade {
   animation: just-fade 0.5s ease-in forwards;
+}
+.show.roll-in {
+  animation: roll-in 0.5s ease-in forwards;
 }
 }
 

@@ -171,12 +171,23 @@ const superOptimizedBackground = await getImage({src: heroImage, format: 'webp',
     @apply mx-auto grid content-center w-full px-4;
   }
   .heroSocial {
+    animation: from-right 0.5s ease-in;
     grid-area: "social";
     justify-self: flex-end;
     align-items: center;
     background-color: rgba(var(--color-fill));
     border-radius: 2rem 0 0 2rem;
     @apply grid h-[85px] py-1 nm:gap-4 nm:pl-8 pl-2 nm:flex nm:h-auto nm:py-2
+  }
+  @keyframes from-right {
+    from {
+      opacity: 0.2;
+      transform: translateX(10vw) scaleX(0);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0vw) scaleX(1);
+    }
   }
   #hero h1 {
     color: rgb(var(--color-fill));
@@ -214,5 +225,11 @@ const superOptimizedBackground = await getImage({src: heroImage, format: 'webp',
   }
   .all-posts-btn-wrapper {
     @apply my-8 text-center;
+  }
+  .all-posts-btn-wrapper svg {
+    @apply transition-all;
+  }
+  .all-posts-btn-wrapper:hover svg {
+    transform: translateX(0.5rem);
   }
 </style>
