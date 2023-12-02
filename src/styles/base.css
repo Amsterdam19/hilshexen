@@ -479,7 +479,7 @@ ul {
   }
   to {
     opacity: 1;
-    transform: translateX(0vw) scale(1) rotate(0turn);
+    transform: none;
   }
 }
 
