@@ -444,11 +444,11 @@ ul {
   }
   20% {
     opacity: 0.6;
-    transform: translateY(0px) scale(1);
+    transform: none;
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: none;
   }
 }
 
@@ -459,17 +459,17 @@ ul {
   }
   to {
     opacity: 1;
-    transform: translateY(0px);
+    transform: none;
   }
 }
 @keyframes slide {
   from {
     opacity: 0;
-    transform: translateX(-10vw) scaleX(0);
+    transform: translateX(-50px) scaleX(0);
   }
   to {
     opacity: 1;
-    transform: translateX(0vw) scaleX(1);
+    transform: none;
   }
 }
 @keyframes roll-in {
