@@ -369,11 +369,11 @@ ul {
   }
 }
 
-@media (hover: hover) and (min-width: 1200px) {
-  .fancy span {
-    display: inline-block;
-  }
-  
+.fancy span {
+  display: inline-block;
+}
+
+@media (hover: hover) and (min-width: 1200px) {  
   .fancy > .outer {
     transition: transform 350ms ease;
   }
