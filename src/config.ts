@@ -1,11 +1,11 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://cheerful-pasca-165143.netlify.app/",
+  website: "https://hilshexen.netlify.app/",
   author: "Amsterdam19",
   desc: "Ein Blog über die Wanderschaft",
   title: "HilsHexen",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "og.jpg",
   lightAndDarkMode: true,
   postPerPage: 10,
   feturedPosts: 5,
