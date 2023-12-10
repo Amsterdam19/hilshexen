@@ -537,6 +537,7 @@ ul {
   animation: just-fade 0.5s ease-in forwards;
 }
 .show.roll-in {
+  opacity: 0;
   animation: roll-in 0.5s ease-in forwards;
 }
 }

@@ -16,15 +16,6 @@ export default defineConfig({
     sitemap(),
   ],
   markdown: {
-    remarkPlugins: [
-      remarkToc,
-      [
-        remarkCollapse,
-        {
-          test: "contents",
-        },
-      ],
-    ],
     shikiConfig: {
       theme: "one-dark-pro",
       wrap: true,

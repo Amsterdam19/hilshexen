@@ -1,13 +1,8 @@
 function animationTimelineInit () {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }else {
-                if(!(entry.classList.contains('slide'))) {
-                    entry.target.classList.remove('show');
-                }
-            }
+            entry.target.classList.toggle("show", entry.isIntersecting)
+            if (entry.isIntersecting) observer.unobserve(entry.target)
         })
     })
 
