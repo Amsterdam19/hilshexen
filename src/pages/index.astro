@@ -128,7 +128,7 @@ const superOptimizedBackground = await getImage({src: heroImage, format: 'webp',
     width: 100%;
     min-height: 100vh;
     min-height: 100svh;
-    background-color: rgb(var(--color-card));
+    background-color: rgba(var(--color-card), 0.5);
     display: flex;
     align-items: center;
     margin: 0;
@@ -176,11 +176,13 @@ const superOptimizedBackground = await getImage({src: heroImage, format: 'webp',
     align-items: center;
     background-color: rgba(var(--color-fill));
     border-radius: 2rem 0 0 2rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     @apply grid h-[85px] py-1 nm:gap-4 nm:pl-8 pl-2 nm:flex nm:h-auto nm:py-2
   }
   #hero h1 {
     color: rgb(var(--color-fill));
-    @apply my-4 inline-block text-6xl font-black sm:my-8 sm:text-7xl;
+    font-weight: 600;
+    @apply my-4 inline-block text-6xl sm:my-8 sm:text-7xl;
   }
   #hero .rss-link {
     @apply mb-6;

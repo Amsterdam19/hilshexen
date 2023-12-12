@@ -12,25 +12,31 @@ const { url, icon, txt, className, ariaLabel } = Astro.props;
 </a>
 <style>
   a {
-    --_color-shadow: var(--color-text-base);
+    --_color-shadow: var(0,0,0,0.8);
     --_alpha: 0.5;
     --_width: 6px;
 
     display: flex !important;
     gap: 8px;
     width: fit-content;
+    border-width: 1px;
+    border-color: rgba(2, 15, 2,0.3);
     background-color: rgb(var(--color-fill));
     color: rgb(var(--color-text-base));
-    padding-inline: 24px;
-    padding-block: 0.5rem;
+    padding-inline: 1.5rem;
+    padding-block: 1.1rem;
     box-shadow: -1px -1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), 1px -1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), -1px 1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), 1px 1px var(--_width) rgba(var(--_color-shadow), var(--_alpha));
-    @apply rounded-full;
-  }
+    border-radius: 1rem;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #e9f1e9;
+    background-color: rgb(var(--color-accent));
+    }
   a:hover svg {
     transform: rotateY(360deg);
   }
   a:hover {
-    opacity: 0.9;
+    transform: scale(0.97);
   }
   svg {
     transition: transform 0.3s ease-in-out;

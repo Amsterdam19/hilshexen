@@ -24,7 +24,7 @@ const headerProps = {
 
 <a href={href} class={card ? ("postCard card scroll-animation"): ("postCard scroll-animation")}>
     <Picture class="h-full object-cover postImg" src={heroImage} quality="low" formats={['avif', 'webp']} alt={"Bild zum Artikel " + title} />
-    <Datetime datetime={pubDatetime} className="text-skin-accent postDate mx-[5%]"/>
+    <Datetime datetime={pubDatetime} className="postDate mx-[5%]"/>
     <span
       class="inline-block font-medium decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0 text-balance text-3xl postTitle mx-[5%]"
     >

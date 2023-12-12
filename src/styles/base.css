@@ -28,6 +28,30 @@
 @layer base {
   :root,
   html[data-theme="light"] {
+    --color-fill: 255, 255, 250;
+    --color-text-base: 2, 15, 2;
+    --color-accent: 38, 116, 45;
+    --color-card: 169, 198, 169;
+    --color-card-muted: 205, 205, 205;
+    --color-border: 85, 143, 87;
+    --color-postCard: 255, 255, 255;
+    --color-main: var(--color-fill);
+  }
+  html[data-theme="dark"] {
+    --color-fill: 2, 5, 2;
+    --color-text-base: 233, 241, 233;
+    --color-accent: 38, 116, 45;
+    --color-card: 13, 55, 17;
+    --color-card-muted: 138, 51, 2;
+    --color-border: 85, 143, 87;
+    --color-postCard: 2, 15, 2;
+    --color-main: var(--color-fill);
+  }
+  #sun-svg,
+  html[data-theme="dark"] #moon-svg {
+    display: none;
+  }
+  #xyz {
     --color-fill: 255, 255, 247;
     --color-text-base: 40, 39, 40;
     --color-accent: 101, 126, 103;
@@ -36,8 +60,15 @@
     --color-border: 180, 207, 184;
     --color-postCard: 255, 255, 255;
     --color-main: 255, 255, 247;
-  }
-  html[data-theme="dark"] {
+    color: rgb(255, 255, 250);
+    color: rgb(39, 40, 39);
+    color: rgb(38, 116, 45);
+    color: rgb(229, 240, 231);
+    color: rgb(205, 205, 205);
+    color: rgb(41, 99, 50);
+    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 247);
+
     --color-fill: 30, 34, 44;
     --color-text-base: 234, 237, 243;
     --color-accent: 204, 230, 208;
@@ -46,15 +77,14 @@
     --color-border: 96, 153, 104;
     --color-postCard: 49, 55, 72;
     --color-main: 30, 34, 44;
-  }
-  #sun-svg,
-  html[data-theme="dark"] #moon-svg {
-    display: none;
-  }
-  #xyz {
     color: rgb(30, 34, 44);
-    color: rgb(23, 24, 25);
-    color: rgb(255, 255, 245);
+    color: rgb(234, 237, 243);
+    color: rgb(204, 230, 208);
+    color: rgb(57, 66, 59);
+    color: rgb(138, 51, 2);
+    color: rgb(96, 153, 104);
+    color: rgb(49, 55, 72);
+    color: rgb(30, 34, 44);
   }
   #moon-svg,
   html[data-theme="dark"] #sun-svg {
@@ -206,7 +236,7 @@
 
 .strokeme {
   --_color-shadow: var(--color-text-base);
-  --_alpha: 0.5;
+  --_alpha: 0.4;
   --_width: 6px;
   text-shadow: -1px -1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), 1px -1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), -1px 1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), 1px 1px var(--_width) rgba(var(--_color-shadow), var(--_alpha));
 }
@@ -229,7 +259,7 @@ ul {
   max-width: 27rem;
   min-height: 30rem;
   border-radius: 1rem;
-  background-color: rgb(var(--color-postCard));
+  background-color: rgba(var(--color-postCard), 0.8);
   height: auto;
   grid-row: span 4;
   grid-template-rows: subgrid;

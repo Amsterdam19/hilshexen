@@ -48,7 +48,7 @@ const ogUrl = new URL(
   </div>
   <main id="main-content">
     <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
-    <Datetime datetime={pubDatetime} size="lg" className="my-2" />
+    <Datetime datetime={pubDatetime} size="lg" className="my-2 text-skin-accent mb-3" />
     <Image src={heroImage} alt="Artikelbild" class="rounded-2xl" format="webp"/>
     <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl">
       <Content />
@@ -66,7 +66,10 @@ const ogUrl = new URL(
     @apply mx-auto w-full max-w-3xl px-4 pb-12;
   }
   .post-title {
-    @apply text-2xl font-semibold text-skin-accent;
+    margin-block: 1.5rem;
+    font-size: clamp(1.5rem, 3rem, 3.5rem);;
+    line-height: 1;
+    @apply font-semibold;
   }
   .tags-container {
     @apply my-8;
