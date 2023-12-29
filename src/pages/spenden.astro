@@ -1,0 +1,239 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import { SITE } from "@config";
+import Footer from "@components/Footer.astro";
+import { Picture } from "astro:assets";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import Button from "@components/Button.astro";
+
+//Images
+import HilsHeika from "@assets/images/HilsHeika.jpg";
+---
+
+<Layout
+    title={`Spenden | ${SITE.title}`}
+    description="Zu Fuß von Kaierde bis ans Mittelmeer. Für jeden Kilometer kannst Du spenden! Dafür berichten wir hier jeden Tag von unserer Strecke!"
+>
+    <Header activeNav="spenden" />
+    <Breadcrumbs />
+    <main>
+        <section id="warum">
+            <h2>Warum?</h2>
+            <div class="warumGrid">
+                <div class="p">
+                    <p>
+                        Alles begann mit einem einzigen Satz: „Irgendwann geh‘
+                        ich einfach ans Meer“. Das muss vor ungefähr 8 Jahren
+                        gewesen sein. Wahrscheinlich war das Wetter schlecht und
+                        das Leben trubelig wie immer. Ein paar Jahre vergingen,
+                        aber dieser Satz fiel immer mal wieder, bis ich eines
+                        Tages, „Willst du nicht erstmal bis zur Nordsee gehen?“,
+                        zur Antwort bekam. Das haben wir dann 2018 gemacht. Wir,
+                        das sind Katrin und Heidi. Wir sind von Hauptbahnhof
+                        Hannover bis an die Nordsee marschiert, 2019 sind wir
+                        von Altenau nach Wittenberg und 2022 von Kaierde nach
+                        Münster gewandert.
+                    </p><p>
+                        In diesem Jahr soll es nun wahr werden! Am 12. Juni
+                        brechen wir auf. Wir starten unsere Challenge. HEIdi und
+                        Katrin, wir sind die „HilsHiker“, ääähhhmmm nein wir
+                        sind die HilsHeika und gehen über 1200 km in ungefähr 10
+                        Wochen – von Kaierde bis ans Mittelmeer.
+                    </p>
+                </div>
+                <div class="img">
+                    <Picture
+                        src={HilsHeika}
+                        formats={["avif", "webp"]}
+                        alt="HEIdi und Katrin beim Wandern."
+                    />
+                </div>
+            </div>
+        </section>
+        <section class="max-w-none p-0" id="wofur">
+            <div class="w-full">
+                <h2>Wofür?</h2>
+            </div>
+            <div class="p">
+                <p>
+                    Wer ans Meer will, der sollte schwimmen können! Und damit
+                    unsere Kinder in der Hilsmulde das auch weiter lernen
+                    können, damit unsere Familien an heißen Sommertagen in ein
+                    Freibad können und damit wir im Sommer ein Freibad für
+                    gesunden Sport und viele Begegnungen behalten, gehen wir
+                    los!
+                </p><p>
+                    Für jeden Kilometer kannst Du spenden! Dafür berichten wir
+                    hier jeden Tag von unserer Strecke! Wenn Du damit
+                    einverstanden bist, wirst Du in einer Spendenliste
+                    veröffentlicht. Eure Spenden sollen uns motivieren
+                    durchzuhalten! Jede Eurer Spenden kommt zu 100 Prozent dem
+                    Freibad Delligsen zu Gute!
+                </p>
+                <Button
+                    url="http://freibad-delligsen.de/"
+                    icon="public"
+                    txt="Freibad Delligsen"
+                    className="my-8"
+                    color="35, 95, 164"
+                />
+            </div>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1440 320"
+                preserveAspectRatio="none"
+            >
+                <path
+                    fill="#123154"
+                    fill-opacity="1"
+                    d="M0,64L21.8,74.7C43.6,85,87,107,131,128C174.5,149,218,171,262,192C305.5,213,349,235,393,234.7C436.4,235,480,213,524,170.7C567.3,128,611,64,655,48C698.2,32,742,64,785,80C829.1,96,873,96,916,80C960,64,1004,32,1047,69.3C1090.9,107,1135,213,1178,261.3C1221.8,309,1265,299,1309,256C1352.7,213,1396,139,1418,101.3L1440,64L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"
+                ></path>
+                <path
+                    fill="#235FA4"
+                    fill-opacity="0.95"
+                    d="M0,160L21.8,181.3C43.6,203,87,245,131,218.7C174.5,192,218,96,262,96C305.5,96,349,192,393,213.3C436.4,235,480,181,524,165.3C567.3,149,611,171,655,186.7C698.2,203,742,213,785,197.3C829.1,181,873,139,916,122.7C960,107,1004,117,1047,106.7C1090.9,96,1135,64,1178,74.7C1221.8,85,1265,139,1309,133.3C1352.7,128,1396,64,1418,32L1440,0L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"
+                ></path>
+                <path
+                    fill="#4287d7"
+                    fill-opacity="0.95"
+                    d="M0,128L21.8,112C43.6,96,87,64,131,90.7C174.5,117,218,203,262,224C305.5,245,349,203,393,160C436.4,117,480,75,524,96C567.3,117,611,203,655,213.3C698.2,224,742,160,785,122.7C829.1,85,873,75,916,74.7C960,75,1004,85,1047,101.3C1090.9,117,1135,139,1178,160C1221.8,181,1265,203,1309,186.7C1352.7,171,1396,117,1418,90.7L1440,64L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"
+                ></path>
+            </svg>
+        </section>
+        <section id="wie">
+            <h2>Wie?</h2>
+            <div class="p">
+                <p>
+                    Wir freuen uns auf unser Abenteuer und freuen uns über jede
+                    Unterstützung durch Eure Spenden! Spornt uns an und werdet
+                    gleichzeitig zu Förderern des Delligser Freibades!
+                </p>
+                <p>
+                    Spornt uns an und werdet gleichzeitig zu Förderern des
+                    Delligser Freibades!
+                </p>
+            </div>
+            <table>
+                <tr>
+                    <td>Kontoinhaber:</td>
+                    <td>Förderverein Freibad Delligsen</td>
+                </tr>
+                <tr>
+                    <td>Verwendungszweck:</td>
+                    <td
+                        >HilsHeika (und Name des Spenders, wenn wir Euch nennen
+                        sollenI!)</td
+                    >
+                </tr>
+                <tr>
+                    <td>IBAN:</td>
+                    <td>DE91 2789 3760 3705 2950 00</td>
+                </tr>
+                <tr>
+                    <td>BIC:</td>
+                    <td>GENODEF 1 SES</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <Footer />
+</Layout>
+<style>
+    main {
+        display: grid;
+        gap: 5rem;
+    }
+    section {
+        min-height: 50rem;
+        width: 100%;
+    }
+    .warumGrid {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 3rem;
+    }
+    @media (width < 1024px) {
+        .warumGrid {
+            grid-template-columns: 1fr;
+        }
+        img {
+            margin-block: 1rem;
+            max-width: 500px;
+            margin-inline: auto;
+        }
+    }
+    img {
+        border-radius: 1rem;
+    }
+    h2 {
+        height: fit-content;
+        width: 100%;
+        position: relative;
+        padding-left: 20px;
+        margin-block: 2rem;
+        font-size: clamp(2rem, 2.0909rem + 4.1558vw, 4rem);
+    }
+    h2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 30%;
+        height: 40%;
+        width: 7px;
+        border-radius: 5px 0 0 5px;
+        background-color: rgb(var(--color-accent));
+    }
+    p {
+        max-width: 50rem;
+        line-height: 2.7rem;
+        font-size: clamp(1rem, 0.6818rem + 1.4545vw, 1.1rem);
+    }
+    .p {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    #wofur {
+        position: relative;
+        padding-bottom: 230px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(var(--color-card-blue), 0.5);
+    }
+    #wofur > * {
+        max-width: var(--site_width);
+        padding-inline: 1rem;
+    }
+    #wofur > svg {
+        position: absolute;
+        bottom: 0;
+        max-width: none;
+        padding: 0px;
+        width: 100%;
+        height: clamp(150px, 20vw, 250px);
+    }
+
+    table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        margin-top: 3rem;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid rgb(var(--color-border));
+        padding: 8px;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    td:nth-child(odd) {
+        font-weight: 700;
+    }
+</style>

@@ -77,6 +77,8 @@ Something a wise person once told me about typography is:
   </figcaption>
 </figure>
 
+![Alt text](../../assets/images/HilsHeika.jpg "testttttttttttttttttttttttttttttttttttttttt")
+
 Now I'm going to show you an example of an unordered list to make sure that looks good, too:
 
 - So here is the first item in this list.

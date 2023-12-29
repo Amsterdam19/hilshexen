@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://hilshexen.netlify.app/", // replace this with your deployed domain
+  site: "https://hilsheika.netlify.app/", // replace this with your deployed domain
   integrations: [
     tailwind({
       applyBaseStyles: false,
