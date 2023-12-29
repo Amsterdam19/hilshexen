@@ -470,7 +470,7 @@ ul {
 /* Scroll Animation */
 @keyframes fade {
   0% {
-    opacity: 0.2;
+    opacity: 0;
     transform: translateY(10px) scale(0.9);
   }
   20% {
@@ -485,7 +485,7 @@ ul {
 
 @keyframes just-fade {
   from {
-    opacity: 0.2;
+    opacity: 0;
     transform: translateY(5px) ;
   }
   to {
@@ -540,7 +540,7 @@ ul {
 @supports (not (animation-timeline: view())) {
 .scroll-animation,
 .fade {
-  opacity: 0.2;
+  opacity: 0;
   transform: translateY(10px) scale(0.9) ;
 }
 .tsxCard {

@@ -1,6 +1,5 @@
 ---
-import { Icon } from "astro-icon";
-const { url, icon, txt, className, ariaLabel, color = "var(--color-accent)"} = Astro.props;
+const { url, txt, className, ariaLabel, color = "var(--color-accent)"} = Astro.props;
 ---
 
 <a href={url}
@@ -9,7 +8,7 @@ const { url, icon, txt, className, ariaLabel, color = "var(--color-accent)"} = A
   aria-label={ariaLabel}
   style={`background-color: rgb(${color})`}>
   <div class="icon">
-  <Icon name={icon} />
+    <slot/>
   </div>
     <span>{txt}</span>
 </a>
