@@ -1,0 +1,42 @@
+---
+export interface Props {
+  href: string;
+  className?: string;
+  ariaLabel?: string;
+  title?: string;
+  disabled?: boolean;
+  decoration?: boolean;
+  wFull?: boolean;
+}
+
+const {
+  href,
+  className,
+  ariaLabel = "weitere Informationen aufrufen",
+  title = "mehr",
+  disabled = false,
+  wFull = false,
+} = Astro.props;
+---
+
+<span class={`${wFull ? "wFull" : ""}`}>
+  <a
+    href={disabled ? "#" : href}
+    tabindex={disabled ? "-1" : "0"}
+    class={`group inline-block ${className}`}
+    aria-label={ariaLabel}
+    title={title}
+    aria-disabled={disabled}
+  >
+    {title}
+  </a>
+</span>
+
+<style>
+  .wFull {
+    @apply w-full inline-block;
+  }
+  a {
+    @apply inline-block underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0 decoration-dashed underline hover:text-skin-accent;
+  }
+</style>

@@ -21,6 +21,7 @@ import heroImage from '@assets/images/nature-943768_1920.jpg';
 import Button from "@components/Button.astro";
 import Motivation from "@components/Motivation.astro";
 import AnimatedH2 from "@components/AnimatedH2.astro";
+import LinkNormal from "@components/LinkNormal.astro";
 const optimizedBackground = await getImage({src: heroImage, format: 'webp'})
 const superOptimizedBackground = await getImage({src: heroImage, format: 'webp', quality: 1})
 ---
@@ -66,7 +67,7 @@ const superOptimizedBackground = await getImage({src: heroImage, format: 'webp',
       <div class="scroll-animation just-fade" id="spendenDiv">
         <h2 id="spendenH2">Wofür werden die Spenden verwendet?</h2>
         <p id="spendenP">Ich möchte mit meiner Freundin zu Fuß von Kaierde ans Mittelmeer laufen.  Wir werden zwischen 70 und 80 Tage unterwegs sein. Ich würde gerne eine "Challenge" zu Gunsten unseres Freibades daraus machen: Ich sammele für meine Kilometer Spenden, die dann das Freibad bekommt.</p>
-        <LinkButton href="http://www.freibad-delligsen.de" ariaLabel="Link zur Seite des Freibads Delligsen" decoration={true}>Freibad Delligsen</LinkButton>
+        <LinkNormal href="/spenden#wofur" ariaLabel="Weitere Informationen wofür die Spenden verwendet werden"></LinkNormal>
       </div>
     </section>
 

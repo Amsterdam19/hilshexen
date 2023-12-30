@@ -1,7 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import portrait from "@assets/images/1122822-200.png";
+import portrait from "@assets/images/HilsHeika.jpg";
 import AnimatedH2 from "./AnimatedH2.astro";
+import LinkNormal from "./LinkNormal.astro";
 ---
 
 <section>
@@ -76,6 +77,7 @@ import AnimatedH2 from "./AnimatedH2.astro";
         "Challenge" zu Gunsten unseres Freibades daraus machen: Ich sammele für
         meine Kilometer Spenden, die dann das Freibad bekommt. Dafür teile ich
         täglich Bilder und Posts von der Strecke.
+        <LinkNormal href="/spenden#warum" wFull={true}/>
       </p>
       <Image
         class={"scroll-animation roll-in"}
@@ -116,11 +118,10 @@ import AnimatedH2 from "./AnimatedH2.astro";
     height: fit-content;
   }
   #portraitImage {
-    border-radius: 50%;
+    border-radius: clamp(1rem, 3rem, 40%);
     background-color: rgb(200, 226, 198);
-    max-width: 15rem;
-    min-width: 10rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    width: clamp(10rem, 20rem, 25rem);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
   }
   #more {
     position: absolute;
