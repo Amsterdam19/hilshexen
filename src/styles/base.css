@@ -28,7 +28,7 @@
 @layer base {
   :root,
   html[data-theme="light"] {
-    --color-fill: 255, 255, 250;
+    --color-fill: 252, 252, 247;
     --color-text-base: 2, 15, 2;
     --color-accent: 38, 116, 45;
     --color-card: 169, 198, 169;
@@ -36,17 +36,19 @@
     --color-card-muted: 205, 205, 205;
     --color-border: 85, 143, 87;
     --color-postCard: 255, 255, 255;
+    --box-shaddow: 149, 157, 165;
     --color-main: var(--color-fill);
   }
   html[data-theme="dark"] {
-    --color-fill: 2, 5, 2;
+    --color-fill:28, 28, 25;
     --color-text-base: 233, 241, 233;
     --color-accent: 38, 116, 45;
     --color-card: 13, 55, 17;
     --color-card-blue: 22, 51, 77;
     --color-card-muted: 138, 51, 2;
     --color-border: 85, 143, 87;
-    --color-postCard: 2, 15, 2;
+    --color-postCard: 36, 36, 36;
+    --box-shaddow: 9, 17, 25;
     --color-main: var(--color-fill);
   }
   #sun-svg,
@@ -265,13 +267,13 @@ ul {
   height: auto;
   grid-row: span 4;
   grid-template-rows: subgrid;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(var(--box-shaddow), 0.2) 0px 8px 24px;
   @apply grid my-5 overflow-hidden;
 }
 
 @supports (view-transition-name: header) {
   .postCard {
-    transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out, box-shaddow .2s ease-in-out;
   }    
 }
 
