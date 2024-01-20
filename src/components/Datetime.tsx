@@ -23,7 +23,7 @@ export default function Datetime({ datetime, size = "sm", className }: Props) {
 const FormattedDatetime = ({ datetime }: { datetime: string | Date }) => {
   const myDatetime = new Date(datetime);
 
-  const date = myDatetime.toLocaleDateString(LOCALE, {
+  const date = myDatetime.toLocaleDateString(LOCALE.langTag, {
     year: "numeric",
     month: "long",
   });
@@ -37,7 +37,7 @@ const FormattedDatetime = ({ datetime }: { datetime: string | Date }) => {
 const FormattedDay = ({ datetime }: { datetime: string | Date }) => {
   const myDatetime = new Date(datetime);
 
-  const date = myDatetime.toLocaleDateString(LOCALE, {
+  const date = myDatetime.toLocaleDateString(LOCALE.langTag, {
     day: "numeric",
   });
 

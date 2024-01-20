@@ -94,7 +94,7 @@ import LinkNormal from "./LinkNormal.astro";
   section {
     min-height: 50rem;
     min-height: 100svh;
-    @apply pb-16 md:pb-0 sm:mt-16 isolate flex flex-col relative mb-8 px-4 w-full max-w-none justify-center;
+    @apply pb-16 px-0 md:pb-0 sm:mt-16 isolate flex flex-col relative mb-8 w-full max-w-none justify-center;
   }
   #bergeSvg {
     position: absolute;
@@ -108,7 +108,8 @@ import LinkNormal from "./LinkNormal.astro";
     filter: drop-shadow(0px -5px 10px rgba(0, 0, 0, 0.1));
   }
   #motivationDiv {
-    @apply px-4 mb-8 sm:mb-[15rem];
+    max-width: var(--site_width);
+    @apply mb-8 sm:mb-[15rem] px-4;
   }
   #content {
     @apply flex flex-col-reverse items-center tracking-wide leading-10 gap-16 justify-between md:flex-row;

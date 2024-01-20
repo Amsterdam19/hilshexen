@@ -14,7 +14,7 @@ const { activeNav } = Astro.props;
   <a id="skip-to-content" href="#main-content">Skip to content</a>
   <div class="nav-container">
     <div class="top-nav-wrap">
-      <a href="/" class="logo whitespace-nowrap fancy" id="site-title" >
+      <a href="/" class="logo whitespace-nowrap fancy" id="site-title">
         {
           LOGO_IMAGE.enable ? (
             <img
@@ -24,54 +24,69 @@ const { activeNav } = Astro.props;
               height={LOGO_IMAGE.height}
             />
           ) : (
-          <span class="outer"><span class="inner" style="animation-delay: -3673ms;">
-            <span class="letter" style="animation-delay: 0ms;">H</span>
-        </span>
-    </span>
-    <span class="outer">
-        <span class="inner" style="animation-delay: -547ms;">
-            <span class="letter" style="animation-delay: 1000ms;">i</span>
-        </span>
-    </span>
-    <span class="outer">
-        <span class="inner" style="animation-delay: -2630ms;">
-            <span class="letter" style="animation-delay: 2000ms;">l
-            </span></span></span><span class="outer">
-        <span class="inner" style="animation-delay: -990ms;">
-            <span class="letter" style="animation-delay: 3000ms;">s</span>
-        </span>
-    </span>
-    <span class="outer">
-        <span class="inner" style="animation-delay: -810ms;">
-            <span class="letter" style="animation-delay: 4000ms;">H
-            </span>
-        </span>
-    </span>
-    <span class="outer">
-        <span class="inner" style="animation-delay: -4652ms;">
-            <span class="letter" style="animation-delay: 5000ms;">e
-            </span>
-        </span>
-    </span>
-    <span class="outer">
-        <span class="inner" style="animation-delay: -3735ms;">
-            <span class="letter" style="animation-delay: 6000ms;">i
-            </span>
-        </span>
-    </span>
-    <span class="outer">
-        <span class="inner" style="animation-delay: -4789ms;">
-            <span class="letter" style="animation-delay: 7000ms;">K
-            </span>
-        </span>
-    </span>
-    <span class="outer">
-        <span class="inner" style="animation-delay: -4637ms;">
-            <span class="letter" style="animation-delay: 8000ms;">a
-            </span>
-        </span>
-    </span>
-
+              <span class="outer">
+                <span class="inner" style="animation-delay: -3673ms;">
+                  <span class="letter" style="animation-delay: 0ms;">
+                    H
+                  </span>
+                </span>
+              </span>
+              <span class="outer">
+                <span class="inner" style="animation-delay: -547ms;">
+                  <span class="letter" style="animation-delay: 1000ms;">
+                    i
+                  </span>
+                </span>
+              </span>
+              <span class="outer">
+                <span class="inner" style="animation-delay: -2630ms;">
+                  <span class="letter" style="animation-delay: 2000ms;">
+                    l
+                  </span>
+                </span>
+              </span>
+              <span class="outer">
+                <span class="inner" style="animation-delay: -990ms;">
+                  <span class="letter" style="animation-delay: 3000ms;">
+                    s
+                  </span>
+                </span>
+              </span>
+              <span class="outer">
+                <span class="inner" style="animation-delay: -810ms;">
+                  <span class="letter" style="animation-delay: 4000ms;">
+                    H
+                  </span>
+                </span>
+              </span>
+              <span class="outer">
+                <span class="inner" style="animation-delay: -4652ms;">
+                  <span class="letter" style="animation-delay: 5000ms;">
+                    e
+                  </span>
+                </span>
+              </span>
+              <span class="outer">
+                <span class="inner" style="animation-delay: -3735ms;">
+                  <span class="letter" style="animation-delay: 6000ms;">
+                    i
+                  </span>
+                </span>
+              </span>
+              <span class="outer">
+                <span class="inner" style="animation-delay: -4789ms;">
+                  <span class="letter" style="animation-delay: 7000ms;">
+                    K
+                  </span>
+                </span>
+              </span>
+              <span class="outer">
+                <span class="inner" style="animation-delay: -4637ms;">
+                  <span class="letter" style="animation-delay: 8000ms;">
+                    a
+                  </span>
+                </span>
+              </span>
           )
         }
       </a>
@@ -103,40 +118,48 @@ const { activeNav } = Astro.props;
         </button>
         <ul id="menu-items" class="display-none sm:flex">
           <li>
-            <a href="/" class={activeNav === "index" ? "active" : "" + "fancy-link"}>
+            <a
+              href="/"
+              class={activeNav === "index" ? "active" : "" + "fancy-link"}
+            >
               Start
             </a>
           </li>
           <li>
-            <a href="/posts" class={activeNav === "posts" ? "active" : "" + "fancy-link"}>
+            <a
+              href="/posts"
+              class={activeNav === "posts" ? "active" : "" + "fancy-link"}
+            >
               Blog
             </a>
           </li>
           <li>
-            <a href="/spenden" class={activeNav === "spenden" ? "active" : "" + "fancy-link"}>
+            <a
+              href="/spenden"
+              class={activeNav === "spenden" ? "active" : "" + "fancy-link"}
+            >
               Spenden
             </a>
           </li>
           <li>
             <span class="hover:scale-[1.075]">
-            <LinkButton
-              href="/search"
-              className={`focus-outline p-3 sm:p-1 ${
-                activeNav === "search" ? "active" : ""
-              } flex`}
-              ariaLabel="search"
-              title="Suche"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="scale-125 sm:scale-100"
-                ><path
-                  d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"
-                ></path>
-              </svg>
-            </LinkButton>              
+              <LinkButton
+                href="/search"
+                className={`focus-outline p-3 sm:p-1 ${
+                  activeNav === "search" ? "active" : ""
+                } flex`}
+                ariaLabel="search"
+                title="Suche"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="scale-125 sm:scale-100"
+                  ><path
+                    d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"
+                  ></path>
+                </svg>
+              </LinkButton>
             </span>
-
           </li>
           <li>
             {
@@ -179,7 +202,7 @@ const { activeNav } = Astro.props;
     @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8;
   }
   .logo {
-    @apply absolute py-1 text-xl font-semibold sm:static sm:text-2xl;
+    @apply flex absolute py-1 text-xl font-semibold sm:static sm:text-2xl;
   }
   .hamburger-menu {
     @apply self-end p-2 sm:hidden;
@@ -254,7 +277,7 @@ const { activeNav } = Astro.props;
       menuBtn.setAttribute("aria-expanded", menuExpanded ? "false" : "true");
       menuBtn.setAttribute(
         "aria-label",
-        menuExpanded ? "Open Menu" : "Close Menu"
+        menuExpanded ? "Open Menu" : "Close Menu",
       );
       menuItems?.classList.toggle("display-none");
     });
@@ -263,45 +286,44 @@ const { activeNav } = Astro.props;
   toggleNav();
 
   function animateLogo() {
-  const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+    const rand = (min, max) =>
+      Math.floor(Math.random() * (max - min + 1)) + min;
 
-  const enhance = id => {
-  const element = document.getElementById(id),
+    const enhance = (id) => {
+      const element = document.getElementById(id),
         text = element.innerText.split("");
-  
-  element.innerText = "";
-  
-  text.forEach((value, index) => {
-    const outer = document.createElement("span");
-    
-    outer.className = "outer";
-    
-    const inner = document.createElement("span");
-    
-    inner.className = "inner";
-    
-    inner.style.animationDelay = `${rand(-5000, 0)}ms`;
-    
-    const letter = document.createElement("span");
-    
-    letter.className = "letter";
-    
-    letter.innerText = value;
-    
-    letter.style.animationDelay = `${index * 1000 }ms`;
-    
-    inner.appendChild(letter);    
-    
-    outer.appendChild(inner);    
-    
-    element.appendChild(outer);
-  });
-}
 
-  enhance("site-title");
+      element.innerText = "";
 
+      text.forEach((value, index) => {
+        const outer = document.createElement("span");
+
+        outer.className = "outer";
+
+        const inner = document.createElement("span");
+
+        inner.className = "inner";
+
+        inner.style.animationDelay = `${rand(-5000, 0)}ms`;
+
+        const letter = document.createElement("span");
+
+        letter.className = "letter";
+
+        letter.innerText = value;
+
+        letter.style.animationDelay = `${index * 1000}ms`;
+
+        inner.appendChild(letter);
+
+        outer.appendChild(inner);
+
+        element.appendChild(outer);
+      });
+    };
+
+    enhance("site-title");
   }
-
 
   // Runs on view transitions navigation
   document.addEventListener("astro:after-swap", toggleNav);

@@ -54,9 +54,22 @@ const ogUrl = new URL(
       <Content />
     </article>
 
-    <ul class="tags-container">
-      {tags.map(tag => <Tag name={slugifyStr(tag)} />)}
+    <ul class="my-8">
+      {tags.map(tag => <Tag tag={slugifyStr(tag)} />)}
     </ul>
+    <div class="flex justify-end">
+      <button
+        id="back-to-top"
+        class="focus-outline whitespace-nowrap hover:text-skin-accent"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="rotate-90">
+          <path
+            d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+          ></path>
+        </svg>
+        <span>Zurück nach oben</span>
+      </button>
+    </div>
   </main>
   <Footer />
 </Layout>
@@ -71,10 +84,15 @@ const ogUrl = new URL(
     line-height: 1;
     @apply font-semibold;
   }
-  .tags-container {
-    @apply my-8;
-  }
   .button:hover svg {
     @apply -translate-x-1
   }
 </style>
+<script is:inline>
+  /* When the user clicks on the "Back to Top" button,
+   * scroll to the top of the document */
+  document.querySelector("#back-to-top")?.addEventListener("click", () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  });
+</script>

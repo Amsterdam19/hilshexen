@@ -14,22 +14,18 @@ const { url, txt, className, ariaLabel, color = "var(--color-accent)"} = Astro.p
 </a>
 <style>
   a {
-    --_color-shadow: var(0,0,0,0.8);
-    --_alpha: 0.5;
-    --_width: 6px;
-
     display: flex !important;
     gap: 8px;
     width: fit-content;
     border-width: 1px;
     border-color: rgba(2, 15, 2,0.3);
     padding-inline: 1.5rem;
-    padding-block: 1.1rem;
-    box-shadow: -1px -1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), 1px -1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), -1px 1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), 1px 1px var(--_width) rgba(var(--_color-shadow), var(--_alpha));
-    border-radius: 1rem;
+    padding-block: 0.7rem;
     font-weight: 800;
     font-size: 1.2rem;
+    line-height: 1.2rem;
     color: #e9f1e9;
+    @apply rounded-full;
     }
   a:hover .icon {
     transform: rotateY(360deg);

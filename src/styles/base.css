@@ -98,7 +98,9 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply flex min-h-screen flex-col bg-skin-fill font-mono text-skin-base 
+    min-height: 100vh;
+    min-height: 100svh;
+    @apply flex flex-col bg-skin-fill font-mono text-skin-base 
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
   }
   section,
@@ -238,11 +240,14 @@
   transform: translate(var(--translate-x),var(--translate-y)) rotate(var(--rotate)) skew(var(--skew-x)) skewY(var(--skew-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
 }
 
-.strokeme {
-  --_color-shadow: var(--color-text-base);
-  --_alpha: 0.4;
-  --_width: 6px;
+.strokeme2 {
+  --_color-shadow: 2,15,2;
+  --_alpha: 0.3;
+  --_width: 1px;
   text-shadow: -1px -1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), 1px -1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), -1px 1px var(--_width) rgba(var(--_color-shadow), var(--_alpha)), 1px 1px var(--_width) rgba(var(--_color-shadow), var(--_alpha));
+}
+.strokeme {
+  filter: drop-shadow(0 0 10px rgba(var(--color-text-base), 0.7));
 }
 
 ul {
@@ -262,7 +267,7 @@ ul {
 .postCard {
   max-width: 27rem;
   min-height: 30rem;
-  border-radius: 1rem;
+  border-radius: clamp(1rem, 2rem, 3rem);
   background-color: rgba(var(--color-postCard), 0.8);
   height: auto;
   grid-row: span 4;

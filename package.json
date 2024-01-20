@@ -1,6 +1,6 @@
 {
   "name": "mad-motion",
-  "version": "3.0.0",
+  "version": "4.2.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -15,10 +15,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@astrojs/check": "^0.3.4",
-    "@astrojs/rss": "^4.0.1",
+    "@astrojs/check": "^0.4.1",
+    "@astrojs/rss": "^4.0.2",
     "@resvg/resvg-js": "^2.4.1",
-    "astro": "^4.0.8",
+    "astro": "^4.2.1",
     "astro-icon": "^0.8.1",
     "fuse.js": "^6.6.2",
     "github-slugger": "^2.0.0",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@astrojs/react": "^3.0.9",
-    "@astrojs/sitemap": "^3.0.4",
+    "@astrojs/sitemap": "^3.0.5",
     "@astrojs/tailwind": "^5.1.0",
     "@divriots/jampack": "^0.20.2",
     "@tailwindcss/typography": "^0.5.10",

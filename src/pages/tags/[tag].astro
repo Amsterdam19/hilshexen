@@ -14,6 +14,7 @@ import getSortedPosts from "@utils/getSortedPosts";
 export interface Props {
   post: CollectionEntry<"blog">;
   tag: string;
+  tagName: string;
 }
 
 export async function getStaticPaths() {
@@ -21,15 +22,15 @@ export async function getStaticPaths() {
 
   const tags = getUniqueTags(posts);
 
-  return tags.map(tag => {
+  return tags.map(({ tag, tagName }) => {
     return {
       params: { tag },
-      props: { tag },
+      props: { tag, tagName },
     };
   });
 }
 
-const { tag } = Astro.props;
+const { tag, tagName } = Astro.props;
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 
@@ -38,18 +39,22 @@ const tagPosts = getPostsByTag(posts, tag);
 const sortTagsPost = getSortedPosts(tagPosts);
 ---
 
-<Layout title={`Tag:${tag} | ${SITE.title}`}>
+<Layout title={`Tag: ${tagName} | ${SITE.title}`}>
   <Header activeNav="tags" />
   <Main
-    pageTitle={[`Tag:`, `${tag}`]}
+    pageTitle={[`Tag:`, `${tagName}`]}
     titleTransition={tag}
-    pageDesc={`Alle Blogeinträge mit dem Tag „${tag}“.`}
+    pageDesc={`Alle Blogeinträge mit dem Tag „${tagName}“.`}
   >
     <h1 slot="title" transition:name={tag}>{`Tag:${tag}`}</h1>
     <ul class="postUl">
       {
         sortTagsPost.map(({ data }) => (
-          <Card href={`/posts/${slugify(data)}`} frontmatter={data} Card={false}/>
+          <Card
+            href={`/posts/${slugify(data)}`}
+            frontmatter={data}
+            Card={false}
+          />
         ))
       }
     </ul>

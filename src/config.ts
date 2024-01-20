@@ -11,7 +11,10 @@ export const SITE: Site = {
   feturedPosts: 5,
 };
 
-export const LOCALE = ["de-DE"]; // set to [] to use the environment default
+export const LOCALE = {
+  lang: "de", // html lang code. Set this empty and default will be "en"
+  langTag: ["de-DE"], // BCP 47 Language Tags. Set this empty [] to use the environment default
+} as const;
 
 export const LOGO_IMAGE = {
   enable: false,
