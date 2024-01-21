@@ -16,7 +16,7 @@ breadcrumbList[0] === "posts" &&
   <ul>
     <li>
       <a href="/">Start</a>
-      <span aria-hidden="true">&nbsp;&gt;&nbsp;</span>
+      <span aria-hidden="true">&nbsp;&vert;&nbsp;</span>
     </li>
     {
       breadcrumbList.map((breadcrumb, index) =>
@@ -33,7 +33,7 @@ breadcrumbList[0] === "posts" &&
         ) : (
           <li>
             <a href={`/${breadcrumb}`}>{breadcrumb}</a>
-            <span aria-hidden="true">&nbsp;&gt;&nbsp;</span>
+            <span aria-hidden="true">&nbsp;&vert;&nbsp;</span>
           </li>
         )
       )
@@ -44,18 +44,18 @@ breadcrumbList[0] === "posts" &&
 <style>
   .breadcrumb {
     max-width: var(--site_width);
-    @apply mx-auto mb-1 mt-8 w-full px-4;
+    @apply mx-auto my-8 w-full px-4;
   }
   .breadcrumb ul li {
     @apply inline;
   }
   .breadcrumb ul li a {
-    @apply capitalize opacity-70;
+    @apply capitalize;
   }
   .breadcrumb ul li span {
     @apply opacity-70;
   }
   .breadcrumb ul li:not(:last-child) a {
-    @apply hover:opacity-100;
+    @apply opacity-70 hover:opacity-100;
   }
 </style>

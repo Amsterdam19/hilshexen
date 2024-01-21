@@ -24,12 +24,15 @@ const next = pageNum < totalPages ? "" : "disabled";
 <Layout title={`Blog | ${SITE.title}`}>
   <Header activeNav="posts" />
   <Main pageTitle="Blog" pageDesc="Alle Artikel meiner Wanderung.">
-    <LinkButton
-      className="hover:text-skin-accent underline underline-offset-4 decoration-dashed center-layout"
-      href="/tags"
-    >
-      Tags / Schlagwörter
-    </LinkButton>
+    <div class="center-layout">
+      <LinkButton
+        className="hover:text-skin-accent underline underline-offset-4 decoration-dashed w-fit"
+        href="/tags"
+      >
+        Tags / Schlagwörter
+      </LinkButton>
+    </div>
+
     <ul class="postUl">
       {
         posts.map(({ data }) => (
@@ -45,7 +48,7 @@ const next = pageNum < totalPages ? "" : "disabled";
         <LinkButton
           disabled={prev === "disabled"}
           href={`/posts${pageNum - 1 !== 1 ? "/" + (pageNum - 1) : ""}`}
-          className={`mr-4 select-none ${prev}`}
+          className={`mr-4 select-none pagLink ${prev}`}
           ariaLabel="Zurück"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class={`${prev}-svg`}>
@@ -56,7 +59,7 @@ const next = pageNum < totalPages ? "" : "disabled";
         <LinkButton
           disabled={next === "disabled"}
           href={`/posts/${pageNum + 1}`}
-          className={`ml-4 select-none ${next}`}
+          className={`ml-4 select-none pagLink ${next}`}
           ariaLabel="Weiter"
         >
           Weiter
@@ -72,7 +75,7 @@ const next = pageNum < totalPages ? "" : "disabled";
 
 <style>
   .pagination-wrapper {
-    @apply mb-8 mt-auto flex justify-center;
+    @apply mb-12 mt-auto flex justify-center;
   }
   .disabled {
     @apply pointer-events-none select-none opacity-50 hover:text-skin-base group-hover:fill-skin-base;
