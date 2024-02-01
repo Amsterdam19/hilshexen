@@ -543,7 +543,7 @@ ul {
 @keyframes roll-in {
   from {
     opacity: 0;
-    transform: translateX(20vw) scale(0) rotate(2turn);
+    transform: translateX(0) scale(0) rotate(2turn);
   }
   to {
     opacity: 1;
