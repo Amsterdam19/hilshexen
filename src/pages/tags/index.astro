@@ -16,7 +16,7 @@ let tags = getUniqueTags(posts);
 <Layout title={`Tags | ${SITE.title}`}>
   <Header activeNav="tags" />
   <Main pageTitle="Tags" pageDesc="Alle Tags.">
-    <ul>
+    <ul class="flex gap-3 flex-wrap">
       {tags.map(({ tag }) => <Tag {tag} size="lg" />)}
     </ul>
   </Main>

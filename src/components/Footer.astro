@@ -1,5 +1,4 @@
 ---
-import Hr from "./Hr.astro";
 import Socials from "./Socials.astro";
 
 const currentYear = new Date().getFullYear();
@@ -26,15 +25,16 @@ const { noMarginTop = false } = Astro.props;
 
 <style>
   footer {
+    background-color: rgb(var(--color-surface));
+    border-radius: clamp(1rem,2rem,3rem) clamp(1rem,2rem,3rem) 0 0;
     @apply w-full;
   }
   a:hover {
     color: rgb(var(--color-accent));
   }
   .footer-wrapper {
-    border-radius: clamp(1rem,2rem,3rem) clamp(1rem,2rem,3rem) 0 0;
-    background-color: rgb(var(--color-surface));
-    @apply px-8 py-16 flex flex-col items-center justify-between md:flex-row;
+    max-width: var(--site_width);
+    @apply mx-auto px-4 py-16 flex flex-col items-center justify-between md:flex-row;
   }
   .link-button {
     @apply my-1 p-2 hover:rotate-6;

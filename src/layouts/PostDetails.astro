@@ -54,7 +54,7 @@ const ogUrl = new URL(
       <Content />
     </article>
 
-    <ul class="my-8">
+    <ul class="my-8 flex gap-3 flex-wrap">
       {tags.map(tag => <Tag tag={slugifyStr(tag)} />)}
     </ul>
     <div class="flex justify-end">
@@ -84,8 +84,12 @@ const ogUrl = new URL(
     line-height: 1;
     @apply font-semibold;
   }
+  .button {
+    background-color: rgb(var(--color-breadcrumbs));
+    @apply p-2 rounded-[0.6rem];
+  }
   .button:hover svg {
-    @apply -translate-x-1
+    @apply -translate-x-1;
   }
 </style>
 <script is:inline>

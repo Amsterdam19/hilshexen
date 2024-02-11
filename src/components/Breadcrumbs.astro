@@ -15,27 +15,27 @@ breadcrumbList[0] === "posts" &&
 <nav class="breadcrumb" aria-label="breadcrumb">
   <ul>
     <li>
-      <a href="/">Start</a>
-      <span aria-hidden="true">&nbsp;&vert;&nbsp;</span>
+      <a class="start" href="/">Start</a>
     </li>
     {
       breadcrumbList.map((breadcrumb, index) =>
         index + 1 === breadcrumbList.length ? (
           <li>
             <span
-              class={`${index > 0 ? "lowercase" : "capitalize"}`}
+              class={`breadcrumb-span ${index > 0 ? "lowercase" : "capitalize"}`}
               aria-current="page"
             >
               {/* make the last part lowercase in Home > Tags > some-tag */}
               {breadcrumb}
             </span>
+            <span aria-hidden="true" class="arrow">&nbsp;</span>
           </li>
         ) : (
           <li>
-            <a href={`/${breadcrumb}`}>{breadcrumb}</a>
-            <span aria-hidden="true">&nbsp;&vert;&nbsp;</span>
+            <a class="breadcrumb-span" href={`/${breadcrumb}`}>{breadcrumb}</a>
+            <span aria-hidden="true" class="arrow">&nbsp;</span>
           </li>
-        )
+        ),
       )
     }
   </ul>
@@ -43,19 +43,82 @@ breadcrumbList[0] === "posts" &&
 
 <style>
   .breadcrumb {
+    --_breadcrumb-color: rgb(var(--color-breadcrumbs));
+    --_breadcrumb-radius: 0.6rem;
     max-width: var(--site_width);
-    @apply mx-auto my-8 w-full px-4;
+    font-size: 0;
+    @apply mx-auto py-8 w-full px-4 overflow-scroll;
+  }
+  .breadcrumb ul {
+    @apply whitespace-nowrap;
   }
   .breadcrumb ul li {
     @apply inline;
   }
   .breadcrumb ul li a {
+    font-size: 1rem;
     @apply capitalize;
   }
-  .breadcrumb ul li span {
-    @apply opacity-70;
+  span {
+    font-size: 1rem;
   }
-  .breadcrumb ul li:not(:last-child) a {
-    @apply opacity-70 hover:opacity-100;
+  .breadcrumb ul li:not(:last-child) {
+    transition: opacity 0.2s ease-in-out;
+    @apply opacity-60 hover:opacity-100;
+  }
+  .start {
+    background-color: var(--_breadcrumb-color);
+    border-radius: var(--_breadcrumb-radius) 0.2rem 0.2rem var(--_breadcrumb-radius);
+    @apply relative p-2 pr-0 mr-2;
+  }
+  .start::after {
+    content: "";
+    height: calc(100% / 1.414213562);
+    border-radius: 0 var(--_breadcrumb-radius) 0 0;
+    background-color: inherit;
+    transform: translateX(50%) rotate(45deg);
+    @apply absolute right-0 aspect-square -z-10;
+  }
+  .breadcrumb-span {
+    background: linear-gradient(90deg, var(--_breadcrumb-color), var(--_breadcrumb-color));
+    background-position-x: .5rem;
+    background-repeat: no-repeat;
+    @apply relative p-2 pl-6 pr-0 ml-2;
+  }
+  .breadcrumb-span::before,
+  .breadcrumb-span::after {
+    content: "";
+    background-color: var(--_breadcrumb-color);
+    @apply absolute left-0 h-1/2 w-1/2 -z-10;
+  }
+  .breadcrumb-span::before {
+    border-radius: var(--_breadcrumb-radius) var(--_breadcrumb-radius) 0 0;
+    top: 0;
+    transform: skew(45deg);
+  }
+  .breadcrumb-span::after {
+    border-radius: 0 0 var(--_breadcrumb-radius) var(--_breadcrumb-radius);
+    bottom: 0;
+    transform: skew(-45deg);
+  }
+  .arrow {
+    height: 1rem;
+    font-size: 1rem;
+    border-radius: 0 .2rem .2rem 0;
+    background-color: var(--_breadcrumb-color);
+    @apply py-2 relative mr-2;
+  }
+  .arrow::after {
+    content: "";
+    right: 0;
+    height: calc(100% / 1.414213562);
+    border-radius: 0 var(--_breadcrumb-radius) 0 0;
+    background-color: var(--_breadcrumb-color);
+    transform: translateX(50%) rotate(45deg);
+    @apply absolute aspect-square -z-10;
+  }
+  .start:hover::after,
+  .arrow:hover::after {
+    margin: 0 auto;
   }
 </style>
