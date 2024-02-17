@@ -22,10 +22,9 @@ breadcrumbList[0] === "posts" &&
         index + 1 === breadcrumbList.length ? (
           <li>
             <span
-              class={`breadcrumb-span ${index > 0 ? "lowercase" : "capitalize"}`}
+              class={`breadcrumb-span capitalize`}
               aria-current="page"
             >
-              {/* make the last part lowercase in Home > Tags > some-tag */}
               {breadcrumb}
             </span>
             <span aria-hidden="true" class="arrow">&nbsp;</span>
@@ -46,21 +45,17 @@ breadcrumbList[0] === "posts" &&
     --_breadcrumb-color: rgb(var(--color-breadcrumbs));
     --_breadcrumb-radius: 0.6rem;
     max-width: var(--site_width);
-    font-size: 0;
-    @apply mx-auto py-8 w-full px-4 overflow-scroll;
+    @apply mx-auto py-8 w-full px-4 text-nowrap;
   }
   .breadcrumb ul {
-    @apply whitespace-nowrap;
+    @apply flex flex-wrap gap-4;
   }
   .breadcrumb ul li {
-    @apply inline;
+    @apply flex;
   }
   .breadcrumb ul li a {
-    font-size: 1rem;
+    height: 100%;
     @apply capitalize;
-  }
-  span {
-    font-size: 1rem;
   }
   .breadcrumb ul li:not(:last-child) {
     transition: opacity 0.2s ease-in-out;
@@ -69,11 +64,11 @@ breadcrumbList[0] === "posts" &&
   .start {
     background-color: var(--_breadcrumb-color);
     border-radius: var(--_breadcrumb-radius) 0.2rem 0.2rem var(--_breadcrumb-radius);
-    @apply relative p-2 pr-0 mr-2;
+    @apply relative p-2 pr-0;
   }
   .start::after {
     content: "";
-    height: calc(100% / 1.414213562);
+    height: calc(100% / 1.47);
     border-radius: 0 var(--_breadcrumb-radius) 0 0;
     background-color: inherit;
     transform: translateX(50%) rotate(45deg);
@@ -83,7 +78,7 @@ breadcrumbList[0] === "posts" &&
     background: linear-gradient(90deg, var(--_breadcrumb-color), var(--_breadcrumb-color));
     background-position-x: .5rem;
     background-repeat: no-repeat;
-    @apply relative p-2 pl-6 pr-0 ml-2;
+    @apply relative p-2 pl-6 pr-0 bg-no-repeat;
   }
   .breadcrumb-span::before,
   .breadcrumb-span::after {
@@ -102,23 +97,17 @@ breadcrumbList[0] === "posts" &&
     transform: skew(-45deg);
   }
   .arrow {
-    height: 1rem;
-    font-size: 1rem;
     border-radius: 0 .2rem .2rem 0;
     background-color: var(--_breadcrumb-color);
-    @apply py-2 relative mr-2;
+    @apply py-2 relative;
   }
   .arrow::after {
     content: "";
     right: 0;
-    height: calc(100% / 1.414213562);
+    height: calc(100% / 1.47);
     border-radius: 0 var(--_breadcrumb-radius) 0 0;
     background-color: var(--_breadcrumb-color);
     transform: translateX(50%) rotate(45deg);
     @apply absolute aspect-square -z-10;
-  }
-  .start:hover::after,
-  .arrow:hover::after {
-    margin: 0 auto;
   }
 </style>
