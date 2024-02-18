@@ -271,6 +271,7 @@ ul {
 .postCard {
   --_transition-time: 0.8s;
   --_transition-fktn: cubic-bezier(0, 0, 0.2, 1);
+  --_border-hover: clamp(2rem, 3rem, 4rem);
   max-width: 27rem;
   min-height: 30rem;
   border-radius: clamp(1rem, 2rem, 3rem);
@@ -279,7 +280,7 @@ ul {
   position: relative;
   box-shadow: rgba(var(--box-shaddow), 0.2) 0px 8px 24px;
   grid-template-rows: subgrid;
-  transition: border-radius calc(var(--_transition-time) / 2) var(--_transition-fktn);
+  transition: border-radius var(--_transition-time) var(--_transition-fktn);
   background-color: rgba(var(--color-postCard), 1);
   @apply grid my-5 overflow-hidden;
 }
@@ -300,7 +301,7 @@ ul {
 }
 
 .postCard:hover {
-  border-radius: clamp(2rem, 3rem, 4rem);
+  border-radius: var(--_border-hover);
 }
 
 .postCard:hover .day {
@@ -314,7 +315,67 @@ ul {
   @apply decoration-dashed underline;
 }
 
+@media (min-width: 70rem) and (prefers-reduced-motion: no-preference) {
+  .postDate,
+  .postDesc,
+  .postTitle {
+    transition: transform var(--_transition-time) var(--_transition-fktn);
+  }
+  .postCard:first-child:hover .postDate{
+    transform: translateX(-.5rem);
+  }
+  .postCard:first-child:hover .postTitle {
+    transform: translateX(-.5rem);
+  }
+  .postCard:first-child:hover .postDesc{
+    transform: translateX(-.5rem);
+  }
+  .postCard:not(:first-child):hover .postDate{
+    transform: translateY(-1rem);
+  }
+  .postCard:not(:first-child):hover .postTitle {
+    transform: translateY(-.5rem);
+  }
+  .postCard:not(:first-child):hover .postDesc{
+    transform: translateY(-.2rem);
+  }
 
+  .postDate,
+  .postTitle,
+  .postDesc {
+    z-index: 2;
+    background-color: inherit;
+  }
+
+  .postDate:not(:first-child)::after {
+    content: '';
+    background: white;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    z-index: -1;
+    transform: scaleY(0) translateY(0);
+    border-radius: var(--_border-hover);
+    transition: transform var(--_transition-time) var(--_transition-fktn);
+    @apply w-full h-full absolute opacity-100;
+  }
+
+  .postCard:not(:first-child):hover .postDate::after {
+    transform: scaleY(1) translateY(-1rem);
+  }
+
+  .postCard:not(:first-child) picture,
+  .postCard:not(:first-child) img {
+    z-index: 0;
+    transition: transform var(--_transition-time) var(--_transition-fktn);
+  }
+
+  .postCard:not(:first-child):hover picture,
+  .postCard:not(:first-child):hover img {
+    transform: scale(1.05);
+  }
+}
 @media (min-width: 70rem) {
   .card:first-child {
     --_padding: 3rem;
@@ -343,34 +404,6 @@ ul {
     height: 100% !important;
     position: relative;
   }
-  .postCard picture,
-  .postCard img {
-    position: relative;
-  }
-
-  .postCard picture::after,
-  .postCard img::after {
-    content: '';
-    background: rgb(var(--color-breadcrumbs));
-    background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(var(--color-breadcrumbs), 0.5) 8%, rgb(var(--color-breadcrumbs)));
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    z-index: 10;
-    scale: 0;
-    transition: scale var(--_transition-time) var(--_transition-fktn), opacity var(--_transition-time) var(--_transition-fktn);
-    @apply aspect-square h-full absolute rounded-full opacity-50;
-  }
-
-  .card:hover picture::after,
-  .card:hover img::after {
-    scale: 4.5;
-    opacity: 0.1;
-  }
-
   .card:first-child .postDate {
     grid-area: postDate;
     text-align: start;
@@ -392,6 +425,17 @@ ul {
   }
   .day {
     font-size: 30pt;
+  }
+  .postCard picture:after {
+    content: '';
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 1;
+    transition: opacity var(--_transition-time) var(--_transition-fktn);
+    @apply inset-0 absolute opacity-0;
+  }
+
+  .postCard:hover picture:after {
+    @apply opacity-30;
   }
 }
 @media (min-width: 100rem) {
