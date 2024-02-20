@@ -77,7 +77,7 @@ import LinkNormal from "./LinkNormal.astro";
         "Challenge" zu Gunsten unseres Freibades daraus machen: Ich sammele für
         meine Kilometer Spenden, die dann das Freibad bekommt. Dafür teile ich
         täglich Bilder und Posts von der Strecke.
-        <LinkNormal href="/spenden#warum" />
+        <LinkNormal href="/spenden#warum" className="rounded-[0.6rem]"/>
       </p>
       <Image
         class={""}
@@ -94,7 +94,7 @@ import LinkNormal from "./LinkNormal.astro";
   section {
     min-height: 50rem;
     min-height: 100svh;
-    background-color: rgb(var(--color-surface));
+    background-color: rgba(var(--color-breadcrumbs),0.3);
     border-radius: 2rem 2rem 0 0;
     @apply pb-16 px-0 md:pb-0 sm:mt-16 isolate flex flex-col relative mb-8 w-full max-w-none justify-center;
   }

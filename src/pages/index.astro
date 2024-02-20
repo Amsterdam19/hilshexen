@@ -27,7 +27,7 @@ import LinkNormal from "@components/LinkNormal.astro";
 <Layout identity={true}>
   <Header activeNav="index" />
   <main id="main-content">
-    <section id="hero" class="max-w-none bg-no-repeat bg-cover bg-center">
+    <section id="hero" class="max-w-none">
       <div class="heroContent">
         <h1>
           <span id="km" class="flex items-baseline"
@@ -171,9 +171,6 @@ import LinkNormal from "@components/LinkNormal.astro";
 </Layout>
 
 <style>
-  main {
-    background-color: rgba(var(--color-main), 1);
-  }
   /* ===== Spenden Section ===== */
   #spenden {
     width: 100%;

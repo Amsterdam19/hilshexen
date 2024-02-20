@@ -286,7 +286,7 @@ ul {
 }
 @supports (view-transition-name: header) {
   .postCard {
-    transition: background-color .2s ease-in-out, box-shaddow .2s ease-in-out, border-radius 0.2s ease-in-out;
+    transition: background-color .2s ease-in-out, border-radius var(--_transition-time) var(--_transition-fktn);
   }    
 }
 
@@ -321,22 +321,25 @@ ul {
   .postTitle {
     transition: transform var(--_transition-time) var(--_transition-fktn);
   }
-  .postCard:first-child:hover .postDate{
+  .postCard:first-child:not(.tsxCard):hover .postDate {
     transform: translateX(-.5rem);
   }
-  .postCard:first-child:hover .postTitle {
+  .postCard:first-child:not(.tsxCard):hover .postTitle {
     transform: translateX(-.5rem);
   }
-  .postCard:first-child:hover .postDesc{
+  .postCard:first-child:not(.tsxCard):hover .postDesc {
     transform: translateX(-.5rem);
   }
-  .postCard:not(:first-child):hover .postDate{
+  .postCard:not(:first-child):hover .postDate,
+  .tsxCard:hover .postDate {
     transform: translateY(-1rem);
   }
-  .postCard:not(:first-child):hover .postTitle {
+  .postCard:not(:first-child):hover .postTitle,
+  .tsxCard:hover .postTitle {
     transform: translateY(-.5rem);
   }
-  .postCard:not(:first-child):hover .postDesc{
+  .postCard:not(:first-child):hover .postDesc,
+  .tsxCard:hover .postDesc {
     transform: translateY(-.2rem);
   }
 
@@ -347,33 +350,37 @@ ul {
     background-color: inherit;
   }
 
-  .postDate:not(:first-child)::after {
+  .postDate:not(:first-child)::after,
+  .tsxCard .postDate::after {
     content: '';
-    background: white;
+    background: inherit;
     left: 0;
     right: 0;
     top: 0;
     margin: auto;
     z-index: -1;
-    transform: scaleY(0) translateY(0);
+    transform: scaleY(0) translateY(-50%);
     border-radius: var(--_border-hover);
     transition: transform var(--_transition-time) var(--_transition-fktn);
     @apply w-full h-full absolute opacity-100;
   }
 
-  .postCard:not(:first-child):hover .postDate::after {
-    transform: scaleY(1) translateY(-1rem);
+  .postCard:not(:first-child):hover .postDate::after,
+  .tsxCard:hover .postDate::after {
+    transform: scaleY(1) translateY(-60%);
   }
 
   .postCard:not(:first-child) picture,
-  .postCard:not(:first-child) img {
+  .postCard:not(:first-child) img,
+  .tsxCard img {
     z-index: 0;
     transition: transform var(--_transition-time) var(--_transition-fktn);
   }
 
   .postCard:not(:first-child):hover picture,
-  .postCard:not(:first-child):hover img {
-    transform: scale(1.05);
+  .postCard:not(:first-child):hover img,
+  .tsxCard img {
+    transform: scale(1.02);
   }
 }
 @media (min-width: 70rem) {
@@ -426,7 +433,8 @@ ul {
   .day {
     font-size: 30pt;
   }
-  .postCard picture:after {
+  .postCard picture::after,
+  .tsxCard img::after {
     content: '';
     background-color: rgba(0, 0, 0, 1);
     z-index: 1;
@@ -434,7 +442,8 @@ ul {
     @apply inset-0 absolute opacity-0;
   }
 
-  .postCard:hover picture:after {
+  .postCard:hover picture::after,
+  .tsxCard:hover img::after {
     @apply opacity-30;
   }
 }
@@ -565,11 +574,7 @@ ul {
 @keyframes fade {
   0% {
     opacity: 0;
-    transform: translateY(10px) scale(0.9);
-  }
-  20% {
-    opacity: 0.6;
-    transform: none;
+    transform: translateY(2rem) scale(0.9);
   }
   100% {
     opacity: 1;
@@ -581,16 +586,6 @@ ul {
   from {
     opacity: 0;
     transform: translateY(5px) ;
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-@keyframes slide {
-  from {
-    opacity: 0;
-    transform: translateX(-50px) scaleX(0);
   }
   to {
     opacity: 1;
@@ -618,10 +613,6 @@ ul {
       animation-range: cover 0% cover 40%;
     }
   }
-
-  .slide {
-    --_animation-type: slide;
-  }
   .just-fade {
     --_animation-type: just-fade;
   }
@@ -644,6 +635,20 @@ ul {
 .show.fade {
   animation: fade 0.5s ease-in forwards;
 }
+
+.show.postCard {
+  --_animation-delay: 0s;
+  animation: fade 0.5s ease-in forwards;
+  animation-delay: var(--_animation-delay);
+}
+
+.postCard:nth-child(1){--_animation-delay:0.1s}
+.postCard:nth-child(2){--_animation-delay:0.1s}
+.postCard:nth-child(3){--_animation-delay:0.2s}
+.postCard:nth-child(4){--_animation-delay:0.3s}
+.postCard:nth-child(5){--_animation-delay:0.4s}
+.postCard:nth-child(6){--_animation-delay:0.5s}
+.postCard:nth-child(7){--_animation-delay:0.6s}
 
 .slide {
   animation: none;

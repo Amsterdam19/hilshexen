@@ -7,7 +7,7 @@ export const SITE: Site = {
   title: "HilsHeika",
   ogImage: "og.jpg",
   lightAndDarkMode: true,
-  postPerPage: 10,
+  postPerPage: 7,
   feturedPosts: 5,
 };
 
