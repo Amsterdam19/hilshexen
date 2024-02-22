@@ -585,19 +585,10 @@ ul {
 @keyframes just-fade {
   from {
     opacity: 0;
-    transform: translateY(5px) ;
   }
   to {
+    transform: none;
     opacity: 1;
-    transform: none;
-  }
-}
-@keyframes roll-in {
-  from {
-    transform: translateX(0) scale(0) rotate(2turn);
-  }
-  to {
-    transform: none;
   }
 }
 
@@ -615,9 +606,6 @@ ul {
   }
   .just-fade {
     --_animation-type: just-fade;
-  }
-  .roll-in {
-    --_animation-type: roll-in;
   }
 }
 @supports (not (animation-timeline: view())) {
@@ -642,19 +630,11 @@ ul {
   animation-delay: var(--_animation-delay);
 }
 
-.postCard:nth-child(1){--_animation-delay:0.1s}
-.postCard:nth-child(2){--_animation-delay:0.1s}
-.postCard:nth-child(3){--_animation-delay:0.2s}
-.postCard:nth-child(4){--_animation-delay:0.3s}
-.postCard:nth-child(5){--_animation-delay:0.4s}
-.postCard:nth-child(6){--_animation-delay:0.5s}
-.postCard:nth-child(7){--_animation-delay:0.6s}
-
 .slide {
   animation: none;
   opacity: 0;
-  transform: translateX(-10vw) scaleX(0);
-  transition: all 0.5s ease-in;
+  transform: translateY(2rem) scale(0.9);
+  transition: transform 0.5s ease-in, opacity 0.5s ease-in;
 }
 .show.slide {
   animation: none;
@@ -668,6 +648,16 @@ ul {
   opacity: 0;
   animation: roll-in 0.5s ease-in forwards;
 }
+}
+
+@media (min-width: 30rem) {
+  .postCard:nth-child(1){--_animation-delay:0.1s}
+.postCard:nth-child(2){--_animation-delay:0.1s}
+.postCard:nth-child(3){--_animation-delay:0.2s}
+.postCard:nth-child(4){--_animation-delay:0.3s}
+.postCard:nth-child(5){--_animation-delay:0.4s}
+.postCard:nth-child(6){--_animation-delay:0.5s}
+.postCard:nth-child(7){--_animation-delay:0.6s}
 }
 
 @media(prefers-reduced-motion) {

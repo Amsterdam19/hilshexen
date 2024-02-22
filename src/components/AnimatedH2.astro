@@ -2,7 +2,7 @@
 const { txt } = Astro.props;
 ---
 
-<h2 class="scroll-animation animated-h2">{txt}</h2>
+<h2 class="scroll-animation slide animated-h2">{txt}</h2>
 
 <style>
   .animated-h2 {
@@ -18,31 +18,23 @@ const { txt } = Astro.props;
       --_shaddow-width: 3px;
       --_animation-duration: 0.4s;
       --color-primary: rgb(var(--color-text-base));
-      --color-secondary: color-mix(
-        in lch,
-        rgb(var(--color-accent)) 80%,
-        rgb(var(--color-fill))
-      );
-      --color-tertiary: color-mix(
-        in lch,
-        rgb(var(--color-accent)) 60%,
-        rgb(var(--color-fill))
-      );
-      --color-quaternary: color-mix(
-        in lch,
-        rgb(var(--color-accent)) 40%,
-        rgb(var(--color-fill))
-      );
-      --color-quinary: color-mix(
-        in lch,
-        rgb(var(--color-accent)) 20%,
-        rgb(var(--color-fill))
-      );
+      --color-secondary: rgba(var(--color-accent), 0.8);
+      --color-tertiary: rgba(var(--color-accent), 0.6);
+      --color-quaternary: rgba(var(--color-accent), 0.4);
+      --color-quinary: rgba(var(--color-accent), 0.2);
       text-shadow: none;
       color: var(--color-primary);
       font-weight: 600;
       @apply py-10 text-6xl tracking-wide;
     }
+    .show:hover {
+      animation:
+        shadows var(--_animation-duration) ease-in-out forwards,
+        move var(--_animation-duration) ease-in-out forwards !important;
+      animation-delay: 0s !important;
+    }
+  }
+  @supports (animation-timeline: view()) {
     .animated-h2:hover {
       animation:
         shadows var(--_animation-duration) ease-in-out forwards,
