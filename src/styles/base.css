@@ -145,7 +145,7 @@
     prose-table:text-skin-base prose-th:border
     prose-th:border-skin-line prose-td:border 
     prose-td:border-skin-line prose-img:mx-auto 
-    prose-img:!mt-2 prose-img:rounded-2xl
+    prose-img:!my-2 prose-img:rounded-2xl
   }
   .prose a {
     @apply hover:!text-skin-accent;
@@ -652,12 +652,12 @@ ul {
 
 @media (min-width: 30rem) {
   .postCard:nth-child(1){--_animation-delay:0.1s}
-.postCard:nth-child(2){--_animation-delay:0.1s}
-.postCard:nth-child(3){--_animation-delay:0.2s}
-.postCard:nth-child(4){--_animation-delay:0.3s}
-.postCard:nth-child(5){--_animation-delay:0.4s}
-.postCard:nth-child(6){--_animation-delay:0.5s}
-.postCard:nth-child(7){--_animation-delay:0.6s}
+  .postCard:nth-child(2){--_animation-delay:0.1s}
+  .postCard:nth-child(3){--_animation-delay:0.2s}
+  .postCard:nth-child(4){--_animation-delay:0.3s}
+  .postCard:nth-child(5){--_animation-delay:0.4s}
+  .postCard:nth-child(6){--_animation-delay:0.5s}
+  .postCard:nth-child(7){--_animation-delay:0.6s}
 }
 
 @media(prefers-reduced-motion) {
