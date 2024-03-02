@@ -180,63 +180,63 @@ declare module 'astro:content' {
   slug: "adding-new-post-copy";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "adding-new-post.md": {
 	id: "adding-new-post.md";
   slug: "adding-new-post";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "example-blog.md": {
 	id: "example-blog.md";
   slug: "example-blog";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "huhu.md": {
 	id: "huhu.md";
   slug: "huhu";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "koffer-packen.md": {
 	id: "koffer-packen.md";
   slug: "koffer-packen";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "mount-saint-michel.md": {
 	id: "mount-saint-michel.md";
   slug: "mount-saint-michel";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "predefined-color-schemes.md": {
 	id: "predefined-color-schemes.md";
   slug: "predefined-color-schemes";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "tailwind-typography.md": {
 	id: "tailwind-typography.md";
   slug: "tailwind-typography";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "terminal-development.md": {
 	id: "terminal-development.md";
   slug: "terminal-development";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 };
 
@@ -248,5 +248,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	type ContentConfig = never;
+	type ContentConfig = typeof import("../src/content/config");
 }
