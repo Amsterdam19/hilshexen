@@ -398,6 +398,7 @@ ul {
     min-height: 25rem;
     justify-content: space-between;
     max-width: unset;
+    max-height: 35rem;
     height: auto;
     padding-right: var(--_padding);
   }
