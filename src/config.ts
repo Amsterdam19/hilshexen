@@ -1,7 +1,7 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://hilsheika.netlify.app/",
+  website: "https://hils-heika.de//",
   author: "Amsterdam19",
   desc: "Ein Blog über die Wanderschaft",
   title: "HilsHeika",
@@ -32,13 +32,13 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Facebook",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "/coming-soon",
     linkTitle: `${SITE.title} on Facebook`,
     active: true,
   },
   {
     name: "Instagram",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "/coming-soon",
     linkTitle: `${SITE.title} on Instagram`,
     active: true,
   },
