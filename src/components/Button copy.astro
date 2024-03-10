@@ -1,0 +1,39 @@
+---
+const { url, txt, className, ariaLabel, color = "var(--color-accent)"} = Astro.props;
+---
+
+<a href={url}
+  role="button"
+  class={`group inline-block ${className}`}
+  aria-label={ariaLabel}
+  style={`background-color: rgb(${color})`}>
+  <div class="icon">
+    <slot/>
+  </div>
+    <span>{txt}</span>
+</a>
+<style>
+  a {
+    display: flex !important;
+    gap: 8px;
+    width: fit-content;
+    border-width: 1px;
+    border-color: rgba(2, 15, 2,0.3);
+    padding-inline: 1.5rem;
+    padding-block: 0.7rem;
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    color: #e9f1e9;
+    @apply rounded-full;
+    }
+  a:hover .icon {
+    transform: rotateY(360deg);
+  }
+  a:hover {
+    transform: scale(0.97);
+  }
+  .icon {
+    transition: transform 0.3s ease-in-out;
+  }
+</style>

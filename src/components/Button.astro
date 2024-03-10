@@ -1,39 +1,90 @@
 ---
-const { url, txt, className, ariaLabel, color = "var(--color-accent)"} = Astro.props;
+import { Icon } from "astro-icon/components";
+const {
+  url,
+  txt,
+  icon,
+  className,
+  ariaLabel,
+  right = false,
+  btn_bg = "var(--color-breadcrumbs)",
+  btn_co = "var(--color-breadcrumbs-2)",
+} = Astro.props;
 ---
 
-<a href={url}
+<a
+  href={url}
   role="button"
   class={`group inline-block ${className}`}
   aria-label={ariaLabel}
-  style={`background-color: rgb(${color})`}>
-  <div class="icon">
-    <slot/>
-  </div>
-    <span>{txt}</span>
+  style={`--_btn-bg:var(--color-breadcrumbs);--_btn-co:var(--color-breadcrumbs-2);`}
+>
+  {right != true && icon != null && <Icon name={icon} />}
+  <span>{txt}</span>
+  {right == true && icon != null && <Icon name={icon} />}
 </a>
 <style>
   a {
+    text-align: center;
+    text-decoration: none;
+    outline: none;
     display: flex !important;
+    align-items: center;
     gap: 8px;
+    background-color: rgb(var(--_btn-bg));
+    min-width: 80px;
     width: fit-content;
-    border-width: 1px;
-    border-color: rgba(2, 15, 2,0.3);
     padding-inline: 1.5rem;
-    padding-block: 0.7rem;
-    font-weight: 800;
-    font-size: 1.2rem;
+    height: 56px;
+    font-size: 1.25rem;
     line-height: 1.2rem;
-    color: #e9f1e9;
-    @apply rounded-full;
-    }
-  a:hover .icon {
-    transform: rotateY(360deg);
+    justify-content: space-evenly;
+    font-weight: 700;
+    @apply rounded-full relative overflow-hidden m-4 ml-0;
   }
+  a span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+    color: rgb(var(--_btn-bg));
+  }
+  [data-icon] {
+    position: relative;
+    z-index: 10;
+    color:rgb(var(--_btn-bg));
+    font-size: 1.2rem;
+    transition: color 0.4s;
+  }
+
   a:hover {
-    transform: scale(0.97);
+    filter: drop-shadow(0 0 10px rgb(var(--_btn-bg)));
   }
-  .icon {
-    transition: transform 0.3s ease-in-out;
+
+  a:hover span,
+  a:hover [data-icon] {
+    color: rgb(var(--_btn-co));
+  }
+
+  a::before,
+  a::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  a::before {
+    content: "";
+    background: rgb(var(--_btn-co));
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+  }
+
+  a:hover::before {
+    transform: translate3d(100%, 0, 0);
   }
 </style>

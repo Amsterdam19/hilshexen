@@ -43,7 +43,7 @@ import LinkNormal from "@components/LinkNormal.astro";
           >
           <span>Von Kaierde bis ans Mittelmeer</span>
         </h1>
-        <Button url="#spenden" txt="Spenden" color="var(--color-breadcrumbs)" className="rounded-[0.6rem] border-none text-skin-base">
+        <Button url="#spenden" txt="Spenden" icon="donation">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"
@@ -91,10 +91,7 @@ import LinkNormal from "@components/LinkNormal.astro";
           gerne eine "Challenge" zu Gunsten unseres Freibades daraus machen: Ich
           sammele für meine Kilometer Spenden, die dann das Freibad bekommt.
         </p>
-        <LinkNormal
-          href="/spenden#wofur"
-          ariaLabel="Weitere Informationen wofür die Spenden verwendet werden"
-        />
+        <Button href="/spenden#wofur" icon="open" ariaLabel="Weitere Informationen wofür die Spenden verwendet werden" txt="mehr" right={true}/>
       </div>
     </section>
 
@@ -116,16 +113,7 @@ import LinkNormal from "@components/LinkNormal.astro";
             )
         }
       </ul>
-      <div class="all-posts-btn-wrapper">
-        <LinkButton href="/posts" className="pagLink mx-auto">
-          Alle Blogeinträge
-          <svg xmlns="http://www.w3.org/2000/svg"
-            ><path
-              d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-            ></path>
-          </svg>
-        </LinkButton>
-      </div>
+      <Button url="/posts" txt="Alle Blogeinträge" icon="next" right={true} className="mx-auto"/>
     </section>
   </main>
 
@@ -289,14 +277,5 @@ import LinkNormal from "@components/LinkNormal.astro";
   article:hover {
     text-decoration-color: rgb(var(--color-accent));
     text-decoration-thickness: 10px;
-  }
-  .all-posts-btn-wrapper {
-    @apply my-8 text-center;
-  }
-  .all-posts-btn-wrapper svg {
-    @apply transition-all;
-  }
-  .all-posts-btn-wrapper:hover svg {
-    transform: translateX(0.5rem);
   }
 </style>

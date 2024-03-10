@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import portrait from "@assets/HilsHeika.jpg";
 import AnimatedH2 from "./AnimatedH2.astro";
-import LinkNormal from "./LinkNormal.astro";
+import Button from "./Button.astro";
 ---
 
 <section>
@@ -78,7 +78,7 @@ import LinkNormal from "./LinkNormal.astro";
         Euch hier Vorbereitungen und Vorfreude und dann nehmen wir Euch hier in
         unserem Blog mit auf die Reise! Jeder Cent Eurer Spende kommt dem
         Delligser Freibad zu Gute. Am 12. Juni geht es los!
-        <LinkNormal href="/spenden#warum" className="rounded-[0.6rem] mt-8" />
+        <Button href="/spenden#warum" icon="open" ariaLabel="mehr" txt="mehr" right={true} className="mt-8"/>
       </p>
       <Image
         class={""}

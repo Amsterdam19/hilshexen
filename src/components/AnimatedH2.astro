@@ -2,107 +2,57 @@
 const { txt } = Astro.props;
 ---
 
-<h2 class="scroll-animation slide animated-h2">{txt}</h2>
+<h2 class="scroll-animation slide animated-h2" data-text={txt}>{txt}</h2>
 
 <style>
   .animated-h2 {
     width: fit-content;
+    font-size: clamp(2rem, 1.3878rem + 3.2653vw, 4rem);
+    color: var(--color-primary);
+    @apply font-semibold my-10;
   }
-  @media (width <= 1024px) {
+  @media (width <= 50rem) {
     .animated-h2 {
-      @apply my-[3rem] sm:mb-[7rem] w-full text-center text-3xl font-semibold tracking-wide nm:text-4xl;
+      @apply my-[3rem] sm:mb-[7rem] w-full text-center tracking-wide;
     }
   }
-  @media (width > 1024px) {
+  @media (width > 50rem) {
     .animated-h2 {
+      --_color-primary: rgb(var(--color-text-base));
+      --_color-secondary: rgba(var(--color-accent), 0.66);
+      --_color-tertiary: rgba(var(--color-accent), 0.33);
       --_shaddow-width: 3px;
-      --_animation-duration: 0.4s;
-      --color-primary: rgb(var(--color-text-base));
-      --color-secondary: rgba(var(--color-accent), 0.8);
-      --color-tertiary: rgba(var(--color-accent), 0.6);
-      --color-quaternary: rgba(var(--color-accent), 0.4);
-      --color-quinary: rgba(var(--color-accent), 0.2);
-      text-shadow: none;
-      color: var(--color-primary);
-      font-weight: 600;
-      @apply py-10 text-6xl tracking-wide;
+      --_animatino-time: 0.2s;
+      color: var(--_color-primary);
+      transition: transform var(--_animatino-time) ease-in-out;
+      z-index: 3;
+      @apply tracking-wide;
     }
-    .show:hover {
-      animation:
-        shadows var(--_animation-duration) ease-in-out forwards,
-        move var(--_animation-duration) ease-in-out forwards !important;
-      animation-delay: 0s !important;
+    .animated-h2::before,
+    .animated-h2::after {
+      content:attr(data-text);
+      position: absolute;
+      inset: 0;
+      transition: transform var(--_animatino-time) ease-in-out;
     }
-  }
-  @supports (animation-timeline: view()) {
+    .animated-h2::before {
+      color: var(--_color-secondary);
+      z-index: -1;
+    }
+    .animated-h2::after {
+      color: var(--_color-tertiary);
+      z-index: -2;
+      
+
+    }
     .animated-h2:hover {
-      animation:
-        shadows var(--_animation-duration) ease-in-out forwards,
-        move var(--_animation-duration) ease-in-out forwards;
+      transform: translate(calc(var(--_shaddow-width) * -2), calc(var(--_shaddow-width) * -2));
+    }
+    .animated-h2:hover::before {
+      transform: translate(calc(var(--_shaddow-width) * 1), calc(var(--_shaddow-width) * 1));
+    }
+    .animated-h2:hover::after{
+      transform: translate(calc(var(--_shaddow-width) * 2), calc(var(--_shaddow-width) * 2));
     }
   }
-  @keyframes shadows {
-  0% {
-    text-shadow: none;
-  }
-  10% {
-    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary);
-  }
-  20% {
-    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary),
-      calc(var(--_shaddow-width) * 2) calc(var(--_shaddow-width) * 2) 0 var(--color-tertiary);
-  }
-  30% {
-    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary),
-      calc(var(--_shaddow-width) * 2) calc(var(--_shaddow-width) * 2) 0 var(--color-tertiary), calc(var(--_shaddow-width) * 3) calc(var(--_shaddow-width) * 3) var(--color-quaternary);
-  }
-  40% {
-    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary),
-      calc(var(--_shaddow-width) * 2) calc(var(--_shaddow-width) * 2) 0 var(--color-tertiary), calc(var(--_shaddow-width) * 3) calc(var(--_shaddow-width) * 3) var(--color-quaternary),
-      calc(var(--_shaddow-width) * 4) calc(var(--_shaddow-width) * 4) 0 var(--color-quinary);
-  }
-  50% {
-    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary),
-      calc(var(--_shaddow-width) * 2) calc(var(--_shaddow-width) * 2) 0 var(--color-tertiary), calc(var(--_shaddow-width) * 3) calc(var(--_shaddow-width) * 3) var(--color-quaternary),
-      calc(var(--_shaddow-width) * 4) calc(var(--_shaddow-width) * 4) 0 var(--color-quinary);
-  }
-  60% {
-    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary),
-      calc(var(--_shaddow-width) * 2) calc(var(--_shaddow-width) * 2) 0 var(--color-tertiary), calc(var(--_shaddow-width) * 3) calc(var(--_shaddow-width) * 3) var(--color-quaternary),
-      calc(var(--_shaddow-width) * 4) calc(var(--_shaddow-width) * 4) 0 var(--color-quinary);
-  }
-  70% {
-    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary),
-      calc(var(--_shaddow-width) * 2) calc(var(--_shaddow-width) * 2) 0 var(--color-tertiary), calc(var(--_shaddow-width) * 3) calc(var(--_shaddow-width) * 3) var(--color-quaternary);
-  }
-  80% {
-    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary),
-      calc(var(--_shaddow-width) * 2) calc(var(--_shaddow-width) * 2) 0 var(--color-tertiary);
-  }
-  90% {
-    text-shadow: var(--_shaddow-width) var(--_shaddow-width) 0 var(--color-secondary);
-  }
-  100% {
-    text-shadow: none;
-  }
-}
-
-@keyframes move {
-  0% {
-    transform: translate(0px, 0px);
-  }
-  40% {
-    transform: translate(calc(var(--_shaddow-width) * -4), calc(var(--_shaddow-width) * -4));
-  }
-  50% {
-    transform: translate(calc(var(--_shaddow-width) * -4), calc(var(--_shaddow-width) * -4));
-  }
-  60% {
-    transform: translate(calc(var(--_shaddow-width) * -4), calc(var(--_shaddow-width) * -4));
-  }
-  100% {
-    transform: translate(0px, 0px);
-  }
-}
-
 </style>

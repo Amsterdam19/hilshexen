@@ -38,6 +38,7 @@
     --color-border: 85, 143, 87;
     --color-postCard: 255, 255, 255;
     --color-breadcrumbs: 250, 235, 215;
+    --color-breadcrumbs-2: 70, 65, 59;
     --box-shaddow: 149, 157, 165;
     --color-main: var(--color-fill);
   }
@@ -52,6 +53,7 @@
     --color-border: 85, 143, 87;
     --color-postCard: 37, 37, 37;
     --color-breadcrumbs: 70, 65, 59;
+    --color-breadcrumbs-2: 250, 235, 215;
     --box-shaddow: 9, 17, 25;
     --color-main: var(--color-fill);
   }
@@ -76,7 +78,7 @@
     color: rgb(41, 99, 50);
     color: rgb(255, 255, 255);
     color: rgb(255, 255, 247);
-    color: rgb(70, 65, 59);
+    color: rgb(255, 240, 221);
 
     --color-fill: 30, 34, 44;
     --color-text-base: 234, 237, 243;

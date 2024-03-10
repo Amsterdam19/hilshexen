@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://hilsheika.netlify.app/sitemap-index.xml
+Sitemap: https://hils-heika.de//sitemap-index.xml
