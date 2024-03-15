@@ -21,7 +21,6 @@ import heroImage from "@assets/nature-943768_1920.jpg";
 import Button from "@components/Button.astro";
 import Motivation from "@components/Motivation.astro";
 import AnimatedH2 from "@components/AnimatedH2.astro";
-import LinkNormal from "@components/LinkNormal.astro";
 ---
 
 <Layout identity={true}>
@@ -43,7 +42,7 @@ import LinkNormal from "@components/LinkNormal.astro";
           >
           <span>Von Kaierde bis ans Mittelmeer</span>
         </h1>
-        <Button url="#spenden" txt="Spenden" icon="donation">
+        <Button url="/spenden" txt="Spenden" icon="donation">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"
@@ -91,7 +90,7 @@ import LinkNormal from "@components/LinkNormal.astro";
           gerne eine "Challenge" zu Gunsten unseres Freibades daraus machen: Ich
           sammele für meine Kilometer Spenden, die dann das Freibad bekommt.
         </p>
-        <Button href="/spenden#wofur" icon="open" ariaLabel="Weitere Informationen wofür die Spenden verwendet werden" txt="mehr" right={true}/>
+        <Button url="/spenden#wofur" icon="open" ariaLabel="Weitere Informationen wofür die Spenden verwendet werden" txt="mehr" right={true}/>
       </div>
     </section>
 
