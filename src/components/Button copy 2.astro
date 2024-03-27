@@ -1,0 +1,25 @@
+---
+import { Icon } from "astro-icon/components";
+const { url, className, ariaLabel } = Astro.props;
+---
+
+<a
+  href={url}
+  role="button"
+  class={`focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ${className}`}
+  aria-label={ariaLabel}
+>
+  <slot />
+</a>
+<style>
+  a {
+    display: flex;
+    width: max-content;
+    place-items: center;
+    background-color: rgb(var(--color-text-base));
+    color: rgb(var(--color-fill));
+  }
+  a > * {
+    fill: rgb(var(--color-fill)) !important;
+  }
+</style>

@@ -273,10 +273,11 @@ ul {
 .postCard {
   --_transition-time: 0.8s;
   --_transition-fktn: cubic-bezier(0, 0, 0.2, 1);
-  --_border-hover: clamp(2rem, 3rem, 4rem);
+  --_border-hover: clamp(1rem, 2rem, 3rem);
+  --_first-child-transform: -0.35rem;
   max-width: 27rem;
   min-height: 30rem;
-  border-radius: clamp(1rem, 2rem, 3rem);
+  border-radius: clamp(0.5rem, 1rem, 1.5rem);
   height: auto;
   grid-row: span 4;
   position: relative;
@@ -306,10 +307,6 @@ ul {
   border-radius: var(--_border-hover);
 }
 
-.postCard:hover .day {
-  color: rgb(var(--color-accent));
-}
-
 .postTitle {
   @apply text-ellipsis line-clamp-2 w-4/5 text-balance;
 }
@@ -324,13 +321,13 @@ ul {
     transition: transform var(--_transition-time) var(--_transition-fktn);
   }
   .postCard:first-child:not(.tsxCard):hover .postDate {
-    transform: translateX(-.5rem);
+    transform: translateX(var(--_first-child-transform));
   }
   .postCard:first-child:not(.tsxCard):hover .postTitle {
-    transform: translateX(-.5rem);
+    transform: translateX(var(--_first-child-transform));
   }
   .postCard:first-child:not(.tsxCard):hover .postDesc {
-    transform: translateX(-.5rem);
+    transform: translateX(var(--_first-child-transform));
   }
   .postCard:not(:first-child):hover .postDate,
   .tsxCard:hover .postDate {
@@ -447,7 +444,7 @@ ul {
 
   .postCard:hover picture::after,
   .tsxCard:hover img::after {
-    @apply opacity-30;
+    @apply opacity-20;
   }
 }
 @media (min-width: 100rem) {
