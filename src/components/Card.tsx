@@ -18,7 +18,7 @@ export default function Card({ href, frontmatter, secHeading = true, Card = true
   };
 
   return (
-    <a href={href} className={Card ? ("scroll-animation postCard card tsxCard"): ("scroll-animation postCard tsxCard")}>
+    <a href={href} className={Card ? ("postCard card tsxCard"): ("postCard tsxCard")}>
       <img className="h-full object-cover bg-cover postImg" src={heroImage.src} alt={"Bild zum Artikel " + title}/>
       <Datetime datetime={pubDatetime} className="postDate px-[5%]"/>
       <span

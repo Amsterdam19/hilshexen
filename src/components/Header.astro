@@ -9,8 +9,8 @@ export interface Props {
 
 const { activeNav } = Astro.props;
 ---
-
-<header>
+<div class="invisible h-[3.75rem] sm:h-[6.5rem]"></div>
+<header class="font-mono">
   <a id="skip-to-content" href="#main-content">Skip to content</a>
   <div class="nav-container">
     <div class="top-nav-wrap">
@@ -24,6 +24,7 @@ const { activeNav } = Astro.props;
               height={LOGO_IMAGE.height}
             />
           ) : (
+            <>
               <span class="outer">
                 <span class="inner" style="animation-delay: -3673ms;">
                   <span class="letter" style="animation-delay: 0ms;">
@@ -87,6 +88,7 @@ const { activeNav } = Astro.props;
                   </span>
                 </span>
               </span>
+            </>
           )
         }
       </a>
@@ -97,26 +99,9 @@ const { activeNav } = Astro.props;
           aria-expanded="false"
           aria-controls="menu-items"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="menu-icon"
-          >
-            <line x1="7" y1="12" x2="21" y2="12" class="line"></line>
-            <line x1="3" y1="6" x2="21" y2="6" class="line"></line>
-            <line x1="12" y1="18" x2="21" y2="18" class="line"></line>
-            <line x1="18" y1="6" x2="6" y2="18" class="close"></line>
-            <line x1="6" y1="6" x2="18" y2="18" class="close"></line>
-          </svg>
+          <div class="menu-button"></div>
         </button>
-        <ul id="menu-items" class="display-none sm:flex">
+        <ul id="menu-items" class="sm:flex">
           <li>
             <a
               href="/"
@@ -142,7 +127,7 @@ const { activeNav } = Astro.props;
             </a>
           </li>
           <li>
-            <span class="hover:scale-[1.075]">
+            <span class="hover:scale-[1.075] bg-circle">
               <LinkButton
                 href="/search"
                 className={`focus-outline p-3 sm:p-1 ${
@@ -166,7 +151,7 @@ const { activeNav } = Astro.props;
               SITE.lightAndDarkMode && (
                 <button
                   id="theme-btn"
-                  class="focus-outline"
+                  class="focus-outline bg-circle"
                   title="Wechsel zwischen hell und dunkel"
                   aria-label="auto"
                   aria-live="polite"
@@ -185,15 +170,23 @@ const { activeNav } = Astro.props;
       </nav>
     </div>
   </div>
-  <span class={activeNav === "index" ? "hidden" : ""}>
-  </span>
+  <span class={activeNav === "index" ? "hidden" : ""}> </span>
 </header>
 
 <style>
+  header {
+    position: fixed;
+    background-color: rgba(var(--color-fill), 0.7);
+    backdrop-filter: blur(5px);
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+  }
   #skip-to-content {
     @apply absolute -top-full left-16 z-50 bg-skin-accent px-3 py-2 text-skin-inverted transition-all focus:top-4;
   }
   .nav-container {
+    --_animation-time: 400ms;
     max-width: var(--site_width);
     @apply mx-auto flex flex-col items-center justify-between sm:flex-row;
   }
@@ -204,7 +197,12 @@ const { activeNav } = Astro.props;
     @apply flex absolute py-1 text-xl font-semibold sm:static sm:text-2xl;
   }
   .hamburger-menu {
-    @apply self-end p-2 sm:hidden;
+    --_hamburger-heigth: 4px;
+    --_hamburger-width: 25px;
+    --_hamburger-margin: 8px;
+    height: calc(var(--_hamburger-heigth) * 3 + var(--_hamburger-margin) * 2);
+    width: var(--_hamburger-width);
+    @apply self-end p-0 sm:hidden;
   }
   .hamburger-menu svg {
     @apply h-6 w-6 scale-125 fill-skin-base;
@@ -246,20 +244,64 @@ const { activeNav } = Astro.props;
     @apply p-3 sm:p-1;
   }
   #theme-btn svg {
-    @apply scale-125 transition-all hover:rotate-12 sm:scale-100;
+    @apply scale-125 transition-opacity hover:rotate-12 sm:scale-100;
+  }
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: rgb(var(--color-text-base));
+    position: absolute;
+    height: var(--_hamburger-heigth);
+    width: var(--_hamburger-width);
+    transition:
+      transform var(--_animation-time) cubic-bezier(0.23, 1, 0.32, 1),
+      background var(--_animation-time) cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
   }
 
-  .menu-icon line {
-    @apply transition-opacity duration-75 ease-in-out;
+  .menu-button::before {
+    content: "";
+    margin-top: calc(var(--_hamburger-margin) * (-1));
   }
-  .menu-icon .close {
-    opacity: 0;
+
+  .menu-button::after {
+    content: "";
+    margin-top: var(--_hamburger-margin);
   }
-  .menu-icon.is-active .line {
-    @apply opacity-0;
+  .menu-button.is-active::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
   }
-  .menu-icon.is-active .close {
-    @apply opacity-100;
+  .menu-button.is-active {
+    background: rgba(255, 255, 255, 0);
+  }
+  .menu-button.is-active::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+  @media (max-width: 640px) {
+    #nav-menu {
+      @apply relative;
+    }
+    #menu-items {
+      border-radius: 0.75rem;
+      border: 1px rgb(var(--color-breadcrumbs-2)) solid;
+      background-color: rgb(var(--color-surface));
+      transform: translateY(-1rem) scale(0.75);
+      transform-origin: top right;
+      transition: opacity calc(var(--_animation-time) / 2) ease-in, transform calc(var(--_animation-time) / 2) ease-in;
+      @apply opacity-0 overflow-hidden w-full top-full absolute gap-8 py-8 mt-6 invisible;
+    }
+    #menu-items.is-active {
+      transform: translateY(0rem) scale(1);
+      @apply opacity-100 visible;
+    }
+    .bg-circle {
+      border: 1px rgb(var(--color-breadcrumbs-2)) solid;
+      background-color: rgb(var(--color-fill));
+      @apply rounded-full;
+    }
   }
 </style>
 
@@ -267,7 +309,7 @@ const { activeNav } = Astro.props;
   function toggleNav() {
     // Toggle menu
     const menuBtn = document.querySelector(".hamburger-menu");
-    const menuIcon = document.querySelector(".menu-icon");
+    const menuIcon = document.querySelector(".menu-button");
     const menuItems = document.querySelector("#menu-items");
 
     menuBtn?.addEventListener("click", () => {
@@ -278,7 +320,7 @@ const { activeNav } = Astro.props;
         "aria-label",
         menuExpanded ? "Open Menu" : "Close Menu",
       );
-      menuItems?.classList.toggle("display-none");
+      menuItems?.classList.toggle("is-active");
     });
   }
 

@@ -21,7 +21,7 @@ const { props } = Astro;
 <main id="main-content">
   {
     "titleTransition" in props ? (
-      <h1 class="center-layout">
+      <h1 class="center-layout gap-4">
         {props.pageTitle[0]}
         <span transition:name={props.titleTransition}>
           {props.pageTitle[1]}
@@ -40,6 +40,7 @@ const { props } = Astro;
     @apply mx-auto mt-3 w-full px-4 pb-12 flex flex-col items-center;
   }
   #main-content h1 {
+    display: flex;
     font-size: clamp(2rem, 1.2347rem + 4.0816vw, 4.5rem);
     line-height: clamp(2rem, 1.2347rem + 4.0816vw, 4.5rem);
     font-weight: 500

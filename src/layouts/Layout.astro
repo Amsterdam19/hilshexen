@@ -59,6 +59,12 @@ const socialImageURL = new URL(
     <meta property="twitter:image" content={socialImageURL} />
 
     <meta name="theme-color" content="" />
+    <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Your Site's Title"
+    href={`${Astro.site}rss.xml`}
+/>
     <slot name="head"/>
 
     {

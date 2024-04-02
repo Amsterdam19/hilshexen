@@ -151,12 +151,12 @@ import AnimatedH2 from "@components/AnimatedH2.astro";
   /* ===== Spenden Section ===== */
   #spenden {
     width: 100%;
-    border-radius: clamp(1rem, 2rem, 3rem);
+    border-radius: clamp(0.5rem, 0.75rem, 1rem);
     max-width: calc(var(--site_width) - 2rem);
     margin-inline: auto;
     min-height: 65vh;
     min-height: 65svh;
-    background-color: rgba(var(--color-card), 0.5);
+    background-color: rgba(var(--color-accent-light), 0.5);
     display: flex;
     align-items: center;
     @apply mb-8 mt-20;
@@ -172,9 +172,11 @@ import AnimatedH2 from "@components/AnimatedH2.astro";
     line-height: 3rem;
     font-size: clamp(2rem, 1.5408rem + 2.449vw, 3.5rem);
     padding-block: 2rem;
+    @apply tracking-wide leading-tight;
   }
   #spendenP {
     padding-bottom: 1rem;
+    @apply tracking-wide leading-10;
   }
 
   /* ===== Hero Section ===== */
@@ -202,7 +204,7 @@ import AnimatedH2 from "@components/AnimatedH2.astro";
   }
   #heroIMG {
     margin-block: auto;
-    border-radius: clamp(1rem, 2rem, 3rem);
+    border-radius: 0.75rem;
     @apply object-cover aspect-square shadow-xl;
   }
   .heroContent {

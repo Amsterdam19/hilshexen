@@ -32,9 +32,9 @@
     --color-surface: 242, 242, 242;
     --color-text-base: 2, 15, 2;
     --color-accent: 38, 116, 45;
-    --color-card: 169, 198, 169;
-    --color-card-blue: 213, 230, 245;
-    --color-card-muted: 205, 205, 205;
+    --color-accent-light: 169, 198, 169;
+    --color-card: 255, 255, 255;
+    --color-card-muted: var(--color-accent-light);
     --color-border: 85, 143, 87;
     --color-postCard: 255, 255, 255;
     --color-breadcrumbs: 250, 235, 215;
@@ -47,9 +47,9 @@
     --color-surface: 37, 37, 37;
     --color-text-base: 233, 241, 233;
     --color-accent: 38, 116, 45;
-    --color-card: 13, 55, 17;
-    --color-card-blue: 22, 51, 77;
-    --color-card-muted: 138, 51, 2;
+    --color-accent-light: 13, 55, 17;
+    --color-card: var(--color-surface);
+    --color-card-muted: var(--color-accent-light);
     --color-border: 85, 143, 87;
     --color-postCard: 37, 37, 37;
     --color-breadcrumbs: 70, 65, 59;
@@ -61,42 +61,6 @@
   html[data-theme="dark"] #moon-svg {
     display: none;
   }
-  #xyz {
-    --color-fill: 255, 255, 247;
-    --color-text-base: 40, 39, 40;
-    --color-accent: 101, 126, 103;
-    --color-card: 229, 240, 231;
-    --color-card-muted: 205, 205, 205;
-    --color-border: 180, 207, 184;
-    --color-postCard: 255, 255, 255;
-    --color-main: 255, 255, 247;
-    color: rgb(29, 29, 29);
-    color: rgb(39, 40, 39);
-    color: rgb(38, 116, 45);
-    color: rgb(229, 240, 231);
-    color: rgb(205, 205, 205);
-    color: rgb(41, 99, 50);
-    color: rgb(255, 255, 255);
-    color: rgb(255, 255, 247);
-    color: rgb(255, 240, 221);
-
-    --color-fill: 30, 34, 44;
-    --color-text-base: 234, 237, 243;
-    --color-accent: 204, 230, 208;
-    --color-card: 57, 66, 59;
-    --color-card-muted: 138, 51, 2;
-    --color-border: 96, 153, 104;
-    --color-postCard: 49, 55, 72;
-    --color-main: 30, 34, 44;
-    color: rgb(213, 230, 245);
-    color: rgb(234, 237, 243);
-    color: rgb(204, 230, 208);
-    color: rgb(57, 66, 59);
-    color: rgb(138, 51, 2);
-    color: rgb(96, 153, 104);
-    color: rgb(49, 55, 72);
-    color: rgb(30, 34, 44);
-  }
   #moon-svg,
   html[data-theme="dark"] #sun-svg {
     display: block;
@@ -107,7 +71,7 @@
   body {
     min-height: 100vh;
     min-height: 100svh;
-    @apply flex flex-col bg-skin-fill font-mono text-skin-base 
+    @apply flex flex-col bg-skin-fill text-skin-base 
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
   }
   section {
@@ -271,26 +235,26 @@ ul {
 }
 
 .postCard {
-  --_transition-time: 0.8s;
+  --_transition-time: 0.3s;
   --_transition-fktn: cubic-bezier(0, 0, 0.2, 1);
-  --_border-hover: clamp(1rem, 2rem, 3rem);
-  --_first-child-transform: -0.35rem;
   max-width: 27rem;
   min-height: 30rem;
-  border-radius: clamp(0.5rem, 1rem, 1.5rem);
+  border-radius: clamp(0.5rem, 0.75rem, 1rem);
   height: auto;
   grid-row: span 4;
   position: relative;
   box-shadow: rgba(var(--box-shaddow), 0.2) 0px 8px 24px;
   grid-template-rows: subgrid;
-  transition: border-radius var(--_transition-time) var(--_transition-fktn);
-  background-color: rgba(var(--color-postCard), 1);
+  background-color: rgb(var(--color-card));
   @apply grid my-5 overflow-hidden;
 }
-@supports (view-transition-name: header) {
-  .postCard {
-    transition: background-color .2s ease-in-out, border-radius var(--_transition-time) var(--_transition-fktn);
-  }    
+
+.postDate {
+  background-color: rgb(var(--color-breadcrumbs));
+  @apply px-2 py-1 mx-[5%] my-2 rounded-md h-fit w-fit;
+}
+.day {
+  margin-right: 0.5rem;
 }
 
 /* ==== Safari Fix ==== */
@@ -303,90 +267,15 @@ ul {
   }
 }
 
-.postCard:hover {
-  border-radius: var(--_border-hover);
-}
-
 .postTitle {
   @apply text-ellipsis line-clamp-2 w-4/5 text-balance;
 }
-.postCard:hover .postTitle {
-  @apply decoration-dashed underline;
-}
 
-@media (min-width: 70rem) and (prefers-reduced-motion: no-preference) {
-  .postDate,
-  .postDesc,
-  .postTitle {
-    transition: transform var(--_transition-time) var(--_transition-fktn);
-  }
-  .postCard:first-child:not(.tsxCard):hover .postDate {
-    transform: translateX(var(--_first-child-transform));
-  }
-  .postCard:first-child:not(.tsxCard):hover .postTitle {
-    transform: translateX(var(--_first-child-transform));
-  }
-  .postCard:first-child:not(.tsxCard):hover .postDesc {
-    transform: translateX(var(--_first-child-transform));
-  }
-  .postCard:not(:first-child):hover .postDate,
-  .tsxCard:hover .postDate {
-    transform: translateY(-1rem);
-  }
-  .postCard:not(:first-child):hover .postTitle,
-  .tsxCard:hover .postTitle {
-    transform: translateY(-.5rem);
-  }
-  .postCard:not(:first-child):hover .postDesc,
-  .tsxCard:hover .postDesc {
-    transform: translateY(-.2rem);
-  }
-
-  .postDate,
-  .postTitle,
-  .postDesc {
-    z-index: 2;
-    background-color: inherit;
-  }
-
-  .postDate:not(:first-child)::after,
-  .tsxCard .postDate::after {
-    content: '';
-    background: inherit;
-    left: 0;
-    right: 0;
-    top: 0;
-    margin: auto;
-    z-index: -1;
-    transform: scaleY(0) translateY(-50%);
-    border-radius: var(--_border-hover);
-    transition: transform var(--_transition-time) var(--_transition-fktn);
-    @apply w-full h-full absolute opacity-100;
-  }
-
-  .postCard:not(:first-child):hover .postDate::after,
-  .tsxCard:hover .postDate::after {
-    transform: scaleY(1) translateY(-60%);
-  }
-
-  .postCard:not(:first-child) picture,
-  .postCard:not(:first-child) img,
-  .tsxCard img {
-    z-index: 0;
-    transition: transform var(--_transition-time) var(--_transition-fktn);
-  }
-
-  .postCard:not(:first-child):hover picture,
-  .postCard:not(:first-child):hover img,
-  .tsxCard img {
-    transform: scale(1.02);
-  }
-}
 @media (min-width: 70rem) {
   .card:first-child {
     --_padding: 3rem;
     grid-template-columns: 3fr var(--_padding) 2fr;
-    grid-template-rows: 3rem 5rem auto 1fr;
+    grid-template-rows: 3rem 5rem 1fr 2fr;
     grid-template-areas:
     "postImg b a"
     "postImg b postDate"
@@ -397,7 +286,7 @@ ul {
     min-height: 25rem;
     justify-content: space-between;
     max-width: unset;
-    max-height: 35rem;
+    max-height: 28rem;
     height: auto;
     padding-right: var(--_padding);
   }
@@ -413,9 +302,7 @@ ul {
   }
   .card:first-child .postDate {
     grid-area: postDate;
-    text-align: start;
-    width: 100%;
-    font-size: 18pt;
+    font-size: 1.2rem;
   }
   .card:first-child .postTitle {
     grid-area: postTitle;
@@ -430,13 +317,14 @@ ul {
     font-size: 15pt;
     @apply line-clamp-none
   }
-  .day {
-    font-size: 30pt;
+  .postCard picture,
+  .tsxCard img {
+    @apply relative;
   }
   .postCard picture::after,
   .tsxCard img::after {
     content: '';
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
     transition: opacity var(--_transition-time) var(--_transition-fktn);
     @apply inset-0 absolute opacity-0;
@@ -444,18 +332,30 @@ ul {
 
   .postCard:hover picture::after,
   .tsxCard:hover img::after {
-    @apply opacity-20;
+    @apply opacity-100;
+  }
+  .postCard:hover picture::before,
+  .tsxCard:hover img::before {
+    @apply opacity-100 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .postCard picture::before,
+  .tsxCard img::before {
+    content: 'Artikel öffnen \2192';
+    z-index: 2;
+    font-size: 1.2rem;
+    color: white;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transition: opacity var(--_transition-time) var(--_transition-fktn), transform var(--_transition-time) var(--_transition-fktn);
+    @apply absolute opacity-0 -translate-y-0 -translate-x-1/2 text-center;
   }
 }
 @media (min-width: 100rem) {
   .card:first-child {
     max-width: unset;
   }
-}
-
-.day {
-  font-weight: 900;
-  font-size: 25pt;
 }
 
 .fancy-link {
@@ -574,11 +474,20 @@ ul {
 @keyframes fade {
   0% {
     opacity: 0;
-    transform: translateY(2rem) scale(0.9);
+    transform: translateY(2px);
   }
   100% {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -607,12 +516,16 @@ ul {
   .just-fade {
     --_animation-type: just-fade;
   }
+
+  .opacity {
+    --_animation-type: opacity;
+  }
 }
 @supports (not (animation-timeline: view())) {
 .scroll-animation,
 .fade {
   opacity: 0;
-  transform: translateY(10px) scale(0.9) ;
+  transform: translateY(5px);
 }
 .tsxCard {
   opacity: 1;
@@ -622,12 +535,6 @@ ul {
 .show.scroll-animation,
 .show.fade {
   animation: fade 0.5s ease-in forwards;
-}
-
-.show.postCard {
-  --_animation-delay: 0s;
-  animation: fade 0.5s ease-in forwards;
-  animation-delay: var(--_animation-delay);
 }
 
 .slide {
@@ -647,6 +554,16 @@ ul {
 .show.roll-in {
   opacity: 0;
   animation: roll-in 0.5s ease-in forwards;
+}
+.opacity {
+  opacity: 0;
+  transform: none;
+}
+.show.opacity {
+  --_animation-delay: 0s;
+  opacity: 0;
+  animation: opacity 0.8s ease-in forwards;
+  animation-delay: var(--_animation-delay);
 }
 }
 

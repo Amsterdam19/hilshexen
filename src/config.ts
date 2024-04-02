@@ -1,8 +1,8 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://hils-heika.de//",
-  author: "Amsterdam19",
+  website: "https://hils-heika.de/",
+  author: "Katrin Feichtinger",
   desc: "Ein Blog über die Wanderschaft",
   title: "HilsHeika",
   ogImage: "og.jpg",

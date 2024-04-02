@@ -17,13 +17,13 @@ const { title, heroImage, pubDatetime, description } = frontmatter;
 
 const headerProps = {
   style: { viewTransitionName: slugify(title) },
-  className: "decoration-dashed hover:underline font-bold",
+  className: "font-bold",
 };
 ---
 
 <a
   href={href}
-  class={card ? "postCard card scroll-animation" : "postCard scroll-animation"}
+  class={card ? "postCard card scroll-animation opacity" : "postCard scroll-animation opacity"}
 >
   <Picture
     class="h-full object-cover postImg"
@@ -32,7 +32,7 @@ const headerProps = {
     formats={["avif", "webp"]}
     alt={"Bild zum Artikel " + title}
   />
-  <Datetime datetime={pubDatetime} className="postDate px-[5%]" />
+  <Datetime datetime={pubDatetime} className="postDate" />
   <span
     class="inline-block font-medium text-balance text-3xl postTitle px-[5%]"
   >
