@@ -250,8 +250,7 @@ ul {
 }
 
 .postDate {
-  background-color: rgb(var(--color-breadcrumbs));
-  @apply px-2 py-1 mx-[5%] my-2 rounded-md h-fit w-fit;
+  @apply px-[5%] my-3;
 }
 .day {
   margin-right: 0.5rem;
@@ -261,9 +260,6 @@ ul {
 @supports  (background: -webkit-named-image(i)) or (-webkit-touch-callout: none) {
   .postUl {
     grid-template-columns: repeat(auto-fill,minmax(300px, 100%)) !important;
-  }
-  .postImg {
-    height: 18rem;
   }
 }
 
@@ -586,33 +582,71 @@ ul {
 }
 
 .pagLink {
-  width: fit-content;
-  background-color: transparent;
-  padding: .36rem .92rem;
-  border: 2px solid rgb(var(--color-text-base));
-  border-radius: 9999px;
-  display: flex;
-  position: relative;
-  align-items: center;
-  z-index: 1;
+  aspect-ratio: 1/1;
+  background-color: rgb(var(--color-surface));
+  border-radius: clamp(0.5rem, 0.75rem, 1rem);
 }
-.pagLink::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  background-color: rgb(var(--color-text-base));
-  z-index: -1;
-  opacity: 0;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  transition: opacity 0.25s ease-in-out;
-}
-.pagLink:hover::after {
-  opacity: 1;
+.pagLink svg {
+    margin: 12px;
+    height: 24px;
+    width: 24px;
+    max-width: 100%;
+    max-height: 100%;
 }
 .pagLink:hover {
-  color: rgb(var(--color-fill));
+  @apply opacity-80;
 }
-.pagLink:hover svg{
-  fill: rgb(var(--color-fill));
+.pagNum {
+  color: rgb(var(--color-breadcrumbs-2));
+  background-color: rgb(var(--color-breadcrumbs));
+  text-align: center;
+  padding: 12px;
+  margin-inline: 0.75rem;
+  max-width: 100%;
+  max-height: 100%;
+  height: 3rem;
+  aspect-ratio: 1 / 1;
+  border-radius: clamp(0.5rem, 0.75rem, 1rem);
+}
+
+
+/*TOC*/
+.tocUL > li {
+  display: list-item;
+  list-style: inside;
+  transition:
+      padding 0.5s ease,
+      opacity 0.5s ease,
+      background-color 0.5s ease;
+  border-radius: clamp(0.5rem, 0.75rem, 1rem);
+  @apply p-2 opacity-80;
+}
+.tocUL > li:hover {
+  background-color: rgb(var(--color-breadcrumbs));
+  @apply pl-3 opacity-100;
+}
+
+.smallH1 {
+  position: relative;
+  padding-left: 1rem;
+}
+.smallH1::before {
+  content: '';
+  background-color: rgb(var(--color-breadcrumbs-2));
+  @apply inset-0 absolute h-4/6 my-auto w-[0.4rem] rounded-full;
+}
+
+.svgButton {
+  color: rgb(var(--color-breadcrumbs-2));
+  fill: rgb(var(--color-breadcrumbs-2));
+  background-color: rgb(var(--color-breadcrumbs));
+  border-radius: clamp(0.5rem, 0.75rem, 1rem);
+  aspect-ratio: 1/1;
+}
+.svgButton svg {
+  margin: 8px;
+  height: 20px;
+  width: 20px;
+  max-width: 100%;
+  max-height: 100%;
 }

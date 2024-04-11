@@ -17,14 +17,15 @@ const { tag, size = "sm" } = Astro.props;
     transition:name={tag}
     class={`${size === "sm" ? "text-sm" : "text-lg"} pr-2 group flex place-items-center`}
   >
-  <span class="text-2xl">&#35;</span> &nbsp;<span>{tag}</span>
+  <span class="text-2xl">&#35;</span> &nbsp;<span class="font-medium">{tag}</span>
   </a>
 </li>
 
 <style>
   a {
-    background-color: rgb(var(--color-surface));
-    @apply px-2 py-[0.4rem] rounded-[0.6rem] relative hover:text-skin-accent focus-visible:p-1;
+    background-color: rgb(var(--color-breadcrumbs));
+    color: rgb(var(--color-breadcrumbs-2));
+    @apply px-2 py-[0.4rem] rounded-[0.6rem] relative hover:opacity-75 focus-visible:p-1;
   }
   a::after {
     content: '';

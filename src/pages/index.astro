@@ -72,15 +72,15 @@ import AnimatedH2 from "@components/AnimatedH2.astro";
     }
 
     <section id="spenden">
-      <div class="scroll-animation just-fade" id="spendenDiv">
-        <h2 id="spendenH2">Wofür werden die Spenden verwendet?</h2>
+      <div class="scroll-animation just-fade text-balance text-center sm:text-left" id="spendenDiv">
+        <AnimatedH2 txt="Wofür werden die Spenden verwendet?" className="!mb-10"/>
         <p id="spendenP">
           Ich möchte mit meiner Freundin zu Fuß von Kaierde ans Mittelmeer
           laufen. Wir werden zwischen 70 und 80 Tage unterwegs sein. Ich würde
           gerne eine "Challenge" zu Gunsten unseres Freibades daraus machen: Ich
           sammele für meine Kilometer Spenden, die dann das Freibad bekommt.
         </p>
-        <Button url="/spenden#wofur" icon="open" ariaLabel="Weitere Informationen wofür die Spenden verwendet werden" txt="mehr" right={true}/>
+        <Button url="/spenden#wofur" icon="open" ariaLabel="Weitere Informationen wofür die Spenden verwendet werden" txt="mehr" right={true} className="mx-auto sm:mx-0"/>
       </div>
     </section>
 
@@ -152,7 +152,7 @@ import AnimatedH2 from "@components/AnimatedH2.astro";
   #spenden {
     width: 100%;
     border-radius: clamp(0.5rem, 0.75rem, 1rem);
-    max-width: calc(var(--site_width) - 2rem);
+    max-width: calc(var(--site_width) * 1.2);
     margin-inline: auto;
     min-height: 65vh;
     min-height: 65svh;
@@ -162,17 +162,8 @@ import AnimatedH2 from "@components/AnimatedH2.astro";
     @apply mb-8 mt-20;
   }
   #spendenDiv {
-    max-width: calc(var(--site_width) * 0.65);
-    display: grid;
-    margin: auto;
-  }
-  #spendenH2 {
-    width: fit-content;
-    font-weight: 700;
-    line-height: 3rem;
-    font-size: clamp(2rem, 1.5408rem + 2.449vw, 3.5rem);
-    padding-block: 2rem;
-    @apply tracking-wide leading-tight;
+    max-width: calc(var(--site_width) - 2rem);
+    margin-inline: auto;
   }
   #spendenP {
     padding-bottom: 1rem;

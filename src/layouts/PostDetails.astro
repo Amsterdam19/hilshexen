@@ -6,7 +6,8 @@ import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
+import TableOfContents from "@components/TOC.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -14,15 +15,23 @@ export interface Props {
 
 const { post } = Astro.props;
 
-const { title, author, heroImage, description, ogImage, canonicalURL, pubDatetime, tags } =
-  post.data;
+const {
+  title,
+  author,
+  heroImage,
+  description,
+  ogImage,
+  canonicalURL,
+  pubDatetime,
+  tags,
+} = post.data;
 
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 
 const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
 const ogUrl = new URL(
   ogImageUrl ?? `/posts/${slugifyStr(title)}.png`,
-  Astro.url.origin
+  Astro.url.origin,
 ).href;
 ---
 
@@ -34,9 +43,9 @@ const ogUrl = new URL(
   canonicalURL={canonicalURL}
 >
   <Header />
-  <div class="mx-auto flex w-full max-w-3xl justify-start px-2">
+  <div class="w-full max-w-[70rem] mx-auto px-4 py-8">
     <button
-      class="focus-outline mb-2 mt-8 flex hover:opacity-75 button"
+      class="focus-outline mb-2 w-max flex hover:opacity-75 button"
       onclick="history.back()"
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="transition-transform"
@@ -46,41 +55,62 @@ const ogUrl = new URL(
       </svg><span>Zurück</span>
     </button>
   </div>
-  <main id="main-content">
-    <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
-    <Datetime datetime={pubDatetime} size="lg" className="my-2 text-skin-accent mb-3" />
-    <Image src={heroImage} alt="Artikelbild" class="rounded-[0.75rem] scroll-animation opacity" format="webp"/>
-    <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl">
-      <Content />
-    </article>
+  <div id="content">
+    <aside class="flex flex-col gap-6 lg:sticky top-[7rem] h-max">
+      {
+        headings && headings.length > 0 && (
+          <nav class="artikleCard">
+            <TableOfContents {headings} />
+          </nav>
+        )
+      }
+      <div class="artikleCard">
+        <h1 class="font-bold mb-3 text-2xl smallH1">Tags</h1>
+        <ul class="flex gap-3 flex-wrap">
+          {tags.map((tag) => <Tag tag={slugifyStr(tag)} />)}
+        </ul>
+      </div>
+    </aside>
 
-    <ul class="my-8 flex gap-3 flex-wrap">
-      {tags.map(tag => <Tag tag={slugifyStr(tag)} />)}
-    </ul>
-    <div class="flex justify-end">
-      <button
-        id="back-to-top"
-        class="focus-outline whitespace-nowrap hover:text-skin-accent"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="rotate-90">
-          <path
-            d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
-          ></path>
-        </svg>
-        <span>Zurück nach oben</span>
-      </button>
+    <main id="main-content" class="artikleCard">
+      <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
+      <Datetime datetime={pubDatetime} size="lg" className="mt-2 mb-4" />
+      <Image
+        src={heroImage}
+        alt="Artikelbild"
+        class="rounded-[0.75rem] scroll-animation opacity"
+        format="webp"
+      />
+      <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl">
+        <Content />
+      </article>
+    </main>
+  </div>
+  <div class="flex justify-end max-w-[70rem] mx-auto w-full px-4 my-6">
+    <button
+      id="back-to-top"
+      class="focus-outline flex items-center gap-2 hover:opacity-80 artikleCard !p-4"
+    >
+    <div class="svgButton">
+      <svg xmlns="http://www.w3.org/2000/svg" class="rotate-90" viewBox="0 0 24 24"><path fill="currentColor" d="M16.88 2.88a1.25 1.25 0 0 0-1.77 0L6.7 11.29a.996.996 0 0 0 0 1.41l8.41 8.41c.49.49 1.28.49 1.77 0s.49-1.28 0-1.77L9.54 12l7.35-7.35c.48-.49.48-1.28-.01-1.77"/></svg>
+     
     </div>
-  </main>
+
+      <span>Zurück nach oben</span>
+    </button>
+  </div>
   <Footer />
 </Layout>
 
 <style>
-  main {
-    @apply mx-auto w-full max-w-3xl px-4 pb-12;
+  #content {
+    max-width: var(--site_width);
+    grid-template-columns: 1fr 2fr;
+    @apply mx-auto w-full px-4 flex flex-col lg:grid gap-6;
   }
   .post-title {
     margin-block: 1.5rem;
-    font-size: clamp(1.5rem, 3rem, 3.5rem);;
+    font-size: clamp(1.5rem, 3rem, 3.5rem);
     line-height: 1;
     @apply font-semibold;
   }
@@ -90,6 +120,12 @@ const ogUrl = new URL(
   }
   .button:hover svg {
     @apply -translate-x-1;
+  }
+  .artikleCard {
+    border-radius: clamp(0.5rem, 0.75rem, 1rem);
+    box-shadow: rgba(var(--box-shaddow), 0.2) 0px 8px 24px;
+    background-color: rgb(var(--color-card));
+    @apply p-8;
   }
 </style>
 <script is:inline>
@@ -131,22 +167,6 @@ const ogUrl = new URL(
     }
   }
   document.addEventListener("scroll", updateScrollProgress);
-
-  /** Attaches links to headings in the document,
-   *  allowing sharing of sections easily */
-  function addHeadingLinks() {
-    let headings = Array.from(document.querySelectorAll("h2, h3, h4, h5, h6"));
-    for (let heading of headings) {
-      heading.classList.add("group");
-      let link = document.createElement("a");
-      link.innerText = "#";
-      link.className = "heading-link hidden group-hover:inline-block ml-2";
-      link.href = "#" + heading.id;
-      link.ariaHidden = "true";
-      heading.appendChild(link);
-    }
-  }
-  addHeadingLinks();
 
   /** Attaches copy buttons to code blocks in the document,
    * allowing users to copy code easily. */

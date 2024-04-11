@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://hils-heika.de//sitemap-index.xml
+Sitemap: https://hils-heika.de/sitemap-index.xml

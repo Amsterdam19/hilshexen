@@ -1,15 +1,13 @@
 ---
-const { txt } = Astro.props;
+const { txt, className } = Astro.props;
 ---
 
-<h2 class="scroll-animation slide animated-h2" data-text={txt}>{txt}</h2>
+<h2 data-text={txt} class={`scroll-animation slide animated-h2 w-fit font-semibold my-10 ${className}`}>{txt}</h2>
 
 <style>
   .animated-h2 {
-    width: fit-content;
     font-size: clamp(2rem, 1.3878rem + 3.2653vw, 4rem);
     color: var(--color-primary);
-    @apply font-semibold my-10;
   }
   @media (width <= 50rem) {
     .animated-h2 {
