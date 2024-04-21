@@ -7,7 +7,6 @@ const { txt, className } = Astro.props;
 <style>
   .animated-h2 {
     font-size: clamp(2rem, 1.3878rem + 3.2653vw, 4rem);
-    color: var(--color-primary);
   }
   @media (width <= 50rem) {
     .animated-h2 {
@@ -16,12 +15,10 @@ const { txt, className } = Astro.props;
   }
   @media (width > 50rem) {
     .animated-h2 {
-      --_color-primary: rgb(var(--color-text-base));
       --_color-secondary: rgba(var(--color-accent), 0.66);
       --_color-tertiary: rgba(var(--color-accent), 0.33);
       --_shaddow-width: 3px;
       --_animatino-time: 0.2s;
-      color: var(--_color-primary);
       transition: transform var(--_animatino-time) ease-in-out;
       z-index: 3;
       @apply tracking-wide;

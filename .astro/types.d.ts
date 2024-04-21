@@ -126,69 +126,6 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"noch-100-tage copy 2.md": {
-	id: "noch-100-tage copy 2.md";
-  slug: "noch-100-tage-copy-2";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"noch-100-tage copy 3.md": {
-	id: "noch-100-tage copy 3.md";
-  slug: "noch-100-tage-copy-3";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"noch-100-tage copy 4.md": {
-	id: "noch-100-tage copy 4.md";
-  slug: "noch-100-tage-copy-4";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"noch-100-tage copy 5.md": {
-	id: "noch-100-tage copy 5.md";
-  slug: "noch-100-tage-copy-5";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"noch-100-tage copy 6.md": {
-	id: "noch-100-tage copy 6.md";
-  slug: "noch-100-tage-copy-6";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"noch-100-tage copy 7.md": {
-	id: "noch-100-tage copy 7.md";
-  slug: "noch-100-tage-copy-7";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"noch-100-tage copy 8.md": {
-	id: "noch-100-tage copy 8.md";
-  slug: "noch-100-tage-copy-8";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"noch-100-tage copy 9.md": {
-	id: "noch-100-tage copy 9.md";
-  slug: "noch-100-tage-copy-9";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"noch-100-tage copy.md": {
-	id: "noch-100-tage copy.md";
-  slug: "noch-100-tage-copy";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
 "noch-100-tage.md": {
 	id: "noch-100-tage.md";
   slug: "noch-100-tage";

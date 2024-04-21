@@ -21,15 +21,16 @@ import heroImage from "@assets/nature-943768_1920.jpg";
 import Button from "@components/Button.astro";
 import Motivation from "@components/Motivation.astro";
 import AnimatedH2 from "@components/AnimatedH2.astro";
+import portrait from "@assets/HilsHeika.jpg";
 ---
 
 <Layout identity={true}>
   <Header activeNav="index" />
   <main id="main-content">
     <section id="hero" class="max-w-none">
-      <div class="heroContent">
+      <div class="heroContent text-center md:text-start">
         <h1>
-          <span id="km" class="flex items-baseline"
+          <span id="km" class="flex items-baseline justify-center md:justify-start"
             ><div class="relative">
               <span id="counterNBR">
                 <span class="invisible">1200</span><div
@@ -42,7 +43,7 @@ import AnimatedH2 from "@components/AnimatedH2.astro";
           >
           <span>Von Kaierde bis ans Mittelmeer</span>
         </h1>
-        <Button url="/spenden" txt="Spenden" icon="donation"/>
+        <Button url="/spenden" txt="Spenden" icon="donation" className="mx-auto md:mx-0"/>
       </div>
       <Image
         src={heroImage}
@@ -73,14 +74,24 @@ import AnimatedH2 from "@components/AnimatedH2.astro";
 
     <section id="spenden">
       <div class="scroll-animation just-fade text-balance text-center sm:text-left" id="spendenDiv">
-        <AnimatedH2 txt="Wofür werden die Spenden verwendet?" className="!mb-10"/>
-        <p id="spendenP">
-          Ich möchte mit meiner Freundin zu Fuß von Kaierde ans Mittelmeer
-          laufen. Wir werden zwischen 70 und 80 Tage unterwegs sein. Ich würde
-          gerne eine "Challenge" zu Gunsten unseres Freibades daraus machen: Ich
-          sammele für meine Kilometer Spenden, die dann das Freibad bekommt.
-        </p>
-        <Button url="/spenden#wofur" icon="open" ariaLabel="Weitere Informationen wofür die Spenden verwendet werden" txt="mehr" right={true} className="mx-auto sm:mx-0"/>
+        <div class="flex flex-col md:flex-row gap-8 items-center">
+          <div class="max-w-[30rem] md:max-w-[56rem] text-center md:text-left">
+            <AnimatedH2 txt="Wofür werden die Spenden verwendet?" className="!mb-10"/>
+            <p id="spendenP">
+              Ich möchte mit meiner Freundin zu Fuß von Kaierde ans Mittelmeer
+              laufen. Wir werden zwischen 70 und 80 Tage unterwegs sein. Ich würde
+              gerne eine "Challenge" zu Gunsten unseres Freibades daraus machen: Ich
+              sammele für meine Kilometer Spenden, die dann das Freibad bekommt.
+              <Button url="/spenden#wofur" icon="open" ariaLabel="Weitere Informationen wofür die Spenden verwendet werden" txt="mehr" right={true} className="mx-auto md:mx-0"/>
+            </p>
+          </div>
+          <Image
+          class={"rounded-xl w-96 max-w-full object-cover my-4"}
+          src={portrait}
+          id="portraitImage"
+          alt="Portrait Image"
+        />
+        </div>
       </div>
     </section>
 

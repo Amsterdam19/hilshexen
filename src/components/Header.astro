@@ -9,7 +9,7 @@ export interface Props {
 
 const { activeNav } = Astro.props;
 ---
-<div class="invisible h-[3.75rem] sm:h-[6.5rem]"></div>
+<div class="mt-4 sm:mt-0 invisible h-[3.75rem] sm:h-[6.5rem]"></div>
 <header class="font-mono">
   <a id="skip-to-content" href="#main-content">Skip to content</a>
   <div class="nav-container">
@@ -176,8 +176,6 @@ const { activeNav } = Astro.props;
 <style>
   header {
     position: fixed;
-    background-color: rgba(var(--color-fill), 0.7);
-    backdrop-filter: blur(5px);
     top: 0;
     width: 100%;
     z-index: 9999;
@@ -188,13 +186,14 @@ const { activeNav } = Astro.props;
   .nav-container {
     --_animation-time: 400ms;
     max-width: var(--site_width);
-    @apply mx-auto flex flex-col items-center justify-between sm:flex-row;
+    @apply mt-4 sm:mt-0 mx-4 sm:mx-auto flex flex-col items-center justify-between sm:flex-row;
   }
   .top-nav-wrap {
-    @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8;
+    background-color: rgb(var(--color-fill));
+    @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8 rounded-2xl;
   }
   .logo {
-    @apply flex absolute py-1 text-xl font-semibold sm:static sm:text-2xl;
+    @apply flex absolute text-xl font-semibold sm:static sm:text-2xl;
   }
   .hamburger-menu {
     --_hamburger-heigth: 4px;
@@ -285,22 +284,26 @@ const { activeNav } = Astro.props;
       @apply relative;
     }
     #menu-items {
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
       border-radius: 0.75rem;
-      border: 1px rgb(var(--color-breadcrumbs-2)) solid;
-      background-color: rgb(var(--color-surface));
-      transform: translateY(-1rem) scale(0.75);
+      background-color: rgb(var(--color-fill));
+      transform: translateY(0rem) scale(0.75);
       transform-origin: top right;
       transition: opacity calc(var(--_animation-time) / 2) ease-in, transform calc(var(--_animation-time) / 2) ease-in;
-      @apply opacity-0 overflow-hidden w-full top-full absolute gap-8 py-8 mt-6 invisible;
+      @apply opacity-0 overflow-hidden w-full top-full absolute gap-8 py-8 mt-6 pointer-events-none;
     }
     #menu-items.is-active {
-      transform: translateY(0rem) scale(1);
-      @apply opacity-100 visible;
+      transform: translateY(1rem) scale(1);
+      @apply opacity-100 pointer-events-auto;
+    }
+    .top-nav-wrap {
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
     }
     .bg-circle {
-      border: 1px rgb(var(--color-breadcrumbs-2)) solid;
       background-color: rgb(var(--color-fill));
-      @apply rounded-full;
+      border-radius: 0.75rem;
+      background-color: rgb(var(--color-breadcrumbs));
+      color: rgb(var(--color-breadcrumbs-2));
     }
   }
 </style>

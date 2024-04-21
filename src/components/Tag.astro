@@ -27,13 +27,6 @@ const { tag, size = "sm" } = Astro.props;
     color: rgb(var(--color-breadcrumbs-2));
     @apply px-2 py-[0.4rem] rounded-[0.6rem] relative hover:opacity-75 focus-visible:p-1;
   }
-  a::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 6px 20px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    @apply rounded-[0.6rem] ;
-  }
   a svg {
     @apply -mr-5 h-6 w-6 scale-95 text-skin-base opacity-80 group-hover:fill-skin-accent;
   }

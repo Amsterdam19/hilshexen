@@ -25,8 +25,9 @@ const { noMarginTop = false } = Astro.props;
 
 <style>
   footer {
-    background-color: rgb(var(--color-surface));
     border-radius: clamp(1rem,2rem,3rem) clamp(1rem,2rem,3rem) 0 0;
+    background-color: rgb(var(--color-card));
+    box-shadow: rgba(var(--box-shaddow), 0.2) 0px 8px 24px;
     @apply w-full;
   }
   a:hover {
@@ -34,7 +35,7 @@ const { noMarginTop = false } = Astro.props;
   }
   .footer-wrapper {
     max-width: var(--site_width);
-    @apply mx-auto px-4 py-16 flex flex-col items-center justify-between md:flex-row;
+    @apply w-full mx-auto px-4 py-16 flex flex-col gap-2 items-center justify-between md:flex-row;
   }
   .link-button {
     @apply my-1 p-2 hover:rotate-6;

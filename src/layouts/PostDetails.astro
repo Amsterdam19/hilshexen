@@ -45,7 +45,7 @@ const ogUrl = new URL(
   <Header />
   <div class="w-full max-w-[70rem] mx-auto px-4 py-8">
     <button
-      class="focus-outline mb-2 w-max flex hover:opacity-75 button"
+      class="focus-outline mb-2 w-max flex button"
       onclick="history.back()"
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="transition-transform"
@@ -91,7 +91,7 @@ const ogUrl = new URL(
       id="back-to-top"
       class="focus-outline flex items-center gap-2 hover:opacity-80 artikleCard !p-4"
     >
-    <div class="svgButton">
+    <div class="svgButton" style="background-color: transparent">
       <svg xmlns="http://www.w3.org/2000/svg" class="rotate-90" viewBox="0 0 24 24"><path fill="currentColor" d="M16.88 2.88a1.25 1.25 0 0 0-1.77 0L6.7 11.29a.996.996 0 0 0 0 1.41l8.41 8.41c.49.49 1.28.49 1.77 0s.49-1.28 0-1.77L9.54 12l7.35-7.35c.48-.49.48-1.28-.01-1.77"/></svg>
      
     </div>
@@ -115,8 +115,16 @@ const ogUrl = new URL(
     @apply font-semibold;
   }
   .button {
-    background-color: rgb(var(--color-breadcrumbs));
+    background-color: rgb(var(--color-accent));
+    color: rgb(var(--color-b-w));
     @apply p-2 rounded-[0.6rem];
+  }
+  .button svg {
+    color: rgb(var(--color-b-w));
+    fill: rgb(var(--color-b-w));
+  }
+  .button:hover {
+    background-color: rgb(var(--color-btn-hover));
   }
   .button:hover svg {
     @apply -translate-x-1;
@@ -125,7 +133,7 @@ const ogUrl = new URL(
     border-radius: clamp(0.5rem, 0.75rem, 1rem);
     box-shadow: rgba(var(--box-shaddow), 0.2) 0px 8px 24px;
     background-color: rgb(var(--color-card));
-    @apply p-8;
+    @apply p-[4%];
   }
 </style>
 <script is:inline>

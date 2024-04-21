@@ -36,6 +36,8 @@ module.exports = {
         base: withOpacity("--color-text-base"),
         accent: withOpacity("--color-accent"),
         inverted: withOpacity("--color-fill"),
+        whiteblack: withOpacity("--color-w-b"),
+        white: withOpacity("--white"),
       },
     },
     backgroundColor: {

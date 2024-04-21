@@ -28,34 +28,52 @@
 @layer base {
   :root,
   html[data-theme="light"] {
-    --color-fill: 255, 255, 255;
+    --color-fill: 247, 248, 247;
     --color-surface: 242, 242, 242;
     --color-text-base: 2, 15, 2;
-    --color-accent: 38, 116, 45;
+    --color-accent: 0, 128, 9;
+    --color-accent-dark: 48, 86, 48;
     --color-accent-light: 169, 198, 169;
-    --color-card: 255, 255, 255;
-    --color-card-muted: var(--color-accent-light);
     --color-border: 85, 143, 87;
-    --color-postCard: 255, 255, 255;
-    --color-breadcrumbs: 250, 235, 215;
-    --color-breadcrumbs-2: 70, 65, 59;
+    --color-breadcrumbs: 203, 241, 203;
+    --color-breadcrumbs-2: 48, 86, 48;
     --box-shaddow: 149, 157, 165;
+    --color-b-w: 255, 255, 255;
+    --color-w-b: 0, 0, 0;
+    --color-card: 255, 255, 255;
+    --color-footer: 0, 139, 139;
+    --color-card-blue: 64, 132, 211;
+
+    --white: 255, 255, 255;
+
+    --color-card-muted: var(--color-accent-light);
+    --color-postCard: var(--color-card);
     --color-main: var(--color-fill);
+    --color-btn-hover: var(--color-accent-dark);
   }
   html[data-theme="dark"] {
     --color-fill:28, 28, 25;
     --color-surface: 37, 37, 37;
     --color-text-base: 233, 241, 233;
-    --color-accent: 38, 116, 45;
-    --color-accent-light: 13, 55, 17;
+    --color-accent: 93, 210, 94;
+    --color-accent-dark: 48, 86, 48;
+    --color-accent-light: 175, 233, 176;
+    --color-border: 85, 143, 87;
+    --color-breadcrumbs: 48, 86, 48;
+    --color-breadcrumbs-2: 203, 241, 203;
+    --box-shaddow: 9, 17, 25;
+    --color-b-w: 0, 0, 0;
+    --color-w-b: 255, 255, 255;
+    --color-footer: 0, 84, 84;
+    --color-card-blue: 64, 132, 211;
+
+    --white: 255, 255, 255;
+
     --color-card: var(--color-surface);
     --color-card-muted: var(--color-accent-light);
-    --color-border: 85, 143, 87;
-    --color-postCard: 37, 37, 37;
-    --color-breadcrumbs: 70, 65, 59;
-    --color-breadcrumbs-2: 250, 235, 215;
-    --box-shaddow: 9, 17, 25;
+    --color-postCard: var(--color-card);
     --color-main: var(--color-fill);
+    --color-btn-hover: var(--color-accent-light);
   }
   #sun-svg,
   html[data-theme="dark"] #moon-svg {
@@ -182,6 +200,12 @@
   --site_width: 70rem;
 }
 
+@supports (view-transition-name: header) {
+  * {
+    transition: background-color .2s ease-in-out;
+  }    
+}
+
 .text-balance {
   text-wrap: balance;
 }
@@ -231,7 +255,7 @@ ul {
   grid-auto-rows: 18rem auto auto auto;
   container-type: inline-size;
   gap: .5rem 2rem;
-  @apply grid grid-flow-dense;
+  @apply grid grid-flow-dense place-items-center md:place-items-start;
 }
 
 .postCard {
@@ -649,4 +673,29 @@ ul {
   width: 20px;
   max-width: 100%;
   max-height: 100%;
+}
+/* Footer */
+.link-button {
+  color: rgb(var(--color-breadcrumbs-2));
+  fill: rgb(var(--color-breadcrumbs-2));
+  background-color: rgb(var(--color-breadcrumbs));
+  border-radius: clamp(0.5rem, 0.75rem, 1rem);
+  aspect-ratio: 1/1;
+  @apply p-1 hover:rotate-6 sm:p-[0.4rem];
+}
+.link-button svg.icon-tabler {
+  margin: 8px;
+  height: 24px;
+  width: 24px;
+  max-width: 100%;
+  max-height: 100%;
+}
+.link-button:hover svg.icon-tabler {
+  color: rgba(var(--color-text-base), 1);
+}
+
+
+.center-layout .darkShaddow {
+  --_color-secondary: #235A31;
+  --_color-tertiary: #182E09;
 }
