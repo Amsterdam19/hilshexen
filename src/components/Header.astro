@@ -9,7 +9,6 @@ export interface Props {
 
 const { activeNav } = Astro.props;
 ---
-<div class="mt-4 sm:mt-0 invisible h-[3.75rem] sm:h-[6.5rem]"></div>
 <header class="font-mono">
   <a id="skip-to-content" href="#main-content">Skip to content</a>
   <div class="nav-container">
@@ -175,22 +174,27 @@ const { activeNav } = Astro.props;
 
 <style>
   header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 9999;
+    @apply z-50 w-full inset-x-0 top-0 sticky;
   }
   #skip-to-content {
     @apply absolute -top-full left-16 z-50 bg-skin-accent px-3 py-2 text-skin-inverted transition-all focus:top-4;
   }
   .nav-container {
     --_animation-time: 400ms;
-    max-width: var(--site_width);
-    @apply mt-4 sm:mt-0 mx-4 sm:mx-auto flex flex-col items-center justify-between sm:flex-row;
+    max-width: calc(var(--site_width) + 4rem);
+    background-color: rgb(var(--color-fill));
+    @apply sm:w-full mt-4 sm:mt-0 mx-4 sm:mx-auto flex flex-col justify-center sm:flex-row rounded-2xl sm:rounded-none sm:rounded-b-2xl;
   }
   .top-nav-wrap {
-    background-color: rgb(var(--color-fill));
-    @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8 rounded-2xl;
+    max-width: var(--site_width);
+    @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8 rounded-2xl sm:rounded-none sm:rounded-b-2xl;
+  }
+  @media (min-width: 74rem) {
+    .nav-container {
+      background-color: rgba(var(--color-fill), 0.7);
+      border: solid 1px rgba(var(--color-fill), 0.8);
+      @apply mt-2 backdrop-blur-md rounded-2xl;
+    }
   }
   .logo {
     @apply flex absolute text-xl font-semibold sm:static sm:text-2xl;

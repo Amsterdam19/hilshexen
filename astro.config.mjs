@@ -10,7 +10,24 @@ export default defineConfig({
   site: "https://hils-heika.de/",
   integrations: [tailwind({
     applyBaseStyles: false
-  }), react(), sitemap(), icon()],
+  }), react(), sitemap(
+    {
+      serialize(item) {
+        if (/impressum/.test(item.url)) {
+          return undefined;
+        }
+        if (/datenschutz/.test(item.url)) {
+          return undefined;
+        }
+        if (/your-special-page/.test(item.url)) {
+          item.changefreq = 'daily';
+          item.lastmod = new Date();
+          item.priority = 0.9;
+        }
+        return item;
+      },
+    }
+  ), icon()],
   markdown: {
     shikiConfig: {
       theme: "one-dark-pro",

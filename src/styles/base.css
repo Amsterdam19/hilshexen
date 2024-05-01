@@ -264,13 +264,10 @@ ul {
   max-width: 27rem;
   min-height: 30rem;
   border-radius: clamp(0.5rem, 0.75rem, 1rem);
-  height: auto;
   grid-row: span 4;
-  position: relative;
   box-shadow: rgba(var(--box-shaddow), 0.2) 0px 8px 24px;
-  grid-template-rows: subgrid;
   background-color: rgb(var(--color-card));
-  @apply grid my-5 overflow-hidden;
+  @apply grid w-full relative my-5 h-auto grid-rows-subgrid overflow-hidden;
 }
 
 .postDate {

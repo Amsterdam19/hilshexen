@@ -19,7 +19,7 @@ export default function Card({ href, frontmatter, secHeading = true, Card = true
 
   return (
     <a href={href} className={Card ? ("postCard card tsxCard"): ("postCard tsxCard")}>
-      <img className="h-full object-cover bg-cover postImg" src={heroImage.src} alt={"Bild zum Artikel " + title}/>
+      <img className="h-full object-cover bg-cover postImg" src={heroImage.src} alt={"Bild zum Artikel " + title} loading="lazy"/>
       <Datetime datetime={pubDatetime} className="postDate px-[5%]"/>
       <span
         className="inline-block font-medium decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0 text-balance text-3xl postTitle px-[5%]"

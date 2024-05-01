@@ -6,7 +6,7 @@ import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import TableOfContents from "@components/TOC.astro";
 
 export interface Props {
@@ -75,12 +75,13 @@ const ogUrl = new URL(
     <main id="main-content" class="artikleCard">
       <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
       <Datetime datetime={pubDatetime} size="lg" className="mt-2 mb-4" />
-      <Image
-        src={heroImage}
-        alt="Artikelbild"
-        class="rounded-[0.75rem] scroll-animation opacity"
-        format="webp"
-      />
+      <Picture
+      class="rounded-[0.75rem] scroll-animation opacity"
+      src={heroImage}
+      quality="mid"
+      formats={["avif", "webp"]}
+      alt={"Bild zum Artikel " + title}
+    />
       <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl">
         <Content />
       </article>
