@@ -255,7 +255,13 @@ ul {
   grid-auto-rows: 18rem auto auto auto;
   container-type: inline-size;
   gap: .5rem 2rem;
-  @apply grid grid-flow-dense place-items-center md:place-items-start;
+  @apply grid grid-flow-dense;
+}
+@media (max-width: 50rem) {
+  #recent-posts .postUl,
+  #featured .postUl {
+    @apply place-items-center;
+  }
 }
 
 .postCard {
