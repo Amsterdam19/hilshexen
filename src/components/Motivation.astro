@@ -21,7 +21,7 @@ import bgImg from "@assets/footer.webp";
     </div>
   </a>
 
-  <div class="center-layout overflow-x-hidden" id="motivationDiv">
+  <div class="center-layout" id="motivationDiv">
     <AnimatedH2 txt="Über den Blog" className="text-skin-white darkShaddow" />
     <div id="content">
       <p class="text-balance scroll-animation just-fade">
@@ -37,7 +37,7 @@ import bgImg from "@assets/footer.webp";
           ariaLabel="mehr"
           txt="mehr"
           right={true}
-          className="mt-8 mx-auto sm:mx-0 color text-skin-whiteblack"
+          className="mt-6 mx-auto sm:mx-0 color text-skin-whiteblack"
         />
       </p>
       <svg
@@ -117,7 +117,7 @@ import bgImg from "@assets/footer.webp";
   }
   #motivationDiv {
     max-width: var(--site_width);
-    @apply mb-8 sm:mb-[15rem] px-4;
+    @apply my-8 px-4;
   }
   #content {
     @apply flex flex-col-reverse items-center tracking-wide leading-10 gap-4 justify-between md:flex-row;
@@ -143,8 +143,8 @@ import bgImg from "@assets/footer.webp";
     paint-order: normal;
   }
   #map path {
-    fill: rgb(var(--color-fill));
-    stroke: rgb(var(--color-text-base));
+    fill: rgb(var(--color-map));
+    stroke: #182E09;
     stroke-width: 70;
     transition:
       transform 0.35s ease-out,
@@ -175,10 +175,9 @@ import bgImg from "@assets/footer.webp";
   }
   p {
     max-width: calc(var(--site_width) * 0.5);
-    height: fit-content;
-    background-color: rgb(var(--color-fill));
+    background-color: rgba(var(--color-fill), 0.7);
     border-radius: 0.75rem;
-    padding: 1rem;
+    @apply p-6 h-fit backdrop-blur-md;
   }
   #portraitImage {
     border-radius: 0.75rem;

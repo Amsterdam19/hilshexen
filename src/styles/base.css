@@ -37,6 +37,7 @@
     --color-border: 85, 143, 87;
     --color-breadcrumbs: 203, 241, 203;
     --color-breadcrumbs-2: 48, 86, 48;
+    --color-map: 171, 216, 174;
     --box-shaddow: 149, 157, 165;
     --color-b-w: 255, 255, 255;
     --color-w-b: 0, 0, 0;
@@ -61,6 +62,7 @@
     --color-border: 85, 143, 87;
     --color-breadcrumbs: 48, 86, 48;
     --color-breadcrumbs-2: 203, 241, 203;
+    --color-map: 125, 179, 131;
     --box-shaddow: 9, 17, 25;
     --color-b-w: 0, 0, 0;
     --color-w-b: 255, 255, 255;
@@ -202,7 +204,7 @@
 
 @supports (view-transition-name: header) {
   * {
-    transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
   }    
 }
 
@@ -347,7 +349,8 @@ ul {
   .postCard picture::after,
   .tsxCard img::after {
     content: '';
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
     z-index: 1;
     transition: opacity var(--_transition-time) var(--_transition-fktn);
     @apply inset-0 absolute opacity-0;

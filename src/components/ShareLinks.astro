@@ -1,0 +1,64 @@
+---
+import socialIcons from "@assets/socialIcons";
+
+const URL = Astro.url;
+
+const shareLinks = [
+    {
+        name: "WhatsApp",
+        href: "https://wa.me/?text=",
+        linkTitle: `Teile den Artikel via WhatsApp`,
+    },
+    {
+        name: "Facebook",
+        href: "https://www.facebook.com/sharer.php?u=",
+        linkTitle: `Teile den Artikel auf Facebook`,
+    },
+    {
+        name: "Twitter",
+        href: "https://twitter.com/intent/tweet?url=",
+        linkTitle: `Teile den Artikel auf Twitter`,
+    },
+    {
+        name: "Telegram",
+        href: "https://t.me/share/url?url=",
+        linkTitle: `Teile den Artikel via Telegram`,
+    },
+    {
+        name: "Mail",
+        href: "mailto:?subject=Guck%20dir%20diesen%20Artikel%20an&body=",
+        linkTitle: `Teile den Artikel via email`,
+    },
+] as const;
+---
+
+<div class={`social-icons`}>
+    <h1 class="font-bold mb-3 text-2xl smallH1">Teilen</h1>
+    <div>
+        {
+            shareLinks.map((social) => (
+                <>
+                    <a
+                        href={`${social.href + URL}`}
+                        class={`group inline-block link-button`}
+                        title={social.linkTitle}
+                    >
+                        <Fragment set:html={socialIcons[social.name]} />
+                    </a>
+                </>
+            ))
+        }
+    </div>
+</div>
+
+<style>
+    .social-icons {
+        @apply flex flex-col flex-wrap gap-1;
+    }
+    .link-button {
+        @apply scale-90 p-2 hover:rotate-6 sm:p-1;
+    }
+    .link-button:not(:hover) {
+        background-color: transparent !important;
+    }
+</style>

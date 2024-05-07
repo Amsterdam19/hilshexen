@@ -6,6 +6,7 @@ import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
+import ShareLinks from "@components/ShareLinks.astro";
 import { Picture } from "astro:assets";
 import TableOfContents from "@components/TOC.astro";
 
@@ -69,6 +70,9 @@ const ogUrl = new URL(
         <ul class="flex gap-3 flex-wrap">
           {tags.map((tag) => <Tag tag={slugifyStr(tag)} />)}
         </ul>
+      </div>
+      <div class="artikleCard">
+        <ShareLinks />
       </div>
     </aside>
 

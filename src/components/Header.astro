@@ -183,11 +183,11 @@ const { activeNav } = Astro.props;
     --_animation-time: 400ms;
     max-width: calc(var(--site_width) + 4rem);
     background-color: rgb(var(--color-fill));
-    @apply sm:w-full mt-4 sm:mt-0 mx-4 sm:mx-auto flex flex-col justify-center sm:flex-row rounded-2xl sm:rounded-none sm:rounded-b-2xl;
+    @apply sm:w-full mx-auto flex flex-col justify-center sm:flex-row rounded-none md:rounded-b-2xl;
   }
   .top-nav-wrap {
     max-width: var(--site_width);
-    @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8 rounded-2xl sm:rounded-none sm:rounded-b-2xl;
+    @apply relative flex w-full items-start justify-between p-4 sm:items-center py-6 sm:py-8 rounded-none md:rounded-b-2xl;
   }
   @media (min-width: 74rem) {
     .nav-container {
