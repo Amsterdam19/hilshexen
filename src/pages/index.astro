@@ -29,7 +29,7 @@ import portrait from "@assets/HilsHeika.jpg";
   <main id="main-content">
     <section id="hero" class="max-w-none">
       <div class="heroContent text-center md:text-start">
-        <h1>
+        <h1 class="fade-in-up">
           <span id="km" class="flex items-baseline justify-center md:justify-start"
             ><div class="relative">
               <span id="counterNBR">
@@ -43,12 +43,13 @@ import portrait from "@assets/HilsHeika.jpg";
           >
           <span>Von Kaierde bis ans Mittelmeer</span>
         </h1>
-        <Button url="/spenden" txt="Spenden" icon="donation" className="mx-auto md:mx-0"/>
+        <Button url="/spenden" txt="Spenden" icon="donation" className="mx-auto md:mx-0 fade-in-up animation-delay-40"/>
       </div>
       <Image
         src={heroImage}
         alt="Eine zum Wandern einladendes Alpenpanorama."
         id="heroIMG"
+        class="fade-in-up animation-delay-100"
       />
     </section>
 
@@ -165,7 +166,7 @@ import portrait from "@assets/HilsHeika.jpg";
     border-radius: clamp(0.5rem, 0.75rem, 1rem);
     max-width: calc(var(--site_width) * 1.2);
     margin-inline: auto;
-    background-color: rgba(var(--color-accent-light), 0.5);
+    background: var(--gradient-fancy);
     display: flex;
     align-items: center;
     @apply mb-8 mt-20;

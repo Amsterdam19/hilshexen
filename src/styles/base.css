@@ -42,8 +42,9 @@
     --color-b-w: 255, 255, 255;
     --color-w-b: 0, 0, 0;
     --color-card: 255, 255, 255;
-    --color-footer: 0, 139, 139;
+    --color-footer: 135, 206, 235;
     --color-card-blue: 64, 132, 211;
+    --gradient-fancy: linear-gradient(120deg, rgba(84,247,107,1) 0%, rgba(40,208,172,1) 100%);
 
     --white: 255, 255, 255;
 
@@ -68,6 +69,7 @@
     --color-w-b: 255, 255, 255;
     --color-footer: 0, 84, 84;
     --color-card-blue: 64, 132, 211;
+    --gradient-fancy: linear-gradient(120deg, rgba(13,74,21,1) 0%, rgba(3,42,33,1) 100%);
 
     --white: 255, 255, 255;
 
@@ -494,6 +496,34 @@ ul {
   .fancy:hover > .outer:nth-child(9) {
     transform: translate(0%, 50%) rotate(8deg);
   }
+}
+
+/*Blog Animation*/
+@keyframes fade-in-up {
+  0% {
+      transform: translateY(2rem);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+.fade-in-up {
+  opacity: 0;
+  animation: fade-in-up 0.3s forwards;
+}
+.animation-delay-20 {
+  animation-delay: 20ms;
+}
+.animation-delay-40 {
+  animation-delay: 40ms;
+}
+.animation-delay-60 {
+  animation-delay: 60ms;
+}
+.animation-delay-100 {
+  animation-delay: 100ms;
 }
 
 /* Scroll Animation */

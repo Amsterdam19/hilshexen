@@ -21,17 +21,17 @@ const { props } = Astro;
 <main id="main-content">
   {
     "titleTransition" in props ? (
-      <h1 class="center-layout gap-4">
+      <h1 class="center-layout gap-4 fade-in-up">
         {props.pageTitle[0]}
         <span transition:name={props.titleTransition}>
           {props.pageTitle[1]}
         </span>
       </h1>
     ) : (
-      <h1 class="center-layout">{props.pageTitle}</h1>
+      <h1 class="center-layout fade-in-up">{props.pageTitle}</h1>
     )
   }
-  <p class="center-layout">{props.pageDesc}</p>
+  <p class="center-layout fade-in-up animation-delay--20">{props.pageDesc}</p>
   <slot />
 </main>
 <style>

@@ -60,23 +60,23 @@ const ogUrl = new URL(
     <aside class="flex flex-col gap-6 lg:sticky top-[7rem] h-max">
       {
         headings && headings.length > 0 && (
-          <nav class="artikleCard">
+          <nav class="artikleCard fade-in-up animation-delay-20">
             <TableOfContents {headings} />
           </nav>
         )
       }
-      <div class="artikleCard">
+      <div class="artikleCard fade-in-up animation-delay-40">
         <h1 class="font-bold mb-3 text-2xl smallH1">Tags</h1>
         <ul class="flex gap-3 flex-wrap">
           {tags.map((tag) => <Tag tag={slugifyStr(tag)} />)}
         </ul>
       </div>
-      <div class="artikleCard">
+      <div class="artikleCard fade-in-up animation-delay-60">
         <ShareLinks />
       </div>
     </aside>
 
-    <main id="main-content" class="artikleCard">
+    <main id="main-content" class="artikleCard fade-in-up animation-delay-100">
       <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
       <Datetime datetime={pubDatetime} size="lg" className="mt-2 mb-4" />
       <Picture
