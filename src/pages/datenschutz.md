@@ -12,16 +12,6 @@ Stand: 11. November 2023
 - [Rechte der betroffenen Personen](#rechte-der-betroffenen-personen)
 - [Bereitstellung des Onlineangebotes und Webhosting](#bereitstellung-des-onlineangebotes-und-webhosting)
 
-## Verantwortlicher
-
-Herr Datenschutz
-
-12345 Musterstadt
-
-Schulstraße 1
-
-E-Mail-Adresse: [datenschutzbeauftragter@test.de](mailto:datenschutzbeauftragter@test.de)
-
 ## Übersicht der Verarbeitungen
 
 Die nachfolgende Übersicht fasst die Arten der verarbeiteten Daten
