@@ -1,0 +1,53 @@
+---
+import { Image, getImage, Picture } from "astro:assets";
+
+const {
+    img,
+    className,
+    classImg,
+    alt,
+    id,
+    rounded = true,
+    picture = false,
+} = Astro.props;
+const optimizedImage = await getImage({
+    src: img,
+    format: "webp",
+    quality: "1",
+    width: "300",
+});
+---
+
+<div
+    style={`background-image: url(${optimizedImage.src});`}
+    class={`${className} ${rounded ? "rounded-xl" : ""}`}
+    id={id}
+>
+    {
+        picture ? (
+            <Picture
+                class={classImg}
+                src={img}
+                quality="low"
+                formats={["avif", "webp"]}
+                alt={alt}
+                style="backdrop-filter: blur(20px);"
+            />
+        ) : (
+            <Image
+                src={img}
+                alt={alt}
+                style="backdrop-filter: blur(20px);"
+                class={classImg}
+            />
+        )
+    }
+</div>
+<style>
+    div {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+    }
+</style>

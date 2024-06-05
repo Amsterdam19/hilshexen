@@ -3,7 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import { SITE } from "@config";
 import Footer from "@components/Footer.astro";
-import { Picture } from "astro:assets";
+import LazyImg from "@components/LazyImg.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Button from "@components/Button.astro";
 
@@ -42,12 +42,8 @@ import HilsHeika from "@assets/HilsHeika.jpg";
                         Wochen – von Kaierde bis ans Mittelmeer.
                     </p>
                 </div>
-                <div class="img fade-in-up animation-delay-100">
-                    <Picture
-                        src={HilsHeika}
-                        formats={["avif", "webp"]}
-                        alt="HEIdi und Katrin beim Wandern."
-                    />
+                <div class="">
+                    <LazyImg img={HilsHeika} picture={true} className="img fade-in-up animation-delay-100" alt="HEIdi und KAtrin beim Wandern"/>
                 </div>
             </div>
         </section>

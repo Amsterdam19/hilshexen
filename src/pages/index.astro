@@ -18,10 +18,12 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 
 //Images
 import heroImage from "@assets/nature-943768_1920.jpg";
+const optimizedHeroImage = await getImage({src: heroImage, format: 'webp', quality: '2'});
 import Button from "@components/Button.astro";
 import Motivation from "@components/Motivation.astro";
 import AnimatedH2 from "@components/AnimatedH2.astro";
 import portrait from "@assets/HilsHeika.jpg";
+import LazyImg from "@components/LazyImg.astro";
 ---
 
 <Layout identity={true}>
@@ -45,12 +47,7 @@ import portrait from "@assets/HilsHeika.jpg";
         </h1>
         <Button url="/spenden" txt="Spenden" icon="donation" className="mx-auto md:mx-0 fade-in-up animation-delay-40"/>
       </div>
-      <Image
-        src={heroImage}
-        alt="Eine zum Wandern einladendes Alpenpanorama."
-        id="heroIMG"
-        class="fade-in-up animation-delay-100"
-      />
+      <LazyImg img={heroImage} alt="Eine zum Wandern einladendes Alpenpanorama." id="heroIMG" className="fade-in-up animation-delay-100 aspect-square" classImg="object-cover aspect-square shadow-xl"/>
     </section>
 
     <Motivation />
@@ -86,12 +83,7 @@ import portrait from "@assets/HilsHeika.jpg";
               <Button url="/spenden#wofur" icon="open" ariaLabel="Weitere Informationen wofür die Spenden verwendet werden" txt="mehr" right={true} className="mt-6 mx-auto md:mx-0"/>
             </p>
           </div>
-          <Image
-          class={"rounded-xl w-96 max-w-full object-cover my-4"}
-          src={portrait}
-          id="portraitImage"
-          alt="Portrait Image"
-        />
+          <LazyImg img={portrait} alt="Portraitbild." id="portraitImage" className="w-full max-w-96 my-4 rounded-xl" classImg="object-cover"/>
         </div>
       </div>
     </section>
@@ -196,15 +188,6 @@ import portrait from "@assets/HilsHeika.jpg";
     .heroContent {
       max-width: calc(var(--site_width) * 0.5) !important;
     }
-    #heroIMG {
-      max-width: calc(var(--site_width) * 0.5);
-      @apply m-auto;
-    }
-  }
-  #heroIMG {
-    margin-block: auto;
-    border-radius: 0.75rem;
-    @apply object-cover aspect-square shadow-xl;
   }
   .heroContent {
     gap: 1.5rem;

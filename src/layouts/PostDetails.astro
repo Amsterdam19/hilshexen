@@ -7,7 +7,7 @@ import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import ShareLinks from "@components/ShareLinks.astro";
-import { Picture } from "astro:assets";
+import LazyImg from "@components/LazyImg.astro";
 import TableOfContents from "@components/TOC.astro";
 
 export interface Props {
@@ -79,13 +79,7 @@ const ogUrl = new URL(
     <main id="main-content" class="artikleCard fade-in-up animation-delay-100">
       <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
       <Datetime datetime={pubDatetime} size="lg" className="mt-2 mb-4" />
-      <Picture
-      class="rounded-[0.75rem] scroll-animation opacity"
-      src={heroImage}
-      quality="mid"
-      formats={["avif", "webp"]}
-      alt={"Bild zum Artikel " + title}
-    />
+      <LazyImg img={heroImage} picture={true} className="scroll-animation opacity"alt={"Bild zum Artikel " + title}/>
       <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl">
         <Content />
       </article>

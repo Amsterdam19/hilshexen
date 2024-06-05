@@ -2,7 +2,7 @@
 import slugify from "@utils/slugify";
 import Datetime from "./Datetime";
 import type { CollectionEntry } from "astro:content";
-import { Picture } from "astro:assets";
+import LazyImg from "./LazyImg.astro";
 
 export interface Props {
   href?: string;
@@ -25,13 +25,7 @@ const headerProps = {
   href={href}
   class={card ? "postCard card scroll-animation opacity" : "postCard scroll-animation opacity"}
 >
-  <Picture
-    class="h-full object-cover postImg"
-    src={heroImage}
-    quality="low"
-    formats={["avif", "webp"]}
-    alt={"Bild zum Artikel " + title}
-  />
+  <LazyImg img={heroImage} picture={true} classImg="object-cover h-full" className="postImg"alt={"Bild zum Artikel " + title} rounded={false}/>
   <Datetime datetime={pubDatetime} className="postDate" />
   <span
     class="inline-block font-medium text-balance text-3xl postTitle px-[5%]"

@@ -320,9 +320,7 @@ ul {
   .card:first-child p {
     height: fit-content;
   }
-  .card:first-child picture,
-  .card:first-child img,
-  .card:first-child .postCard {
+  .card:first-child .postImg {
     grid-area: postImg;
     height: 100% !important;
     position: relative;
@@ -344,11 +342,11 @@ ul {
     font-size: 15pt;
     @apply line-clamp-none
   }
-  .postCard picture,
+  .postImg,
   .tsxCard img {
     @apply relative;
   }
-  .postCard picture::after,
+  .postImg::after,
   .tsxCard img::after {
     content: '';
     background-color: rgba(0, 0, 0, 0.5);
@@ -358,16 +356,16 @@ ul {
     @apply inset-0 absolute opacity-0;
   }
 
-  .postCard:hover picture::after,
+  .postCard:hover .postImg::after,
   .tsxCard:hover img::after {
     @apply opacity-100;
   }
-  .postCard:hover picture::before,
+  .postCard:hover .postImg::before,
   .tsxCard:hover img::before {
     @apply opacity-100 -translate-x-1/2 -translate-y-1/2;
   }
 
-  .postCard picture::before,
+  .postCard .postImg::before,
   .tsxCard img::before {
     content: 'Artikel öffnen \2192';
     z-index: 2;
@@ -734,4 +732,17 @@ ul {
 .center-layout .darkShaddow {
   --_color-secondary: #235A31;
   --_color-tertiary: #182E09;
+}
+
+/*Images*/
+#heroIMG {
+  margin-block: auto;
+  border-radius: 0.75rem;
+  @apply object-cover aspect-square shadow-xl;
+}
+@media (max-width: 55rem) {
+  #heroIMG {
+    max-width: calc(var(--site_width) * 0.5);
+    @apply m-auto;
+  }
 }
