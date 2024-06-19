@@ -1,6 +1,6 @@
 ---
 title: Tag 7 Von Stockhausen nach Friedrichroda
-heroImage: ../../assets/images/img_3014.jpeg
+heroImage: ../../assets/images/img_3016.jpeg
 pubDatetime: 2024-06-18T17:21:50.650Z
 featured: true
 tags:
