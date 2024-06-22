@@ -18,7 +18,12 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 
 //Images
 import heroImage from "@assets/nature-943768_1920.jpg";
-const optimizedHeroImage = await getImage({src: heroImage, format: 'webp', quality: '2'});
+const optimizedHeroImage = await getImage({
+    src: heroImage,
+    format: "webp",
+    quality: "1",
+    width: "300",
+});
 import Button from "@components/Button.astro";
 import Motivation from "@components/Motivation.astro";
 import AnimatedH2 from "@components/AnimatedH2.astro";
@@ -27,6 +32,7 @@ import LazyImg from "@components/LazyImg.astro";
 ---
 
 <Layout identity={true}>
+  <link rel="preload" as="image" href={optimizedHeroImage.src}>
   <Header activeNav="index" />
   <main id="main-content">
     <section id="hero" class="max-w-none">

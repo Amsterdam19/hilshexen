@@ -133,6 +133,76 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"tag-1-kaierde-vogelbeck.md": {
+	id: "tag-1-kaierde-vogelbeck.md";
+  slug: "tag-1-kaierde-vogelbeck";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-10-von-oberhof-nach-neustadt-am-rennsteig.md": {
+	id: "tag-10-von-oberhof-nach-neustadt-am-rennsteig.md";
+  slug: "tag-10-von-oberhof-nach-neustadt-am-rennsteig";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-2-von-vogelbeck-nach-göttingen.md": {
+	id: "tag-2-von-vogelbeck-nach-göttingen.md";
+  slug: "tag-2-von-vogelbeck-nach-göttingen";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-3-von-göttingen-nach-weißenborn.md": {
+	id: "tag-3-von-göttingen-nach-weißenborn.md";
+  slug: "tag-3-von-göttingen-nach-weißenborn";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-4-von-weißenborn-nach-martinfeld.md": {
+	id: "tag-4-von-weißenborn-nach-martinfeld.md";
+  slug: "tag-4-von-weißenborn-nach-martinfeld";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-5-von-martinfeld-nach-treffurt.md": {
+	id: "tag-5-von-martinfeld-nach-treffurt.md";
+  slug: "tag-5-von-martinfeld-nach-treffurt";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-7-von-stockhausen-nach-friedrichroda.md": {
+	id: "tag-7-von-stockhausen-nach-friedrichroda.md";
+  slug: "tag-7-von-stockhausen-nach-friedrichroda";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-8-von-friedrichroda-nach-tambach-dietharz.md": {
+	id: "tag-8-von-friedrichroda-nach-tambach-dietharz.md";
+  slug: "tag-8-von-friedrichroda-nach-tambach-dietharz";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"von-tambach-dietharz-nach-oberhof.md": {
+	id: "von-tambach-dietharz-nach-oberhof.md";
+  slug: "von-tambach-dietharz-nach-oberhof";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"von-treffurt-nach-stockhausen.md": {
+	id: "von-treffurt-nach-stockhausen.md";
+  slug: "von-treffurt-nach-stockhausen";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 };
 
 	};

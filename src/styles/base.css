@@ -398,7 +398,7 @@ ul {
   height: 2px;
   background: currentColor;
   transform: scaleX(0);
-  transform-origin: right;
+  transform-origin: left;
   transition: transform 250ms ease-in;
   transition: transform 250ms ease-in;
 }
