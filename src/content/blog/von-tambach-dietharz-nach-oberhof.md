@@ -1,5 +1,5 @@
 ---
-title: Von Tambach-Dietharz nach Oberhof
+title: Tag 9 Von Tambach-Dietharz nach Oberhof
 heroImage: ../../assets/images/img_3062.jpeg
 pubDatetime: 2024-06-20T18:42:28.217Z
 featured: true
