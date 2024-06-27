@@ -1,8 +1,8 @@
 ---
-title: Von Treffurt nach Stockhausen
+title: Tag 6 Von Treffurt nach Stockhausen
 heroImage: ../../assets/images/a4248310-684b-4b92-a485-5085d0189903-7472-0000018c735b20ee.jpeg
 pubDatetime: 2024-06-17T20:41:13.375Z
-featured: true
+featured: false
 tags:
   - Tag6
 description: "Treffurt-Stockhausen "
