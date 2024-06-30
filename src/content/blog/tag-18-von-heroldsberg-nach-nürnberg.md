@@ -2,7 +2,7 @@
 title: "Tag 18 Von Heroldsberg nach Nürnberg "
 heroImage: ../../assets/images/img_3481.jpeg
 pubDatetime: 2024-06-29T18:22:24.577Z
-featured: true
+featured: false
 tags:
   - Nürnberg
 description: Sightseeing in Nürnberg
