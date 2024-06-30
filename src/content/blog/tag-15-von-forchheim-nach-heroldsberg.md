@@ -1,8 +1,8 @@
 ---
-title: Tag 15 Von Forchheim nach Heroldsberg
+title: Tag 16 Von Forchheim nach Heroldsberg
 heroImage: ../../assets/images/a265f882-1115-4016-9888-62d6262189a3-12971-0000037da16d2413.jpeg
 pubDatetime: 2024-06-27T19:55:10.899Z
-featured: true
+featured: false
 tags:
   - FränkischeSchweiz
 description: Gewitterluft und Stechviecher
