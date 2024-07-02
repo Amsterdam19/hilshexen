@@ -2,7 +2,7 @@
 title: Tag 19 - Von Wendelstein nach Hilpolstein
 heroImage: ../../assets/images/18cc120e-cf0c-4008-9195-2ad8f2188dd0.jpeg
 pubDatetime: 2024-06-30T18:26:36.803Z
-featured: true
+featured: false
 tags:
   - Rothsee
 description: Wandern auf Jacobswegen
