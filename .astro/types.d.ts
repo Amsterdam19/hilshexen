@@ -133,6 +133,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"pause.md": {
+	id: "pause.md";
+  slug: "pause";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "tag-1-kaierde-vogelbeck.md": {
 	id: "tag-1-kaierde-vogelbeck.md";
   slug: "tag-1-kaierde-vogelbeck";
@@ -147,9 +154,79 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"tag-11-von-neustadt-am-rennsteig-nach-eisfeld.md": {
+	id: "tag-11-von-neustadt-am-rennsteig-nach-eisfeld.md";
+  slug: "tag-11-von-neustadt-am-rennsteig-nach-eisfeld";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-12-von-eisfeld-nach-roth-am-forst.md": {
+	id: "tag-12-von-eisfeld-nach-roth-am-forst.md";
+  slug: "tag-12-von-eisfeld-nach-roth-am-forst";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-13-von-roth-am-forst-nach-prächting.md": {
+	id: "tag-13-von-roth-am-forst-nach-prächting.md";
+  slug: "tag-13-von-roth-am-forst-nach-prächting";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-14-von-prächting-nach-wernsdorf.md": {
+	id: "tag-14-von-prächting-nach-wernsdorf.md";
+  slug: "tag-14-von-prächting-nach-wernsdorf";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-15-von-forchheim-nach-heroldsberg.md": {
+	id: "tag-15-von-forchheim-nach-heroldsberg.md";
+  slug: "tag-15-von-forchheim-nach-heroldsberg";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-15-von-wernsdorf-nach-forchheim.md": {
+	id: "tag-15-von-wernsdorf-nach-forchheim.md";
+  slug: "tag-15-von-wernsdorf-nach-forchheim";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-18-von-heroldsberg-nach-nürnberg.md": {
+	id: "tag-18-von-heroldsberg-nach-nürnberg.md";
+  slug: "tag-18-von-heroldsberg-nach-nürnberg";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-19-von-wendelstein-nach-hilpolstein.md": {
+	id: "tag-19-von-wendelstein-nach-hilpolstein.md";
+  slug: "tag-19-von-wendelstein-nach-hilpolstein";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "tag-2-von-vogelbeck-nach-göttingen.md": {
 	id: "tag-2-von-vogelbeck-nach-göttingen.md";
   slug: "tag-2-von-vogelbeck-nach-göttingen";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-20-hilpolstein➡️greding.md": {
+	id: "tag-20-hilpolstein➡️greding.md";
+  slug: "tag-20-hilpolstein️greding";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-21-greding➡️böhmfeld.md": {
+	id: "tag-21-greding➡️böhmfeld.md";
+  slug: "tag-21-greding️böhmfeld";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -213,5 +290,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../src/content/config.js");
+	export type ContentConfig = typeof import("./../src/content/config.js");
 }
