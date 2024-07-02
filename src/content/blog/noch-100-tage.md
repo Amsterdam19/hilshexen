@@ -4,7 +4,7 @@ heroImage: ../../assets/images/img_3524.jpeg
 pubDatetime: 2024-07-02T04:24:18.374Z
 featured: true
 tags:
-  - Altmühll
+  - Altmühl
 description: Aufgelauert
 ---
 Heute sind wir bei perfekten Wanderwetter knapp 29 km 
