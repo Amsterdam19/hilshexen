@@ -11,7 +11,6 @@ Ursprünglich standen heute 28 km auf unserem Programm. Die Hitzewarnung für N�
 
 ![](../../assets/images/251443ca-a27f-413b-b4d3-cc571e4ed320-29290-0000057c67b48c64.jpeg)
 
-![](../../assets/images/18cc120e-cf0c-4008-9195-2ad8f2188dd0.jpeg)
 
  zu unterschätzen! \
 In Nürnberg haben wir dann mal Sightseeing gemacht. Ein bisschen Kulter kann ja zwischendurch mal auch nicht schaden. Nürnberg mit seiner Kaiserburg und den beeindruckenden Kirchen (und den großen Orgeln!)  zu erleben, nach Dörfern, Wald und Wiesenwegen war eine willkommene Abwechslung. Unser Zielhotel in Wendelstein sind wir dann heute mal mit U-Bahn und Bus angefahren. Mal wieder eine richtige Entscheidung! Wir liegen jetzt iauf unseren Betten und schwitzen vom Nixtun. Wenn wir die ganze Strecke heute gelaufen wären, wären wir wahrscheinlich weg geflossen …..

@@ -126,6 +126,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"Tag 20 Hilpoltstein➡️Grending.md": {
+	id: "Tag 20 Hilpoltstein➡️Grending.md";
+  slug: "tag-20-hilpoltstein️grending";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "noch-100-tage.md": {
 	id: "noch-100-tage.md";
   slug: "noch-100-tage";
@@ -217,16 +224,9 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"tag-20-hilpolstein➡️greding.md": {
-	id: "tag-20-hilpolstein➡️greding.md";
-  slug: "tag-20-hilpolstein️greding";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"tag-21-greding➡️böhmfeld.md": {
-	id: "tag-21-greding➡️böhmfeld.md";
-  slug: "tag-21-greding️böhmfeld";
+"tag-21-greding böhmfeld.md": {
+	id: "tag-21-greding böhmfeld.md";
+  slug: "tag-21-greding-böhmfeld";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
