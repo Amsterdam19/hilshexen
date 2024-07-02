@@ -2,7 +2,7 @@
 title: Tag 14 Von Prächting nach Wernsdorf
 heroImage: ../../assets/images/img_3303.jpeg
 pubDatetime: 2024-06-25T20:12:33.330Z
-featured: true
+featured: false
 tags:
   - Tag14
 description: Viel Sonne, viel Aspalt, wenig Schatten
