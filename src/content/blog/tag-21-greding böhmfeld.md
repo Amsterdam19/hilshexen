@@ -1,5 +1,5 @@
 ---
-title: Tag 21 Greding➡️Böhmfeld
+title: Tag 21 Greding ➡️Böhmfeld
 heroImage: ../../assets/images/6c6b1249-b9ec-4650-bf11-453fc1b99100-361-000000de4e4bb09a.jpeg
 pubDatetime: 2024-07-02T19:34:28.389Z
 featured: true
