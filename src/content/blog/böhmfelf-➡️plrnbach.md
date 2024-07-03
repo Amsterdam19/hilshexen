@@ -1,5 +1,5 @@
 ---
-title: Böhmfelf ➡️Plrnbach
+title: Tag 22 Böhmfelf ➡️Plrnbach
 heroImage: ../../assets/images/img_3582.jpeg
 pubDatetime: 2024-07-03T20:54:47.715Z
 featured: true
