@@ -1,8 +1,8 @@
 ---
-title: Tag 23 von Petershausen nach Dachau
+title: Tag 24 Petershausen ➡️Dachau
 heroImage: ../../assets/images/795db403-7ccf-49d3-909c-195d37d023b1-23246-0000047363d8d5c2.jpeg
 pubDatetime: 2024-07-05T17:44:44.987Z
-featured: true
+featured: false
 tags:
   - München
 description: Alpen in Sicht
