@@ -2,7 +2,7 @@
 title: Tag 29 Bad Tölz ➡️ Tutzinger Hütte
 heroImage: ../../assets/images/7dd240b2-34b3-4b4c-89b6-fb60539d6ab6.jpeg
 pubDatetime: 2024-07-13T19:11:04.103Z
-featured: true
+featured: false
 tags:
   - Isartal
 description: Benediktenwand in Sicht
