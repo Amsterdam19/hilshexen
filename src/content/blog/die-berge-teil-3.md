@@ -17,5 +17,3 @@ Der Weg ins Tal nach Scharnitz geht auf einem Schotterweg meistens sachte bergab
 ![](../../assets/images/3d0c0043-4ada-453f-9c2d-61ead3598143-18899-000004097c57ad49.jpeg)
 
 Immer wieder bin ich ein der Isar begegnet. Sie hat so eine beeindruckende Farbe! Echt irre💙💚
-
-![]()
