@@ -29,16 +29,19 @@ import Motivation from "@components/Motivation.astro";
 import AnimatedH2 from "@components/AnimatedH2.astro";
 import portrait from "@assets/HilsHeika.jpg";
 import LazyImg from "@components/LazyImg.astro";
+import Donations from "@components/Donations.astro";
+import Odometer from "@components/Odometer.astro";
 ---
 
 <Layout identity={true}>
-  <link rel="preload" as="image" href={optimizedHeroImage.src}>
+  <link rel="preload" as="image" href={optimizedHeroImage.src} slot="head">
   <Header activeNav="index" />
   <main id="main-content">
     <section id="hero" class="max-w-none">
       <div class="heroContent text-center md:text-start">
         <h1 class="fade-in-up">
-          <span id="km" class="flex items-baseline justify-center md:justify-start"
+          <Odometer font="clamp(5rem,4.3878rem + 3.2653vw,7rem)" className="font-normal font-sans text-skin-accent" betrag={1200}><span class="font-normal font-sans text-skin-accent">km</span></Odometer>
+          <!--<span id="km" class="flex items-baseline justify-center md:justify-start"
             ><div class="relative">
               <span id="counterNBR">
                 <span class="invisible">1200</span><div
@@ -48,7 +51,7 @@ import LazyImg from "@components/LazyImg.astro";
                 </div>
               </span>
             </div>km</span
-          >
+          > -->
           <span>Von Kaierde bis ans Mittelmeer</span>
         </h1>
         <Button url="/spenden" txt="Spenden" icon="donation" className="mx-auto md:mx-0 fade-in-up animation-delay-40"/>
@@ -57,6 +60,7 @@ import LazyImg from "@components/LazyImg.astro";
     </section>
 
     <Motivation />
+    <Donations betrag={2507.25} personen={43} date="15.07.2024"/>
     {
       featuredPosts.length > 0 && (
         <>

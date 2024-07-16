@@ -1,0 +1,36 @@
+---
+import Odometer from "./Odometer.astro";
+
+export interface Props {
+  betrag: Number;
+  title: string;
+  euro?: boolean;
+}
+const { betrag, title, euro = false } = Astro.props;
+---
+
+<div>
+  <Odometer betrag={betrag} className="donation-item">
+    {euro && <span>€</span>}
+  </Odometer>
+  <h3>{title}</h3>
+</div>
+
+<style>
+  span {
+    @apply py-4;
+  }
+  div {
+    @apply grid items-center justify-items-center my-8 rounded-2xl h-full w-full;
+}
+  h3 {
+    font-size: 1.5rem;
+  }
+  @media (width < 45rem) {
+    div {
+      background-color: rgb(var(--color-accent));
+      color: rgb(var(--color-b-w));
+      @apply flex flex-col justify-center;
+    }
+  }
+</style>

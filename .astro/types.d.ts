@@ -133,6 +133,41 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"böhmfelf-➡️plrnbach.md": {
+	id: "böhmfelf-➡️plrnbach.md";
+  slug: "böhmfelf-️plrnbach";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"die-berge-teil-1.md": {
+	id: "die-berge-teil-1.md";
+  slug: "die-berge-teil-1";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"die-berge-teil-2.md": {
+	id: "die-berge-teil-2.md";
+  slug: "die-berge-teil-2";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"die-berge-teil-3.md": {
+	id: "die-berge-teil-3.md";
+  slug: "die-berge-teil-3";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"man-muss-entscheiden-welchen-weg-man-geht.md": {
+	id: "man-muss-entscheiden-welchen-weg-man-geht.md";
+  slug: "man-muss-entscheiden-welchen-weg-man-geht";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "noch-100-tage.md": {
 	id: "noch-100-tage.md";
   slug: "noch-100-tage";
@@ -231,6 +266,55 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"tag-22-pörnbach➡️petershausen.md": {
+	id: "tag-22-pörnbach➡️petershausen.md";
+  slug: "tag-22-pörnbach️petershausen";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-23-von-petershausen-nach-dachau.md": {
+	id: "tag-23-von-petershausen-nach-dachau.md";
+  slug: "tag-23-von-petershausen-nach-dachau";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-25-dachau➡️gauting.md": {
+	id: "tag-25-dachau➡️gauting.md";
+  slug: "tag-25-dachau️gauting";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-26-gauting➡️berg.md": {
+	id: "tag-26-gauting➡️berg.md";
+  slug: "tag-26-gauting️berg";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-27-“bergfest”-in-berg.md": {
+	id: "tag-27-“bergfest”-in-berg.md";
+  slug: "tag-27-bergfest-in-berg";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-28-berg➡️bad-tölz.md": {
+	id: "tag-28-berg➡️bad-tölz.md";
+  slug: "tag-28-berg️bad-tölz";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"tag-29-bad-tölz-➡️-tutzinger-hütte.md": {
+	id: "tag-29-bad-tölz-➡️-tutzinger-hütte.md";
+  slug: "tag-29-bad-tölz-️-tutzinger-hütte";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "tag-3-von-göttingen-nach-weißenborn.md": {
 	id: "tag-3-von-göttingen-nach-weißenborn.md";
   slug: "tag-3-von-göttingen-nach-weißenborn";
@@ -262,6 +346,13 @@ declare module 'astro:content' {
 "tag-8-von-friedrichroda-nach-tambach-dietharz.md": {
 	id: "tag-8-von-friedrichroda-nach-tambach-dietharz.md";
   slug: "tag-8-von-friedrichroda-nach-tambach-dietharz";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"unsere-reise-geht-zu-ende.md": {
+	id: "unsere-reise-geht-zu-ende.md";
+  slug: "unsere-reise-geht-zu-ende";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

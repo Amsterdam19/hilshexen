@@ -1,0 +1,25 @@
+---
+export interface Props {
+  betrag: Number;
+  className?: string;
+  font?: string;
+}
+
+const { betrag, className, font = "clamp(3rem, 2.3333rem + 3.5556vw, 5rem)" } = Astro.props;
+
+import "@styles/odometer.css";
+---
+
+<p style={`font-size: ${font};`}>
+  <span class={`odometer ${className}`} data-target={betrag}>{betrag}</span>
+  <slot />
+</p>
+
+<style>
+  p {
+    @apply font-mono font-medium flex items-center;
+  }
+  span {
+    @apply h-fit text-nowrap;
+  }
+</style>

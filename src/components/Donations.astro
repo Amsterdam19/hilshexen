@@ -1,0 +1,65 @@
+---
+import Button from "@components/Button.astro";
+import Odometer from "./Odometer.astro";
+import AnimatedH2 from "./AnimatedH2.astro";
+import DonationItem from "./DonationItem.astro";
+
+export interface Props {
+  betrag: Number;
+  personen: Number;
+  date: string;
+}
+
+const { betrag, personen, date } = Astro.props;
+---
+
+<section>
+  <AnimatedH2 txt="Bisherige Spenden*"/>
+  <div class="box">
+    <DonationItem betrag={betrag} title="bisher gespendet" euro={true}/>
+    <hr>
+    <DonationItem betrag={personen} title="Spender"/>
+  </div>
+  <p>
+    Noch nicht gespendet?
+    <Button
+        url="/spende#wie"
+        txt="Spenden"
+        icon="donation"
+        className="h-10 !m-0"
+        ariaLabel="Spenden"
+      />
+  </p>
+  <p>{"*Stand:" + date}</p>
+
+
+</section>
+<style>
+  section {
+    min-height: 35rem;
+    @apply pt-8 grid;
+  }
+  .box {
+    @apply grid items-center justify-items-center gap-4;
+  }
+
+  h2 {
+    font-size: clamp(3rem, 2.3333rem + 3.5556vw, 5rem);
+    @apply mr-6;
+  }
+  p:first-of-type {
+    @apply flex justify-center items-center gap-6 flex-wrap mt-16 text-2xl;
+  }
+  p:last-of-type {
+    @apply text-end my-8;
+  }
+  @media (width > 45rem) {
+    .box {
+      grid-template-columns: 1fr auto 1fr;
+    }
+    hr {
+      background-color: rgb(var(--color-text-base));
+      @apply h-1/2 w-1 rounded-full;
+    }
+  }
+</style>

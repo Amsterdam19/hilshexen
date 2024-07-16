@@ -69,6 +69,7 @@ module.exports = {
       transparent: "transparent",
     },
     fontFamily: {
+      sans: ['ui-sans-serif', 'system-ui'],
       mono: ["Roboto Mono", "monospace"],
     },
     // },
