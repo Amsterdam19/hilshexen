@@ -1,0 +1,15 @@
+---
+import getSortedPosts from "@utils/getSortedPosts";
+
+import { getCollection } from "astro:content";
+import SimplePosts from "@layouts/SimplePosts.astro";
+import getPostsByMonth from "@utils/getPostsByMonth";
+
+const posts = await getCollection("blog");
+
+const sortedPosts = getSortedPosts(posts);
+
+
+
+---
+<SimplePosts posts={sortedPosts} />

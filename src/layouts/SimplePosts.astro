@@ -1,0 +1,42 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import type { CollectionEntry } from "astro:content";
+import getPostsByMonth from "@utils/getPostsByMonth";
+import MonthCard from "@components/MonthCard.astro";
+
+export interface Props {
+  posts: CollectionEntry<"blog">[];
+}
+
+const { posts } = Astro.props;
+
+const months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+---
+
+<Layout title={`Zeitleiste | ${SITE.title}`}>
+  <Header />
+  <Main
+    pageTitle="Zeitleiste"
+    pageDesc="Alle Artikel chronologisch zusammengefasst."
+  >
+  <ul class="grid">
+        {
+            months.map( month => (
+                getPostsByMonth(posts, month).length > 0 &&
+            <MonthCard posts={getPostsByMonth(posts, month)} title={month}/>
+            ))
+        }    
+  </ul>
+
+  </Main>
+  <Footer />
+</Layout>
+<style>
+    ul {
+        max-width: calc(var(--site_width) * 2 / 3);
+    }
+</style>
