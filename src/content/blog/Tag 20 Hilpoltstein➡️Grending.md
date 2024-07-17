@@ -1,5 +1,5 @@
 ---
-title: "Tag 20 Hilpoltstein ➡️Greding"
+title: "Tag 20 Hilpoltstein ➡️ Greding"
 heroImage: ../../assets/images/img_3524.jpeg
 pubDatetime: 2024-07-02T04:24:18.374Z
 featured: true

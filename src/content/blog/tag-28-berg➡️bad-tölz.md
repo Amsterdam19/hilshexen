@@ -1,5 +1,5 @@
 ---
-title: "Tag 28 Berg➡️Bad Tölz "
+title: "Tag 28 Berg ➡️ Bad Tölz "
 heroImage: ../../assets/images/7dd240b2-34b3-4b4c-89b6-fb60539d6ab6.jpeg
 pubDatetime: 2024-07-09T19:57:30.083Z
 featured: true

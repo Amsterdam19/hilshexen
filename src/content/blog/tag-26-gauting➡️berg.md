@@ -1,5 +1,5 @@
 ---
-title: "Tag 26 Gauting➡️Berg "
+title: "Tag 26 Gauting ➡️ Berg "
 heroImage: ../../assets/images/429e8ef0-9797-4534-ad4d-865b1988e553-2973-00000083cdcbc8e0.jpeg
 pubDatetime: 2024-07-07T18:19:49.033Z
 featured: true

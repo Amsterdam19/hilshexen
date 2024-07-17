@@ -1,5 +1,5 @@
 ---
-title: Tag 23-Pörnbach➡️Petershausen
+title: Tag 23-Pörnbach ➡️ Petershausen
 heroImage: ../../assets/images/img_3591.jpeg
 pubDatetime: 2024-07-04T19:42:16.195Z
 featured: true

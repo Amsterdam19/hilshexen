@@ -1,5 +1,5 @@
 ---
-title: Tag 25 Dachau➡️Gauting
+title: Tag 25 Dachau ➡️ Gauting
 heroImage: ../../assets/images/2a5f3e0d-5128-4a56-9337-3a6ada8bd866-27861-000005677ed492b7.jpeg
 pubDatetime: 2024-07-06T17:50:36.194Z
 featured: true
